@@ -1,12 +1,23 @@
 import React, { FunctionComponent } from 'react';
-import { Link } from 'gatsby';
+import styled from '@emotion/styled';
+import GlobalStyle from 'components/common/GlobalStyle';
+import Introduction from 'components/main/Introduction';
+import Footer from 'components/common/Footer';
 
 const IndexPage: FunctionComponent = function () {
   return (
-    <div>
-      <Link to="/info/">To Info</Link>
-    </div>
+    <Container>
+      <GlobalStyle />
+      <Introduction />
+      <Footer />
+    </Container>
   );
 };
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+`;
 
 export default IndexPage;
