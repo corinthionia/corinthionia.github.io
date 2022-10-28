@@ -44,6 +44,12 @@ const CategoryListWrapper = styled.div`
 
   width: 768px;
   margin-top: 100px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-top: 50px;
+    padding: 0 20px;
+  }
 `;
 
 const CategoryItem = styled(({ active, ...props }: GatsbyLinkProps) => (
@@ -54,6 +60,10 @@ const CategoryItem = styled(({ active, ...props }: GatsbyLinkProps) => (
   font-size: 16px;
   font-weight: ${({ active }) => (active ? '600' : '400')};
   cursor: pointer;
+
+  @media (max-width: 768px) {
+    font-size: 13px;
+  }
 `;
 
 export default CategoryList;
