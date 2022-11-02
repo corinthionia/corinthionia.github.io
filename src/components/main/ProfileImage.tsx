@@ -18,10 +18,10 @@ const ProfileImgWrapper = styled(GatsbyImage)`
   }
 `;
 
-const ProfileImg: FunctionComponent<ProfileImageProps> = function ({
+const ProfileImage: FunctionComponent<ProfileImageProps> = function ({
   profileImage,
 }) {
   return <ProfileImgWrapper image={profileImage} alt="Profile image" />;
 };
 
-export default ProfileImg;
+export default ProfileImage;
