@@ -1,1 +1,1 @@
-import 'prismjs/themes/prism-material-light.css';
+import 'prismjs/themes/prism-tomorrow.css';

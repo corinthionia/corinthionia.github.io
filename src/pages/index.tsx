@@ -11,6 +11,7 @@ import { PostListItemType } from 'types/PostItem.types';
 const CATEGORY_LIST = {
   All: 5,
   etc: 3,
+  Mobile: 2,
 };
 
 type IndexPageProps = {

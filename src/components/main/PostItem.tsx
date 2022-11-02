@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 import React, { FunctionComponent } from 'react';
-import { PostFrontmatterType } from 'types/PostItem.types';
 import { GatsbyImage } from 'gatsby-plugin-image';
+import { PostFrontmatterType } from 'types/PostItem.types';
 
 type PostItemProps = PostFrontmatterType & { link: string };
 
@@ -31,7 +31,8 @@ const PostItem: FunctionComponent<PostItemProps> = function ({
 }) {
   return (
     <PostItemWrapper to={link}>
-      <ThumbnailImage image={gatsbyImageData} alt="Post Thumbnail Image" />
+      <ThumbnailImage image={gatsbyImageData} alt="Post Item Image" />
+
       <PostItemContent>
         <Title>{title}</Title>
         <Date>{date}</Date>
