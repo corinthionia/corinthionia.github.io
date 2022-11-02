@@ -45,7 +45,13 @@ const config: GatsbyConfig = {
         name: 'contents',
         path: `${__dirname}/contents`,
       },
-      // __key: 'pages',
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'images',
+        path: `${__dirname}/static`,
+      },
     },
     {
       resolve: `gatsby-transformer-remark`,
