@@ -28,7 +28,7 @@ type IndexPageProps = {
       childImageSharp: {
         gatsbyImageData: IGatsbyImageData;
       };
-      publicURL: string;
+      // publicURL: string;
     };
   };
 };
@@ -42,7 +42,7 @@ const IndexPage: FunctionComponent<IndexPageProps> = function ({
     allMarkdownRemark: { edges },
     file: {
       childImageSharp: { gatsbyImageData },
-      publicURL,
+      // publicURL,
     },
   },
 }) {
@@ -78,12 +78,7 @@ const IndexPage: FunctionComponent<IndexPageProps> = function ({
   );
 
   return (
-    <Layout
-      title={title}
-      description={description}
-      url={siteUrl}
-      image={publicURL}
-    >
+    <Layout title={title} description={description} url={siteUrl}>
       <Bio profileImage={gatsbyImageData} />
       <Category
         selectedCategory={selectedCategory}
@@ -119,11 +114,6 @@ export const getPostList = graphql`
             summary
             date(formatString: "YYYY.MM.DD.")
             categories
-            thumbnail {
-              childImageSharp {
-                gatsbyImageData(width: 768, height: 400)
-              }
-            }
           }
         }
       }

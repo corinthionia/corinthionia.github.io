@@ -15,17 +15,12 @@ const PostContainer: FunctionComponent<PostTemplateProps> = ({
   const {
     node: {
       html,
-      frontmatter: {
-        title,
-        summary,
-        date,
-        thumbnail: { publicURL },
-      },
+      frontmatter: { title, summary, date },
     },
   } = edges[0];
 
   return (
-    <Layout title={title} description={summary} url={href} image={publicURL}>
+    <Layout title={title} description={summary} url={href}>
       <PostHead title={title} date={date} />
       <MarkdownItems html={html} />
       <Utterances />
@@ -46,12 +41,6 @@ export const queryMarkdownDataBySlug = graphql`
             summary
             date(formatString: "YYYY.MM.DD.")
             categories
-            thumbnail {
-              childImageSharp {
-                gatsbyImageData
-              }
-              publicURL
-            }
           }
         }
       }

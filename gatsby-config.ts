@@ -44,14 +44,14 @@ const config: GatsbyConfig = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'contents',
-        path: `${__dirname}/contents`,
+        path: `${__dirname}/contents/blog`,
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'images',
-        path: `${__dirname}/static`,
+        path: `${__dirname}/contents/assets`,
       },
     },
     {
