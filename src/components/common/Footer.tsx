@@ -5,7 +5,7 @@ const Footer: FunctionComponent = function () {
   return <FooterWrapper>© Joohyun Kim (김주현) Corinthionia</FooterWrapper>;
 };
 
-const FooterWrapper = styled.div`
+const FooterWrapper = styled.footer`
   display: grid;
   place-items: center;
   margin-top: auto;
@@ -13,7 +13,6 @@ const FooterWrapper = styled.div`
   font-size: 15px;
   text-align: center;
   line-height: 1.5;
-  color: grey;
 
   @media (max-width: 768px) {
     font-size: 13px;
