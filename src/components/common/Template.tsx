@@ -1,15 +1,9 @@
 import React, { FunctionComponent } from 'react';
-import styled from '@emotion/styled';
-import GlobalStyle from 'components/common/GlobalStyle';
+import GlobalStyle from 'styles/GlobalStyle';
 import Footer from 'components/common/Footer';
 import { Helmet } from 'react-helmet';
 import { TemplateProps } from '../../types/Template.types';
-
-const Container = styled.main`
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-`;
+import { Container } from '../../styles/templates/template';
 
 const Template: FunctionComponent<TemplateProps> = function ({
   title,
