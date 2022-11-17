@@ -3,7 +3,7 @@ import type { GatsbyConfig } from 'gatsby';
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `corinthionia`,
-    siteUrl: `https://corinthionia.github.io`,
+    siteUrl: `https://corinthionia.github.io/`,
     description: `dev blog`,
     author: `@corinthionia`,
   },
@@ -86,6 +86,13 @@ const config: GatsbyConfig = {
             options: {
               target: '_blank',
               rel: 'nofollow',
+            },
+          },
+          {
+            resolve: 'gatsby-plugin-canonical-urls',
+            options: {
+              siteUrl: 'https://corinthionia.github.io/',
+              stripQueryString: true,
             },
           },
         ],
