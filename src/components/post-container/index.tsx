@@ -1,6 +1,6 @@
 import { graphql } from 'gatsby';
-import { PostTemplateProps } from 'types/PostItem.types';
-import Layout from '../../layout';
+import { PostTemplateProps } from 'types/post';
+import Layout from 'layout';
 import Utterances from 'components/utterances';
 import PostHead from 'components/post-head';
 import MarkdownItems from 'components/markdown-items';

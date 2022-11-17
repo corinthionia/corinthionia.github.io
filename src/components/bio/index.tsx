@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { GatsbyImage } from 'gatsby-plugin-image';
-import { ProfileImageProps } from 'types/Main.types';
+import { ProfileImageProps } from 'types/bio';
 
 const Bio = ({ profileImage }: ProfileImageProps) => {
   return (

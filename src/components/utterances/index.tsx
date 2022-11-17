@@ -1,6 +1,6 @@
 import { createRef, useEffect } from 'react';
 import styled from '@emotion/styled';
-import { UtterancesAttributesType } from 'types/PostItem.types';
+import { UtterancesAttributesType } from 'types/utterances';
 
 const src = 'https://utteranc.es/client.js';
 const repo = 'corinthionia/corinthionia.github.io';

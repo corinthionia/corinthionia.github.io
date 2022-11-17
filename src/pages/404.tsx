@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
-import GlobalStyle from '../styles/GlobalStyle';
+import GlobalStyle from 'styles/GlobalStyle';
 
 const NotFoundPageWrapper = styled.div`
   display: flex;

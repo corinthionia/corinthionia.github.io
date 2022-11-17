@@ -1,9 +1,9 @@
 import { useMemo } from 'react';
 import { graphql } from 'gatsby';
-import { PostListItemType } from 'types/PostItem.types';
+import { PostListItemType } from 'types/post-list';
 import { IGatsbyImageData } from 'gatsby-plugin-image';
 import queryString, { ParsedQuery } from 'query-string';
-import { CategoryListProps } from 'types/Main.types';
+import { CategoryListProps } from 'types/category';
 import Category from 'components/category';
 import PostList from 'components/post-list';
 import Bio from 'components/bio';
@@ -28,7 +28,6 @@ type IndexPageProps = {
       childImageSharp: {
         gatsbyImageData: IGatsbyImageData;
       };
-      // publicURL: string;
     };
   };
 };

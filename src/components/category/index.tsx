@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
-import { GatsbyLinkProps, CategoryListProps } from '../../types/Main.types';
+import { GatsbyLinkProps, CategoryListProps } from 'types/category';
 
 const Category = ({ selectedCategory, categoryList }: CategoryListProps) => {
   return (

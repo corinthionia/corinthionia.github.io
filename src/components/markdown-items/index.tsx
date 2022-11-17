@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { PostContentProps } from 'types/PostItem.types';
+import { PostContentProps } from 'types/post';
 
 const MarkdownItems = function ({ html }: PostContentProps) {
   return <MarkdownRenderer dangerouslySetInnerHTML={{ __html: html }} />;

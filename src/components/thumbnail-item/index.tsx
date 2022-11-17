@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
-import { PostItemProps } from 'types/PostItem.types';
+import { PostItemProps } from 'types/post';
 
 const ThumbnailItem = ({
   title,

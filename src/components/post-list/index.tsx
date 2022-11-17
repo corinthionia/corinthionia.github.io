@@ -1,12 +1,7 @@
 import { useMemo } from 'react';
 import styled from '@emotion/styled';
 import ThumbnailItem from '../thumbnail-item';
-import { PostListItemType } from 'types/PostItem.types';
-
-type PostListProps = {
-  selectedCategory: string;
-  posts: PostListItemType[];
-};
+import { PostListItemType, PostListProps } from 'types/post-list';
 
 const PostList = function ({ selectedCategory, posts }: PostListProps) {
   const postListData = useMemo(

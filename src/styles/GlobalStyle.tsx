@@ -1,7 +1,7 @@
 import { Global, css } from '@emotion/react';
 
 const defaultStyle = css`
-  // @import url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff');
+  @import url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff');
 
   @font-face {
     font-family: 'Pretendard';
