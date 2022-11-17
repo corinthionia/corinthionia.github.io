@@ -95,6 +95,12 @@ const config: GatsbyConfig = {
               stripQueryString: true,
             },
           },
+          {
+            resolve: 'gatsby-plugin-robots-txt',
+            options: {
+              policy: [{ userAgent: '*', allow: '/' }],
+            },
+          },
         ],
       },
     },
