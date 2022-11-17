@@ -41,7 +41,6 @@ const BackgroundImage = styled((props: GatsbyImgProps) => (
 
 const PostHead: FunctionComponent<PostHeadProps> = function ({
   title,
-  summary,
   date,
   categories,
   thumbnail,
@@ -50,7 +49,6 @@ const PostHead: FunctionComponent<PostHeadProps> = function ({
     <PostHeadWrapper>
       <BackgroundImage image={thumbnail} alt="thumbnail" />
       <PostHeadInfo title={title} date={date} categories={categories} />
-      <div>{summary}</div>
     </PostHeadWrapper>
   );
 };
