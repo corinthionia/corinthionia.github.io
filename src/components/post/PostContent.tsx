@@ -1,9 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import styled from '@emotion/styled';
-
-interface PostContentProps {
-  html: string;
-}
+import { PostContentProps } from 'types/PostItem.types';
 
 const PostContent: FunctionComponent<PostContentProps> = function ({ html }) {
   return <MarkdownRenderer dangerouslySetInnerHTML={{ __html: html }} />;

@@ -2,18 +2,7 @@ import React, { FunctionComponent } from 'react';
 import { graphql } from 'gatsby';
 import { Global, css } from '@emotion/react';
 import styled from '@emotion/styled';
-
-type InfoPageProps = {
-  data: {
-    site: {
-      siteMetadata: {
-        title: string;
-        description: string;
-        author: string;
-      };
-    };
-  };
-};
+import { InfoPageProps } from 'types/PostItem.types';
 
 const InfoPage: FunctionComponent<InfoPageProps> = function ({
   data: {
@@ -68,7 +57,6 @@ const Text1 = styled.div<{ disable: boolean }>`
   text-decoration: ${({ disable }) => (disable ? 'line-through' : 'none')};
 `;
 
-// 객체로 생성
 const Text2 = styled('div')<{ disable: boolean }>(({ disable }) => ({
   fontSize: '15px',
   color: 'blue',

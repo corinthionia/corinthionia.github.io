@@ -1,18 +1,9 @@
 import React, { createRef, FunctionComponent, useEffect } from 'react';
 import styled from '@emotion/styled';
+import { UtterancesAttributesType } from 'types/PostItem.types';
 
 const src = 'https://utteranc.es/client.js';
 const repo = 'corinthionia/corinthionia.github.io';
-
-type UtterancesAttributesType = {
-  src: string;
-  repo: string;
-  'issue-term': string;
-  label: string;
-  theme: string;
-  crossorigin: string;
-  async: string;
-};
 
 const CommentWidget: FunctionComponent = function () {
   const element = createRef<HTMLDivElement>();

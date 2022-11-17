@@ -1,19 +1,8 @@
 import React, { FunctionComponent } from 'react';
 import styled from '@emotion/styled';
-import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
-import PostHeadInfo, {
-  PostHeadInfoProps,
-} from '../../components/post/PostHeadInfo';
-
-type GatsbyImgProps = {
-  image: IGatsbyImageData;
-  alt: string;
-  className?: string;
-};
-
-type PostHeadProps = PostHeadInfoProps & {
-  thumbnail: IGatsbyImageData;
-};
+import { GatsbyImage } from 'gatsby-plugin-image';
+import PostHeadInfo from '../../components/post/PostHeadInfo';
+import { GatsbyImgProps, PostHeadProps } from 'types/PostItem.types';
 
 const PostHeadWrapper = styled.div`
   position: relative;

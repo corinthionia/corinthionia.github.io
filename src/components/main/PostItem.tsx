@@ -2,9 +2,7 @@ import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 import React, { FunctionComponent } from 'react';
 import { GatsbyImage } from 'gatsby-plugin-image';
-import { PostFrontmatterType } from 'types/PostItem.types';
-
-type PostItemProps = PostFrontmatterType & { link: string };
+import { PostItemProps } from 'types/PostItem.types';
 
 const PostItemWrapper = styled(Link)`
   display: flex;

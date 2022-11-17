@@ -1,16 +1,9 @@
-import React, { FunctionComponent, ReactNode } from 'react';
+import React, { FunctionComponent } from 'react';
 import styled from '@emotion/styled';
 import GlobalStyle from 'components/common/GlobalStyle';
 import Footer from 'components/common/Footer';
 import { Helmet } from 'react-helmet';
-
-type TemplateProps = {
-  title: string;
-  description: string;
-  url: string;
-  image: string;
-  children: ReactNode;
-};
+import { TemplateProps } from '../../types/Template.types';
 
 const Container = styled.main`
   display: flex;

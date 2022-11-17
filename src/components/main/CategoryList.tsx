@@ -1,23 +1,7 @@
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
-import React, { FunctionComponent, ReactNode } from 'react';
-
-type CategoryItemProps = {
-  active: boolean;
-};
-
-type GatsbyLinkProps = {
-  children: ReactNode;
-  className?: string;
-  to: string;
-} & CategoryItemProps;
-
-export type CategoryListProps = {
-  selectedCategory: string;
-  categoryList: {
-    [key: string]: number;
-  };
-};
+import React, { FunctionComponent } from 'react';
+import { GatsbyLinkProps, CategoryListProps } from '../../types/Main.types';
 
 const CategoryList: FunctionComponent<CategoryListProps> = function ({
   selectedCategory,
