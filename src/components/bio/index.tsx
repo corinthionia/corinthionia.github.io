@@ -1,9 +1,8 @@
 import styled from '@emotion/styled';
 import { GatsbyImage } from 'gatsby-plugin-image';
-import { FunctionComponent } from 'react';
 import { ProfileImageProps } from 'types/Main.types';
 
-const Bio: FunctionComponent<ProfileImageProps> = ({ profileImage }) => {
+const Bio = ({ profileImage }: ProfileImageProps) => {
   return (
     <Wrapper>
       <ProfileImage image={profileImage} alt="Profile image" />

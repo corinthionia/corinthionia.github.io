@@ -1,4 +1,3 @@
-import React, { FunctionComponent } from 'react';
 import { graphql } from 'gatsby';
 import { PostTemplateProps } from 'types/PostItem.types';
 import Layout from '../../layout';
@@ -6,12 +5,12 @@ import Utterances from 'components/utterances';
 import PostHead from 'components/post-head';
 import MarkdownItems from 'components/markdown-items';
 
-const PostContainer: FunctionComponent<PostTemplateProps> = ({
+const PostContainer = ({
   data: {
     allMarkdownRemark: { edges },
   },
   location: { href },
-}) => {
+}: PostTemplateProps) => {
   const {
     node: {
       html,

@@ -1,4 +1,3 @@
-import React, { FunctionComponent } from 'react';
 import GlobalStyle from '../styles/GlobalStyle';
 import Footer from 'components/footer';
 import { Helmet } from 'react-helmet';
@@ -6,12 +5,7 @@ import { TemplateProps } from '../types/Template.types';
 import { Container } from '../styles/templates/template';
 import Header from 'components/header';
 
-const Layout: FunctionComponent<TemplateProps> = function ({
-  title,
-  description,
-  url,
-  children,
-}) {
+const Layout = function ({ title, description, url, children }: TemplateProps) {
   return (
     <Container>
       <Helmet>

@@ -1,12 +1,8 @@
-import React, { FunctionComponent } from 'react';
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 import { GatsbyLinkProps, CategoryListProps } from '../../types/Main.types';
 
-const Category: FunctionComponent<CategoryListProps> = ({
-  selectedCategory,
-  categoryList,
-}) => {
+const Category = ({ selectedCategory, categoryList }: CategoryListProps) => {
   return (
     <CategoryListWrapper>
       {Object.entries(categoryList).map(([name]) => (

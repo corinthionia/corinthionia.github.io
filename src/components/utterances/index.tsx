@@ -1,11 +1,11 @@
-import React, { createRef, FunctionComponent, useEffect } from 'react';
+import { createRef, useEffect } from 'react';
 import styled from '@emotion/styled';
 import { UtterancesAttributesType } from 'types/PostItem.types';
 
 const src = 'https://utteranc.es/client.js';
 const repo = 'corinthionia/corinthionia.github.io';
 
-const Utterances: FunctionComponent = function () {
+const Utterances = function () {
   const element = createRef<HTMLDivElement>();
 
   useEffect(() => {

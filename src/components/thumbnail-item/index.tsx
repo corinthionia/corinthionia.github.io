@@ -1,15 +1,14 @@
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
-import React, { FunctionComponent } from 'react';
 import { PostItemProps } from 'types/PostItem.types';
 
-const ThumbnailItem: FunctionComponent<PostItemProps> = ({
+const ThumbnailItem = ({
   title,
   date,
   categories,
   summary,
   link,
-}) => {
+}: PostItemProps) => {
   return (
     <PostItemWrapper to={link}>
       <PostItemContent>

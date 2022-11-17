@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useMemo } from 'react';
+import { useMemo } from 'react';
 import { graphql } from 'gatsby';
 import { PostListItemType } from 'types/PostItem.types';
 import { IGatsbyImageData } from 'gatsby-plugin-image';
@@ -33,7 +33,7 @@ type IndexPageProps = {
   };
 };
 
-const IndexPage: FunctionComponent<IndexPageProps> = function ({
+const IndexPage = function ({
   location: { search },
   data: {
     site: {
@@ -42,10 +42,9 @@ const IndexPage: FunctionComponent<IndexPageProps> = function ({
     allMarkdownRemark: { edges },
     file: {
       childImageSharp: { gatsbyImageData },
-      // publicURL,
     },
   },
-}) {
+}: IndexPageProps) {
   const parsed: ParsedQuery<string> = queryString.parse(search);
   const selectedCategory: string =
     typeof parsed.category !== 'string' || !parsed.category
