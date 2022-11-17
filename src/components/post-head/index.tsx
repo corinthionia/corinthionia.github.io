@@ -1,29 +1,40 @@
 import React, { FunctionComponent } from 'react';
 import styled from '@emotion/styled';
+import { PostHeadInfoProps } from 'types/PostItem.types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
-import { PostHeadInfoProps } from 'types/PostItem.types';
 
-const PostHeadInfo: FunctionComponent<PostHeadInfoProps> = function ({
+const PostHead: FunctionComponent<PostHeadInfoProps> = function ({
   title,
   date,
-  categories,
 }) {
   const goBackPage = () => window.history.back();
 
   return (
-    <PostHeadInfoWrapper>
-      <PrevPageIcon onClick={goBackPage}>
-        <FontAwesomeIcon icon={faArrowLeft} />
-      </PrevPageIcon>
-      <Title>{title}</Title>
-      <PostData>
-        <div>{categories.join(' / ')}</div>
-        <div>{date}</div>
-      </PostData>
-    </PostHeadInfoWrapper>
+    <PostHeadWrapper>
+      <PostHeadInfoWrapper>
+        <PrevPageIcon onClick={goBackPage}>
+          <FontAwesomeIcon icon={faArrowLeft} />
+        </PrevPageIcon>
+        <Title>{title}</Title>
+        <PostData>
+          <div>{date}</div>
+        </PostData>
+      </PostHeadInfoWrapper>
+    </PostHeadWrapper>
   );
 };
+
+const PostHeadWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  height: 400px;
+  background: pink;
+
+  @media (max-width: 768px) {
+    height: 300px;
+  }
+`;
 
 const PostHeadInfoWrapper = styled.div`
   display: flex;
@@ -91,4 +102,4 @@ const PostData = styled.div`
   }
 `;
 
-export default PostHeadInfo;
+export default PostHead;

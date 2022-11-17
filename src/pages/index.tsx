@@ -1,13 +1,13 @@
 import React, { FunctionComponent, useMemo } from 'react';
-import Introduction from 'components/main/Introduction';
-import CategoryList from 'components/main/CategoryList';
-import PostList from 'components/main/PostList';
 import { graphql } from 'gatsby';
 import { PostListItemType } from 'types/PostItem.types';
 import { IGatsbyImageData } from 'gatsby-plugin-image';
 import queryString, { ParsedQuery } from 'query-string';
-import Template from '../components/common/Template';
 import { CategoryListProps } from 'types/Main.types';
+import Category from 'components/category';
+import PostList from 'components/post-list';
+import Bio from 'components/bio';
+import Layout from '../layout';
 
 type IndexPageProps = {
   location: {
@@ -78,19 +78,19 @@ const IndexPage: FunctionComponent<IndexPageProps> = function ({
   );
 
   return (
-    <Template
+    <Layout
       title={title}
       description={description}
       url={siteUrl}
       image={publicURL}
     >
-      <Introduction profileImage={gatsbyImageData} />
-      <CategoryList
+      <Bio profileImage={gatsbyImageData} />
+      <Category
         selectedCategory={selectedCategory}
         categoryList={categoryList}
       />
       <PostList selectedCategory={selectedCategory} posts={edges} />
-    </Template>
+    </Layout>
   );
 };
 

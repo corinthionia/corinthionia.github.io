@@ -2,7 +2,7 @@ import React, { FunctionComponent } from 'react';
 import styled from '@emotion/styled';
 import { PostContentProps } from 'types/PostItem.types';
 
-const PostContent: FunctionComponent<PostContentProps> = function ({ html }) {
+const MarkdownItems: FunctionComponent<PostContentProps> = function ({ html }) {
   return <MarkdownRenderer dangerouslySetInnerHTML={{ __html: html }} />;
 };
 
@@ -127,4 +127,4 @@ const MarkdownRenderer = styled.div`
   }
 `;
 
-export default PostContent;
+export default MarkdownItems;

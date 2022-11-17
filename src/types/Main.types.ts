@@ -18,10 +18,6 @@ export type CategoryListProps = {
   };
 };
 
-export type IntroductionProps = {
-  profileImage: IGatsbyImageData;
-};
-
 export type PostType = {
   node: {
     id: string;

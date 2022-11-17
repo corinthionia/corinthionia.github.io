@@ -1,21 +1,21 @@
+import React, { FunctionComponent } from 'react';
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
-import React, { FunctionComponent } from 'react';
 import { GatsbyLinkProps, CategoryListProps } from '../../types/Main.types';
 
-const CategoryList: FunctionComponent<CategoryListProps> = function ({
+const Category: FunctionComponent<CategoryListProps> = ({
   selectedCategory,
   categoryList,
-}) {
+}) => {
   return (
     <CategoryListWrapper>
-      {Object.entries(categoryList).map(([name, count]) => (
+      {Object.entries(categoryList).map(([name]) => (
         <CategoryItem
           to={`/?category=${name}`}
           active={name === selectedCategory}
           key={name}
         >
-          {name} ({count})
+          {name}
         </CategoryItem>
       ))}
     </CategoryListWrapper>
@@ -36,9 +36,11 @@ const CategoryListWrapper = styled.div`
   }
 `;
 
-const CategoryItem = styled(({ active, ...props }: GatsbyLinkProps) => (
+const CategoryBtn = ({ active, ...props }: GatsbyLinkProps) => (
   <Link {...props} />
-))`
+);
+
+const CategoryItem = styled(CategoryBtn)`
   margin-right: 20px;
   padding: 5px 0;
   font-size: 16px;
@@ -50,4 +52,4 @@ const CategoryItem = styled(({ active, ...props }: GatsbyLinkProps) => (
   }
 `;
 
-export default CategoryList;
+export default Category;

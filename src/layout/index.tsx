@@ -1,11 +1,12 @@
 import React, { FunctionComponent } from 'react';
-import GlobalStyle from 'styles/GlobalStyle';
-import Footer from 'components/common/Footer';
+import GlobalStyle from '../styles/GlobalStyle';
+import Footer from 'components/footer';
 import { Helmet } from 'react-helmet';
-import { TemplateProps } from '../../types/Template.types';
-import { Container } from '../../styles/templates/template';
+import { TemplateProps } from '../types/Template.types';
+import { Container } from '../styles/templates/template';
+import Header from 'components/header';
 
-const Template: FunctionComponent<TemplateProps> = function ({
+const Layout: FunctionComponent<TemplateProps> = function ({
   title,
   description,
   url,
@@ -39,10 +40,11 @@ const Template: FunctionComponent<TemplateProps> = function ({
       </Helmet>
 
       <GlobalStyle />
+      <Header />
       {children}
       <Footer />
     </Container>
   );
 };
 
-export default Template;
+export default Layout;

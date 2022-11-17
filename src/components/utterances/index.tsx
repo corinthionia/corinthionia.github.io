@@ -5,7 +5,7 @@ import { UtterancesAttributesType } from 'types/PostItem.types';
 const src = 'https://utteranc.es/client.js';
 const repo = 'corinthionia/corinthionia.github.io';
 
-const CommentWidget: FunctionComponent = function () {
+const Utterances: FunctionComponent = function () {
   const element = createRef<HTMLDivElement>();
 
   useEffect(() => {
@@ -38,4 +38,4 @@ const UtterancesWrapper = styled.div`
   }
 `;
 
-export default CommentWidget;
+export default Utterances;

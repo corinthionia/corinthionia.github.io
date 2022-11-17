@@ -1,6 +1,6 @@
 import React, { FunctionComponent, useMemo } from 'react';
 import styled from '@emotion/styled';
-import PostItem from './PostItem';
+import ThumbnailItem from '../thumbnail-item';
 import { PostListItemType } from 'types/PostItem.types';
 
 type PostListProps = {
@@ -37,7 +37,7 @@ const PostList: FunctionComponent<PostListProps> = function ({
             frontmatter,
           },
         }: PostListItemType) => (
-          <PostItem {...frontmatter} link={slug} key={id} />
+          <ThumbnailItem {...frontmatter} link={slug} key={id} />
         )
       )}
     </PostListWrapper>
