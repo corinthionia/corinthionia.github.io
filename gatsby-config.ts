@@ -9,6 +9,7 @@ const config: GatsbyConfig = {
   },
 
   graphqlTypegen: true,
+
   plugins: [
     {
       resolve: 'gatsby-plugin-typescript',
