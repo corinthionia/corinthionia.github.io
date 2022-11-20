@@ -1,7 +1,7 @@
 ---
 date: '2022-07-29'
 title: 'Next.js + TypeScript 개발 환경 수동으로 세팅하기'
-categories: ['etc']
+categories: ['test']
 summary: create-next-app(CNA)을 사용하지 않고 개발 환경 구축하기 ✨ 최근들어 CRA나 CNA를 사용하지 않고 개발환경을 직접 구축해 보고 싶은 마음이 생겼다. [공식 문서]에도 잘 나와 있지만, 더 쓰기 편하도록 내 나름대로 정리해 봤다. 최근들어 CRA나 CNA를 사용하지 않고 개발환경을 직접 구축해 보고 싶은 마음이 생겼다.
 draft: false
 ---
