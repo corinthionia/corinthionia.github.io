@@ -4,8 +4,9 @@
   "private": true,
   "description": "corinthionia",
   "author": "Joohyun Kim",
+  "homepage": "https://github.com/corinthiona/corinthionia.github.io",
   "keywords": [
-    "gatsby"
+    "개발"
   ],
   "scripts": {
     "develop": "gatsby develop",
