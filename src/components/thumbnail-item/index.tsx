@@ -38,12 +38,12 @@ const PostItemWrapper = styled(Link)`
   border-radius: 8px;
   box-shadow: 0 0 8px rgba(47, 58, 48, 0.2);
 
-  transition: 0.3s box-shadow;
-
   cursor: pointer;
 
   &:hover {
     box-shadow: 0 0 10px rgba(47, 58, 48, 0.25);
+    text-shadow: 0 0 10px rgba(47, 58, 48, 0.2);
+    transition: text-shadow 0.3s, opacity 0.4s;
   }
 
   & + & {

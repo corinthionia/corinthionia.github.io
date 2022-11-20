@@ -146,9 +146,14 @@ const Introduction = styled.div`
 `;
 
 const LinkText = styled(Link)`
-  font-size: 13px;
-  color: #295ab0;
   margin-right: 8px;
+
+  font-size: 13px;
+  color: #84bb70;
+
+  &:hover {
+    color: hotpink;
+  }
 `;
 
 export default Bio;
