@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import { UtterancesAttributesType } from 'types/utterances';
 
 const src = 'https://utteranc.es/client.js';
-const repo = 'corinthionia/corinthionia.github.io';
+const repo = 'corinthionia/blog-comments';
 
 const Utterances = function () {
   const element = createRef<HTMLDivElement>();
@@ -17,7 +17,7 @@ const Utterances = function () {
       src,
       repo,
       'issue-term': 'pathname',
-      label: 'Comment',
+      label: 'comment',
       theme: `github-light`,
       crossorigin: 'anonymous',
       async: 'true',
@@ -33,7 +33,7 @@ const Utterances = function () {
 };
 
 const UtterancesWrapper = styled.div`
-  @media (max-width: 768px) {
+  @media (max-width: 700px) {
     padding: 0 20px;
   }
 `;
