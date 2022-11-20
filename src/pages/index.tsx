@@ -77,6 +77,9 @@ export const getPostList = graphql`
     }
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date, frontmatter___title] }
+      filter: {
+        frontmatter: { categories: { ne: null }, draft: { eq: false } }
+      }
     ) {
       edges {
         node {
@@ -87,7 +90,7 @@ export const getPostList = graphql`
           frontmatter {
             title
             summary
-            date(formatString: "YYYY.MM.DD")
+            date(formatString: "MMMM DD, YYYY")
             categories
             draft
           }
