@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `corinthionia`,
-    siteUrl: `http://localhost:8000/`,
+    siteUrl: `https://corinthionia.github.io`,
     description: `dev blog`,
     author: `@corinthionia`,
   },

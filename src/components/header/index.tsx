@@ -4,8 +4,9 @@ import { Link } from 'gatsby';
 type prop = {
   location: string;
 };
+
 const Header = ({ location }: prop) => {
-  const isRoot = location === 'http://localhost:8000';
+  const isRoot = location === 'https://corinthionia.github.io';
 
   return (
     <Wrapper>
