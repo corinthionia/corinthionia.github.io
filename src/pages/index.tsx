@@ -4,9 +4,9 @@ import queryString, { ParsedQuery } from 'query-string';
 import { CategoryListProps } from 'types/category';
 import Category from 'components/category';
 import PostList from 'components/post-list';
-import Bio from 'components/bio';
 import Layout from '../layout';
 import { IndexPageProps } from 'types';
+import Head from 'components/head';
 
 const IndexPage = function ({
   location: { search },
@@ -54,7 +54,7 @@ const IndexPage = function ({
 
   return (
     <Layout title={title} description={description} url={siteUrl}>
-      <Bio profileImage={gatsbyImageData} />
+      <Head profileImage={gatsbyImageData} />
       <Category
         selectedCategory={selectedCategory}
         categoryList={categoryList}

@@ -1,3 +1,5 @@
+import { IGatsbyImageData } from 'gatsby-plugin-image';
+
 export interface PostFrontmatterType {
   title: string;
   date: string;
@@ -30,6 +32,11 @@ export interface PostTemplateProps {
   data: {
     allMarkdownRemark: {
       edges: PostPageItemType[];
+    };
+    file: {
+      childImageSharp: {
+        gatsbyImageData: IGatsbyImageData;
+      };
     };
   };
   location: {

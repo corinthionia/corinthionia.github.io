@@ -22,8 +22,6 @@ draft: false
 yarn init -y
 ```
 
-<br/>
-
 ### 2. 필요한 package 설치하기
 
 TypeScript 기반으로 React와 Next를 사용하기 때문에 필요한 패키지를 설치한다.
@@ -39,8 +37,6 @@ TypeScript를 사용한다면 아래와같이 `devDependencies`를 추가로 설
 yarn add --dev typescript @types/react @types/node eslint eslint-config-next
 ```
 
-<br/>
-
 ### 3. package.json에 script 추가하기
 
 `package.json` 파일에 다음을 추가한다.
@@ -54,13 +50,10 @@ yarn add --dev typescript @types/react @types/node eslint eslint-config-next
 }
 ```
 
-<br/>
-
 ### 4. public, pages 폴더 생성
 
 - `pages` 파일 이름에 기반하여 라우팅 기능을 제공한다.
 - `public` 이미지, 폰트와 같은 static asset들을 저장하는 공간이다.
-  <br/>
 
 ### 5. pages 폴더에 \_app.tsx 파일 생성
 
@@ -75,7 +68,6 @@ export default MyApp;
 ```
 
 이외에도 `_document.tsx`나 `_error.tsx` 등을 생성할 수 있는데, 각 파일에 대한 설명은 [이 글](https://beside-lab.tistory.com/entry/Nextjs-App-Document-Error)을 참고하면 좋을 것 같다.
-<br/>
 
 ### 6. .gitignore 설정❗️
 
@@ -191,7 +183,6 @@ Option '--resolveJsonModule' cannot be specified without 'node' module resolutio
 ```
 
 [모듈 해석 전략](https://typescript-kr.github.io/pages/module-resolution.html) 글을 보면 `classic`과 `node` 두 가지 값이 있다는데, [이 글](https://www.typescriptlang.org/tsconfig#moduleResolution)을 읽어 보니 `classic`은 최근에 잘 사용하지 않는 것 같다.
-<br/>
 
 ---
 

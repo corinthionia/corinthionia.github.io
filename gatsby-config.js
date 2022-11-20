@@ -1,6 +1,4 @@
-import type { GatsbyConfig } from 'gatsby';
-
-const config: GatsbyConfig = {
+module.exports = {
   siteMetadata: {
     title: `corinthionia`,
     siteUrl: `http://localhost:8000/`,
@@ -102,10 +100,16 @@ const config: GatsbyConfig = {
               policy: [{ userAgent: '*', allow: '/' }],
             },
           },
+          {
+            resolve: 'gatsby-remark-emojis',
+            options: {
+              active: true,
+              escapeCharacter: '#',
+              size: 64,
+            },
+          },
         ],
       },
     },
   ],
 };
-
-export default config;

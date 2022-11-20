@@ -1,63 +1,26 @@
 import styled from '@emotion/styled';
-import { Link } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { ProfileImageProps } from 'types/bio';
 
 const Bio = ({ profileImage }: ProfileImageProps) => {
   return (
     <Wrapper>
-      <Title>Corinthionia</Title>
-      <IndroductionWrapper>
-        <ProfileImage image={profileImage} alt="Profile image" />
-        <TextWrapper>
-          <Author>
-            Written by <AuthorName>@[Joohyun Kim]</AuthorName>
-          </Author>
-          <Introduction>
-            EWHA.W.UNIV Computer Science & Engineering
-          </Introduction>
-          <div>
-            <LinkText to="https://github.com/corinthionia">Github</LinkText>
-            <LinkText to="https://velog.io/@corinthionia">Velog</LinkText>
-          </div>
-        </TextWrapper>
-      </IndroductionWrapper>
+      <ProfileImage image={profileImage} alt="Profile image" />
+      <TextWrapper>
+        <Author>
+          Written by <AuthorName>@[Joohyun Kim]</AuthorName>
+        </Author>
+        <Introduction>EWHA.W.UNIV Computer Science & Engineering</Introduction>
+        <div>
+          <LinkText href="https://github.com/corinthionia">Github</LinkText>
+          <LinkText href="https://velog.io/@corinthionia">Velog</LinkText>
+        </div>
+      </TextWrapper>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  width: 700px;
-  margin: 0 auto;
-  margin-top: 24px;
-
-  @media (max-width: 700px) {
-    width: 100%;
-    padding: 0 20px;
-  }
-`;
-
-const Title = styled.div`
-  height: 75px;
-
-  display: flex;
-  align-items: center;
-
-  color: hotpink;
-  font-size: 28px;
-  font-weight: 700;
-  font-family: 'Press Start 2P', cursive;
-
-  @media (max-width: 700px) {
-    font-size: 24px;
-  }
-`;
-
-const IndroductionWrapper = styled.div`
   width: 100%;
   height: 120px;
 
@@ -145,7 +108,7 @@ const Introduction = styled.div`
   margin-bottom: 8px;
 `;
 
-const LinkText = styled(Link)`
+const LinkText = styled.a`
   margin-right: 8px;
 
   font-size: 13px;

@@ -54,7 +54,7 @@ const PostItemWrapper = styled(Link)`
 const PostItemContent = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 25px;
+  padding: 30px 25px;
 `;
 
 const Title = styled.span`
@@ -72,7 +72,7 @@ const Title = styled.span`
 `;
 
 const PostData = styled.div`
-  margin-top: 20px;
+  margin-top: 15px;
 
   display: flex;
   align-items: center;

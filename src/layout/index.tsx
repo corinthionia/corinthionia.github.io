@@ -32,7 +32,7 @@ const Layout = function ({ title, description, url, children }: TemplateProps) {
       </Helmet>
       <GlobalStyle />
       <Container>
-        <Header />
+        <Header location={url} />
         {children}
         <Footer />
       </Container>
