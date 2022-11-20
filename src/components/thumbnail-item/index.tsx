@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 import { PostItemProps } from 'types/post';
@@ -13,12 +14,15 @@ const ThumbnailItem = ({
     <PostItemWrapper to={link}>
       <PostItemContent>
         <Title>{title}</Title>
-        <Date>{date}</Date>
-        <Category>
+        <PostData>
           {categories.map((category) => (
-            <CategoryItem key={category}>{category}</CategoryItem>
+            <>
+              <CategoryItem key={category}>{category}</CategoryItem>
+              <CategoryItem>|</CategoryItem>
+            </>
           ))}
-        </Category>
+          <Date>{date}</Date>
+        </PostData>
         <Summary>{summary}</Summary>
       </PostItemContent>
     </PostItemWrapper>
@@ -27,28 +31,34 @@ const ThumbnailItem = ({
 
 const PostItemWrapper = styled(Link)`
   display: flex;
-  flex-direction: column;
 
-  border-radius: 10px;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
+  width: 88%;
+  margin: 0 auto;
+
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(47, 58, 48, 0.2);
+
   transition: 0.3s box-shadow;
+
   cursor: pointer;
 
   &:hover {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 10px rgba(47, 58, 48, 0.25);
+  }
+
+  & + & {
+    margin-top: 36px;
   }
 `;
 
 const PostItemContent = styled.div`
   display: flex;
   flex-direction: column;
-
   padding: 25px;
 `;
 
-const Title = styled.div`
+const Title = styled.span`
   display: -webkit-box;
-  margin-bottom: 3px;
 
   overflow: hidden;
   white-space: normal;
@@ -56,47 +66,47 @@ const Title = styled.div`
   overflow-wrap: break-word;
   -webkit-line-clamp: 1;
 
-  font-size: 18px;
+  color: #383838;
+  font-size: 24px;
   font-weight: 600;
 `;
 
-const Date = styled.div`
-  font-size: 12px;
-  font-weight: 400;
-  opacity: 0.5;
-`;
+const PostData = styled.div`
+  margin-top: 20px;
 
-const Category = styled.div`
   display: flex;
-  flex-wrap: wrap;
-  margin-top: 10px;
-  margin: 10px -5px;
+  align-items: center;
 `;
 
-const CategoryItem = styled.div`
-  margin: 2.5px 5px;
-  padding: 2px 6px;
-  border-radius: 4px;
-  background: #b9bbd1;
-  font-size: 12px;
-  font-weight: 400;
-  color: #ffffff;
+const Date = styled.div`
+  color: #a9a9a9;
+
+  font-size: 16px;
+  font-weight: 600;
+`;
+
+const CategoryItem = styled.span`
+  color: #8fa8c4;
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 8px;
 `;
 
 const Summary = styled.div`
+  margin-top: 20px;
   display: -webkit-box;
-  margin-top: auto;
 
   overflow: hidden;
   white-space: normal;
   text-overflow: ellipsis;
   overflow-wrap: break-word;
 
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 
+  color: #757575;
   font-size: 14px;
-  opacity: 0.8;
+  line-height: 1.5;
 `;
 
 export default ThumbnailItem;

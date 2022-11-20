@@ -1,13 +1,14 @@
-import GlobalStyle from 'styles/GlobalStyle';
+import React from 'react';
+import GlobalStyle from '../styles/GlobalStyle';
 import Footer from 'components/footer';
 import { Helmet } from 'react-helmet';
 import { TemplateProps } from 'types/layout';
-import { Container } from 'styles/templates/template';
+import styled from '@emotion/styled';
 import Header from 'components/header';
 
 const Layout = function ({ title, description, url, children }: TemplateProps) {
   return (
-    <Container>
+    <>
       <Helmet>
         <title>{title}</title>
 
@@ -29,13 +30,19 @@ const Layout = function ({ title, description, url, children }: TemplateProps) {
 
         <html lang="ko" />
       </Helmet>
-
       <GlobalStyle />
-      <Header />
-      {children}
-      <Footer />
-    </Container>
+      <Container>
+        <Header />
+        {children}
+        <Footer />
+      </Container>
+    </>
   );
 };
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
 
 export default Layout;

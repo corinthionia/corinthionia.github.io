@@ -1,15 +1,9 @@
-import { IGatsbyImageData } from 'gatsby-plugin-image';
-
 export interface PostFrontmatterType {
   title: string;
   date: string;
   categories: string[];
   summary: string;
-  thumbnail: {
-    childImageSharp: {
-      gatsbyImageData: IGatsbyImageData;
-    };
-  };
+  draft: boolean;
 }
 
 export type PostType = {
@@ -20,9 +14,7 @@ export type PostType = {
       summary: string;
       date: string;
       categories: string[];
-      thumbnail: {
-        publicURL: string;
-      };
+      draft: boolean;
     };
   };
 };

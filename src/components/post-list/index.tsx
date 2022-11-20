@@ -20,7 +20,7 @@ const PostList = function ({ selectedCategory, posts }: PostListProps) {
   );
 
   return (
-    <PostListWrapper>
+    <Wrapper>
       {postListData.map(
         ({
           node: {
@@ -32,20 +32,18 @@ const PostList = function ({ selectedCategory, posts }: PostListProps) {
           <ThumbnailItem {...frontmatter} link={slug} key={id} />
         )
       )}
-    </PostListWrapper>
+    </Wrapper>
   );
 };
 
-const PostListWrapper = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 75px;
+const Wrapper = styled.div`
+  min-height: 100vh;
+  width: 700px;
 
-  width: 768px;
   margin: 0 auto;
   padding: 50px 0 100px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 700px) {
     grid-template-columns: 1fr;
     width: 100%;
     padding: 50px 20px;

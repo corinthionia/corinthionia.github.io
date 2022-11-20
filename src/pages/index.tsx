@@ -1,36 +1,12 @@
 import { useMemo } from 'react';
 import { graphql } from 'gatsby';
-import { PostListItemType } from 'types/post-list';
-import { IGatsbyImageData } from 'gatsby-plugin-image';
 import queryString, { ParsedQuery } from 'query-string';
 import { CategoryListProps } from 'types/category';
 import Category from 'components/category';
 import PostList from 'components/post-list';
 import Bio from 'components/bio';
 import Layout from '../layout';
-
-type IndexPageProps = {
-  location: {
-    search: string;
-  };
-  data: {
-    site: {
-      siteMetadata: {
-        title: string;
-        description: string;
-        siteUrl: string;
-      };
-    };
-    allMarkdownRemark: {
-      edges: PostListItemType[];
-    };
-    file: {
-      childImageSharp: {
-        gatsbyImageData: IGatsbyImageData;
-      };
-    };
-  };
-};
+import { IndexPageProps } from 'types';
 
 const IndexPage = function ({
   location: { search },
@@ -45,6 +21,7 @@ const IndexPage = function ({
   },
 }: IndexPageProps) {
   const parsed: ParsedQuery<string> = queryString.parse(search);
+
   const selectedCategory: string =
     typeof parsed.category !== 'string' || !parsed.category
       ? 'All'
@@ -110,8 +87,9 @@ export const getPostList = graphql`
           frontmatter {
             title
             summary
-            date(formatString: "YYYY.MM.DD.")
+            date(formatString: "YYYY.MM.DD")
             categories
+            draft
           }
         }
       }

@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { css } from '@emotion/react';
 import { Link } from 'gatsby';
 import { GatsbyLinkProps, CategoryListProps } from 'types/category';
 
@@ -21,14 +22,18 @@ const Category = ({ selectedCategory, categoryList }: CategoryListProps) => {
 const CategoryListWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
 
-  width: 768px;
-  margin-top: 100px;
+  width: 700px;
+  height: 50px;
+  padding: 0 20px;
+  margin: 0 auto;
+  margin-top: 32px;
 
-  @media (max-width: 768px) {
+  background: #e3eedf;
+
+  @media (max-width: 700px) {
     width: 100%;
-    margin-top: 50px;
-    padding: 0 20px;
   }
 `;
 
@@ -37,15 +42,27 @@ const CategoryBtn = ({ active, ...props }: GatsbyLinkProps) => (
 );
 
 const CategoryItem = styled(CategoryBtn)`
+  padding: 5px 16px;
   margin-right: 20px;
-  padding: 5px 0;
-  font-size: 16px;
-  font-weight: ${({ active }) => (active ? '600' : '400')};
-  cursor: pointer;
+  border-radius: 12px;
 
-  @media (max-width: 768px) {
-    font-size: 13px;
-  }
+  font-size: 14px;
+
+  background: #ffffff;
+  ${({ active }) =>
+    active
+      ? css`
+          color: #3e433b;
+          font-weight: 600;
+          border: 2px solid #acc79e;
+        `
+      : css`
+          color: #6d746b;
+          font-weight: 400;
+          border: none;
+        `}
+
+  cursor: pointer;
 `;
 
 export default Category;

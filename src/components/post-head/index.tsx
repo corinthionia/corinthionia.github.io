@@ -1,7 +1,5 @@
 import styled from '@emotion/styled';
 import { PostHeadInfoProps } from 'types/post';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 const PostHead = function ({ title, date }: PostHeadInfoProps) {
   const goBackPage = () => window.history.back();
@@ -9,13 +7,8 @@ const PostHead = function ({ title, date }: PostHeadInfoProps) {
   return (
     <PostHeadWrapper>
       <PostHeadInfoWrapper>
-        <PrevPageIcon onClick={goBackPage}>
-          <FontAwesomeIcon icon={faArrowLeft} />
-        </PrevPageIcon>
         <Title>{title}</Title>
-        <PostData>
-          <div>{date}</div>
-        </PostData>
+        <PostData>{date}</PostData>
       </PostHeadInfoWrapper>
     </PostHeadWrapper>
   );
@@ -24,60 +17,43 @@ const PostHead = function ({ title, date }: PostHeadInfoProps) {
 const PostHeadWrapper = styled.div`
   position: relative;
   width: 100%;
-  height: 400px;
-  background: pink;
+  height: 200px;
 
-  @media (max-width: 768px) {
-    height: 300px;
+  @media (max-width: 700px) {
+    height: 200px;
   }
 `;
 
 const PostHeadInfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  width: 768px;
+  width: 700px;
   height: 100%;
   margin: 0 auto;
   padding: 60px 0;
-  color: #ffffff;
 
-  @media (max-width: 768px) {
+  @media (max-width: 700px) {
     width: 100%;
     padding: 40px 20px;
   }
 `;
 
-const PrevPageIcon = styled.div`
-  display: grid;
-  place-items: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: #ffffff;
-  color: #000000;
-  font-size: 22px;
-  cursor: pointer;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-
-  @media (max-width: 768px) {
-    width: 30px;
-    height: 30px;
-    font-size: 18px;
-  }
-`;
 const Title = styled.div`
+  margin-top: auto;
+
+  color: hotpink;
+  font-size: 36px;
+  font-weight: 800;
+
   display: -webkit-box;
   overflow: hidden;
   overflow-wrap: break-word;
-  margin-top: auto;
   text-overflow: ellipsis;
   white-space: normal;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
-  font-size: 45px;
-  font-weight: 800;
 
-  @media (max-width: 768px) {
+  @media (max-width: 700px) {
     font-size: 30px;
   }
 `;

@@ -3,7 +3,7 @@ import type { GatsbyConfig } from 'gatsby';
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `corinthionia`,
-    siteUrl: `https://corinthionia.github.io/`,
+    siteUrl: `http://localhost:8000/`,
     description: `dev blog`,
     author: `@corinthionia`,
   },
