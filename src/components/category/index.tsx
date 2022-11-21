@@ -21,16 +21,23 @@ const Category = ({ selectedCategory, categoryList }: CategoryListProps) => {
 
 const CategoryListWrapper = styled.div`
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
 
   width: 700px;
   height: 50px;
+
   padding: 0 20px;
-  margin: 0 auto;
   margin-top: 32px;
+  overflow-y: auto;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  &::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+  }
 
   background: #e3eedf;
+  border-left: 4px solid #bedeb2;
+  border-right: 4px solid #bedeb2;
 
   @media (max-width: 700px) {
     width: 100%;
@@ -42,9 +49,9 @@ const CategoryBtn = ({ active, ...props }: GatsbyLinkProps) => (
 );
 
 const CategoryItem = styled(CategoryBtn)`
-  padding: 5px 16px;
-  margin-right: 20px;
+  padding: 6px 12px;
   border-radius: 12px;
+  margin-right: 14px;
 
   font-size: 14px;
 

@@ -54,7 +54,7 @@ const PostItemWrapper = styled(Link)`
 const PostItemContent = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 30px 25px;
+  padding: 28px 25px;
 `;
 
 const Title = styled.span`
@@ -70,6 +70,7 @@ const Title = styled.span`
   color: #383838;
   font-size: 24px;
   font-weight: 600;
+  line-height: 1.4;
 `;
 
 const PostData = styled.div`
