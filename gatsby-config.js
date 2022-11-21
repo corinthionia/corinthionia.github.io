@@ -2,8 +2,8 @@ module.exports = {
   siteMetadata: {
     title: `corinthionia`,
     siteUrl: `https://corinthionia.github.io/`,
-    description: `dev blog`,
-    author: `@corinthionia`,
+    description: `Corinthionia`,
+    author: `Joohyun Kim`,
   },
 
   graphqlTypegen: true,
@@ -16,16 +16,12 @@ module.exports = {
         allExtensions: true,
       },
     },
-    {
-      resolve: 'gatsby-plugin-google-analytics',
-      options: {
-        trackingId: 'corinthionia',
-      },
-    },
-    'gatsby-plugin-emotion',
-    'gatsby-plugin-image',
-    'gatsby-plugin-sitemap',
-    'gatsby-plugin-mdx',
+    // {
+    //   resolve: 'gatsby-plugin-google-analytics',
+    //   options: {
+    //     trackingId: '',
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-sharp`,
       options: {
@@ -36,8 +32,7 @@ module.exports = {
         },
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-image`,
+
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -87,36 +82,35 @@ module.exports = {
               rel: 'nofollow',
             },
           },
-          {
-            resolve: 'gatsby-plugin-canonical-urls',
-            options: {
-              siteUrl: 'https://corinthionia.github.io/',
-              stripQueryString: true,
-            },
-          },
-          {
-            resolve: 'gatsby-plugin-robots-txt',
-            options: {
-              policy: [{ userAgent: '*', allow: '/' }],
-            },
-          },
-          {
-            resolve: 'gatsby-remark-emojis',
-            options: {
-              active: true,
-              escapeCharacter: '#',
-              size: 64,
-            },
-          },
-          {
-            resolve: `gatsby-plugin-google-fonts`,
-            options: {
-              fonts: [`Fira+Code\:400`],
-              display: 'swap',
-            },
-          },
+          `gatsby-remark-emojis`,
         ],
       },
     },
+    {
+      resolve: 'gatsby-plugin-canonical-urls',
+      options: {
+        siteUrl: 'https://corinthionia.github.io/',
+        stripQueryString: true,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        policy: [{ userAgent: '*', allow: '/' }],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [`Fira+Code\:400`],
+        display: 'swap',
+      },
+    },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-image`,
+    'gatsby-plugin-emotion',
+    'gatsby-plugin-image',
+    'gatsby-plugin-sitemap',
+    'gatsby-plugin-mdx',
   ],
 };

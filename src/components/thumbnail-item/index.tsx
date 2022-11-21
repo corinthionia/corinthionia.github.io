@@ -77,6 +77,7 @@ const PostData = styled.div`
 
   display: flex;
   align-items: center;
+  font-weight: 800;
 `;
 
 const Date = styled.div`
@@ -89,7 +90,6 @@ const Date = styled.div`
 const CategoryItem = styled.span`
   color: #8fa8c4;
   font-size: 16px;
-  font-weight: bold;
   margin-right: 8px;
 `;
 

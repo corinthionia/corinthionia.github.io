@@ -8,7 +8,10 @@ const Bio = ({ profileImage }: ProfileImageProps) => {
       <ProfileImage image={profileImage} alt="Profile image" />
       <TextWrapper>
         <Author>
-          Written by <AuthorName>@[Joohyun Kim]</AuthorName>
+          Written by{' '}
+          <a href="https://github.com/corinthionia">
+            <AuthorName>@[Joohyun Kim]</AuthorName>
+          </a>
         </Author>
         <Introduction>EWHA.W.UNIV Computer Science & Engineering</Introduction>
         <div>
@@ -47,9 +50,9 @@ const Author = styled.div`
 
 const AuthorName = styled.div`
   display: inline-block;
-  padding: 4px 6px;
+  padding: 4px 7px;
 
-  border-radius: 4px;
+  border-radius: 8px;
   background-color: #ffe5e9;
 
   color: hotpink;
