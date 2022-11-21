@@ -53,7 +53,6 @@ function component() {
 document.body.appendChild(component());
 ```
 
-<br/>
 
 ### 웹팩 빌드를 위한 구성 및 빌드
 
@@ -124,7 +123,6 @@ module.exports = {
 };
 ```
 
-<br/>
 
 ### 1) Entry
 
@@ -137,7 +135,7 @@ module.exports = {
 ```
 
 위와 같이 되어 있으면 웹팩 실행 시 `index.js`를 대상으로 빌드를 수행한다는 뜻이다.  
-따라서 `entry`로 지정한 파일에는 웹 어플리케이션의 전반적인 구조와 내용을 담고 있어야 한다. <br/>
+따라서 `entry`로 지정한 파일에는 웹 어플리케이션의 전반적인 구조와 내용을 담고 있어야 한다. 
 
 ```javascript
 entry: {
@@ -147,7 +145,6 @@ entry: {
 ```
 
 위와 같이 엔트리 포인트를 2개 이상 사용하는 방식은 멀티 페이지 어플리케이션에 적합하다.
-<br/>
 
 ### 2) Output
 
@@ -166,7 +163,6 @@ module.exports = {
 ```
 
 위 코드에서 `path.resolve()`는 인자로 넘어온 경로를 조합하여 유효한 파일 경로를 만들어 주는 Node.js의 API이다. 즉, `./dist/bundle.js`에 결과물을 저장한다는 뜻이다!
-<br/>
 
 `filename` 속성에는 여러 옵션을 넣을 수 있다.
 
@@ -183,7 +179,6 @@ output: {
 - 결과 파일 이름에 웹팩 내부 모듈 ID를 포함
 - 빌드할 때마다 고유한 해시값을 붙임
 - 웹팩 모듈 내용을 기준으로 생성된 해시값 붙임
-  <br/>
 
 ### 3) Loader
 
@@ -197,7 +192,6 @@ module.exports = {
 };
 ```
 
-<br/>
 
 **🏷 CSS Loader 적용하기**
 `css-loader` 설치 후 `webpack.config.js` 파일을 다음과같이 변경한다.
@@ -225,7 +219,6 @@ module.exports = {
 
 - `test`: 로더를 적용할 파일 유형 (보통 정규식 사용)
 - `user`: 해당 파일에 적용할 로더의 이름
-  <br/>
 
 **🏷 자주 사용되는 로더 종류**
 
@@ -234,7 +227,6 @@ module.exports = {
 - File Loader
 - Vue Loader
 - TS Loader
-  <br/>
 
 **🏷 로더 적용 순서**
 특정 파일에 대해 여러 로더를 사용하는 경우, 적용 순서에 주의해야 한다.  

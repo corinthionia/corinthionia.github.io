@@ -31,7 +31,7 @@ const IndexPage = function ({
     () =>
       edges.reduce(
         (
-          list: CategoryListProps[],
+          list: CategoryListProps['categoryList'],
           {
             node: {
               frontmatter: { categories },
