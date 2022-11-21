@@ -33,13 +33,9 @@ const Text = styled.div`
   align-items: center;
 
   color: hotpink;
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 700;
   font-family: 'Press Start 2P', cursive;
-
-  @media (max-width: 700px) {
-    font-size: 24px;
-  }
 `;
 
 export default Head;

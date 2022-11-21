@@ -46,7 +46,7 @@ const Wrapper = styled.div`
   @media (max-width: 700px) {
     grid-template-columns: 1fr;
     width: 100%;
-    padding: 50px 20px;
+    padding: 30px 0;
   }
 `;
 

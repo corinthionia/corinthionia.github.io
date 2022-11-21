@@ -64,7 +64,8 @@ const Title = styled.span`
   white-space: normal;
   text-overflow: ellipsis;
   overflow-wrap: break-word;
-  -webkit-line-clamp: 1;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 
   color: #383838;
   font-size: 24px;

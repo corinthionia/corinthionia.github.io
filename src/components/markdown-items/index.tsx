@@ -88,8 +88,14 @@ const MarkdownRenderer = styled.div`
   a {
     color: hotpink;
 
-    hover {
-      color: #84bb70;
+    -moz-transition: color 0.3s ease;
+    -o-transition: color 0.3s ease;
+    -ms-transition: color 0.3s ease;
+    -webkit-transition: color 0.3s ease;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #8ad46f;
     }
   }
 
@@ -99,17 +105,43 @@ const MarkdownRenderer = styled.div`
     padding: 15px;
     font-size: 14px;
     border-radius: 8px;
-
-    ::-webkit-scrollbar-thumb {
-      background: rgba(255, 255, 255, 0.5);
-      border-radius: 3px;
-    }
+    overflow: auto;
   }
+
+  /* code[class*='language-'],
+  pre[class*='language-'] {
+    background: #fef9d1;
+  } */
 
   code[class*='language-'],
   pre[class*='language-'] {
+    font-family: 'Fira Code', monospace;
+
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.6;
+    font-size: 13px;
+
+    -moz-tab-size: 2;
+    -o-tab-size: 2;
     tab-size: 2;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+
+    -ms-overflow-style: none; // IE 10+
+    overflow: -moz-scrollbars-none; // Firefox
+
+    & > * {
+      font-family: 'Fira Code', monospace;
+    }
   }
+
   // Markdown Responsive Design
   @media (max-width: 700px) {
     width: 100%;

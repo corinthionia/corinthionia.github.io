@@ -108,6 +108,13 @@ module.exports = {
               size: 64,
             },
           },
+          {
+            resolve: `gatsby-plugin-google-fonts`,
+            options: {
+              fonts: [`Fira+Code\:400`],
+              display: 'swap',
+            },
+          },
         ],
       },
     },

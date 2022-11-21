@@ -33,6 +33,8 @@ const Utterances = function () {
 };
 
 const UtterancesWrapper = styled.div`
+  margin-top: 32px;
+
   @media (max-width: 700px) {
     padding: 0 20px;
   }
