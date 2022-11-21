@@ -26,7 +26,6 @@ const PostContainer = ({
   return (
     <Layout title={title} description={summary} url={href}>
       <PostHead title={title} date={date} />
-      <Border />
       <MarkdownItems html={html} />
       <BioWrapper>
         <Border />
