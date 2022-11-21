@@ -71,6 +71,10 @@ const Title = styled.span`
   font-size: 24px;
   font-weight: 600;
   line-height: 1.4;
+
+  @media (max-width: 700px) {
+    font-size: 22px;
+  }
 `;
 
 const PostData = styled.div`

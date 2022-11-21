@@ -7,6 +7,7 @@ const MarkdownItems = function ({ html }: PostContentProps) {
 
 const MarkdownRenderer = styled.div`
   // Renderer Style
+
   display: flex;
   flex-direction: column;
   width: 700px;
@@ -145,8 +146,9 @@ const MarkdownRenderer = styled.div`
   // Markdown Responsive Design
   @media (max-width: 700px) {
     width: 100%;
-    padding: 80px 20px;
+    padding: 30px 20px 80px 20px;
     font-size: 15px;
+    line-height: 1.7;
 
     h1 {
       font-size: 23px;

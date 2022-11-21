@@ -16,12 +16,11 @@ const PostHeadWrapper = styled.header`
   justify-content: flex-end;
 
   width: 700px;
-  height: 200px;
   margin: 0 auto;
 
   @media (max-width: 700px) {
     width: 100%;
-    padding: 0 24px;
+    padding: 40px 24px 12px 24px;
   }
 `;
 
@@ -29,17 +28,17 @@ const Title = styled.div`
   color: hotpink;
   font-size: 32px;
   font-weight: 800;
-  line-height: 1.5;
+  line-height: 1.3;
 
   display: -webkit-box;
   overflow-wrap: break-word;
   text-overflow: ellipsis;
   white-space: normal;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 
   @media (max-width: 700px) {
-    font-size: 30px;
+    font-size: 26px;
   }
 `;
 

@@ -26,6 +26,7 @@ const PostContainer = ({
   return (
     <Layout title={title} description={summary} url={href}>
       <PostHead title={title} date={date} />
+      <Border />
       <MarkdownItems html={html} />
       <BioWrapper>
         <Border />
@@ -56,15 +57,14 @@ const BioWrapper = styled.div`
 const Border = styled.div`
   width: 100%;
   height: 3px;
-  margin: 24px 0;
+  margin: 24px auto;
 
   display: flex;
   align-items: center;
-
   background-image: linear-gradient(60deg, #c9eb74 0%, #f9c5b4 100%);
 
   @media (max-width: 700px) {
-    width: 96%;
+    width: 90%;
   }
 `;
 
