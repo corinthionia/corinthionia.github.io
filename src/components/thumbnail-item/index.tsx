@@ -2,6 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 import { PostItemProps } from 'types/post';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
 const ThumbnailItem = ({
   title,
@@ -11,29 +12,35 @@ const ThumbnailItem = ({
   link,
 }: PostItemProps) => {
   return (
-    <PostItemWrapper to={link}>
-      <PostItemContent>
-        <Title>{title}</Title>
+    <Wrapper to={link}>
+      <Image image="./cat.jpeg" />
+      <PostInfo>
+        <div>
+          <Title>{title}</Title>
+          <Summary>{summary}</Summary>
+        </div>
         <PostData>
           {categories.map((category) => (
             <>
-              <CategoryItem key={category}>{category}</CategoryItem>
-              <CategoryItem>|</CategoryItem>
+              <Category key={category}>{category}</Category>
+              <Category>|</Category>
             </>
           ))}
           <Date>{date}</Date>
         </PostData>
-        <Summary>{summary}</Summary>
-      </PostItemContent>
-    </PostItemWrapper>
+      </PostInfo>
+    </Wrapper>
   );
 };
 
-const PostItemWrapper = styled(Link)`
+const Wrapper = styled(Link)`
   display: flex;
+  flex-direction: column;
 
   width: 88%;
+  height: 380px;
   margin: 0 auto;
+  overflow: hidden;
 
   border-radius: 8px;
   box-shadow: 0 0 8px rgba(47, 58, 48, 0.2);
@@ -45,19 +52,30 @@ const PostItemWrapper = styled(Link)`
     text-shadow: 0 0 10px rgba(47, 58, 48, 0.2);
     transition: text-shadow 0.3s, opacity 0.4s;
   }
+`;
 
-  & + & {
-    margin-top: 36px;
+const Image = styled(GatsbyImage)<any>`
+  width: 100%;
+  height: 205px;
+  object-fit: cover;
+  background: pink;
+
+  @media (max-width: 700px) {
+    height: 52%;
   }
 `;
 
-const PostItemContent = styled.div`
+const PostInfo = styled.div`
+  height: 175px;
+  padding: 22px 25px;
+
   display: flex;
   flex-direction: column;
-  padding: 28px 25px;
+  justify-content: space-between;
 `;
 
-const Title = styled.span`
+const Title = styled.div`
+  /* height: 56px; */
   display: -webkit-box;
 
   overflow: hidden;
@@ -68,7 +86,7 @@ const Title = styled.span`
   -webkit-box-orient: vertical;
 
   color: #383838;
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 600;
   line-height: 1.4;
 
@@ -78,28 +96,23 @@ const Title = styled.span`
 `;
 
 const PostData = styled.div`
-  margin-top: 15px;
-
   display: flex;
   align-items: center;
-  font-weight: 800;
+  font-weight: 600;
+  font-size: 14px;
 `;
 
 const Date = styled.div`
   color: #a9a9a9;
-
-  font-size: 16px;
-  font-weight: 600;
 `;
 
-const CategoryItem = styled.span`
+const Category = styled.span`
   color: #8fa8c4;
-  font-size: 16px;
   margin-right: 8px;
 `;
 
 const Summary = styled.div`
-  margin-top: 20px;
+  margin-top: 8px;
   display: -webkit-box;
 
   overflow: hidden;
@@ -107,10 +120,10 @@ const Summary = styled.div`
   text-overflow: ellipsis;
   overflow-wrap: break-word;
 
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 
-  color: #757575;
+  color: #9b9b9b;
   font-size: 14px;
   line-height: 1.5;
 `;
