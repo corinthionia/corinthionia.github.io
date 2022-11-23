@@ -13,7 +13,9 @@ const Bio = ({ profileImage }: ProfileImageProps) => {
             <AuthorName>@[Joohyun Kim]</AuthorName>
           </a>
         </Author>
-        <Introduction>EWHA.W.UNIV Computer Science & Engineering</Introduction>
+        <Introduction>
+          끊임없이 '더 나은 방법'에 대해 고민하며 능동적 성장을 추구합니다 💭
+        </Introduction>
         <div>
           <LinkText href="https://github.com/corinthionia">Github</LinkText>
           <LinkText href="https://velog.io/@corinthionia">Velog</LinkText>
@@ -29,6 +31,12 @@ const Wrapper = styled.div`
 
   display: flex;
   align-items: center;
+  padding: 0 12px;
+
+  @media (max-width: 375px) {
+    padding: 0;
+    justify-content: space-between;
+  }
 `;
 
 const ProfileImage = styled(GatsbyImage)`
@@ -39,13 +47,17 @@ const ProfileImage = styled(GatsbyImage)`
 `;
 
 const TextWrapper = styled.div`
-  height: 80px;
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 375px) {
+    width: 240px;
+  }
 `;
 
 const Author = styled.div`
   color: #555555;
+  font-size: 16px;
 `;
 
 const AuthorName = styled.div`
@@ -107,8 +119,13 @@ const Introduction = styled.div`
   color: #909090;
   font-size: 13px;
   font-weight: 400;
-  margin-top: 4px;
+  margin-top: 8px;
   margin-bottom: 8px;
+  line-height: 1.4;
+
+  @media (max-width: 375px) {
+    font-size: 11px;
+  }
 `;
 
 const LinkText = styled.a`
