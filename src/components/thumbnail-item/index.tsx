@@ -2,7 +2,8 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 import { PostItemProps } from 'types/post';
-import { GatsbyImage } from 'gatsby-plugin-image';
+import { StaticImage } from 'gatsby-plugin-image';
+import { css } from '@emotion/react';
 
 const ThumbnailItem = ({
   title,
@@ -13,7 +14,15 @@ const ThumbnailItem = ({
 }: PostItemProps) => {
   return (
     <Wrapper to={link}>
-      <Image image="./cat.jpeg" />
+      <StaticImage
+        src="./cat.jpg"
+        alt="A kitten"
+        css={css`
+          width: 100%;
+          height: 205px;
+          object-fit: cover;
+        `}
+      />
       <PostInfo>
         <div>
           <Title>{title}</Title>
@@ -54,11 +63,10 @@ const Wrapper = styled(Link)`
   }
 `;
 
-const Image = styled(GatsbyImage)<any>`
+const Image = styled(StaticImage)`
   width: 100%;
   height: 205px;
   object-fit: cover;
-  background: pink;
 
   @media (max-width: 700px) {
     height: 52%;
@@ -75,7 +83,6 @@ const PostInfo = styled.div`
 `;
 
 const Title = styled.div`
-  /* height: 56px; */
   display: -webkit-box;
 
   overflow: hidden;
