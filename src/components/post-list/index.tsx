@@ -29,7 +29,7 @@ const PostList = function ({ selectedCategory, posts }: PostListProps) {
             frontmatter,
           },
         }: PostListItemType) => (
-          <ThumbnailItem {...frontmatter} link={slug} key={id} />
+          <ThumbnailItem key={id} {...frontmatter} link={slug} />
         )
       )}
     </Wrapper>
@@ -44,7 +44,10 @@ const Wrapper = styled.div`
   padding: 50px 0 100px;
 
   @media (max-width: 700px) {
+    display: grid;
     grid-template-columns: 1fr;
+    row-gap: 52px;
+
     width: 100%;
     padding: 30px 0;
   }

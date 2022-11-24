@@ -3,6 +3,7 @@ date: '2022-05-28'
 title: 'Webpack Study Week 1'
 categories: ['webpack']
 summary: '인프런 캡틴판교 - 프론트엔드 개발자를 위한 웹팩 강의를 듣고 정리한 내용입니다'
+thumbnail: '../../../contents/assets/cat.jpg'
 draft: false
 ---
 

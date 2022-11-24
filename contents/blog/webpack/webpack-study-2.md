@@ -3,6 +3,7 @@ date: '2022-06-06'
 title: 'Webpack Study Week 2'
 categories: ['webpack']
 summary: '웹팩 핸드북 읽고 정리하기'
+thumbnail: '../../../contents/assets/cat.jpg'
 draft: false
 ---
 
@@ -52,7 +53,6 @@ function component() {
 
 document.body.appendChild(component());
 ```
-
 
 ### 웹팩 빌드를 위한 구성 및 빌드
 
@@ -123,7 +123,6 @@ module.exports = {
 };
 ```
 
-
 ### 1) Entry
 
 말 그대로 웹 자원을 변환하기 위해 필요한 "최초 진입점"이자 자바스크립트 파일 경로
@@ -135,7 +134,7 @@ module.exports = {
 ```
 
 위와 같이 되어 있으면 웹팩 실행 시 `index.js`를 대상으로 빌드를 수행한다는 뜻이다.  
-따라서 `entry`로 지정한 파일에는 웹 어플리케이션의 전반적인 구조와 내용을 담고 있어야 한다. 
+따라서 `entry`로 지정한 파일에는 웹 어플리케이션의 전반적인 구조와 내용을 담고 있어야 한다.
 
 ```javascript
 entry: {
@@ -191,7 +190,6 @@ module.exports = {
   },
 };
 ```
-
 
 **🏷 CSS Loader 적용하기**
 `css-loader` 설치 후 `webpack.config.js` 파일을 다음과같이 변경한다.

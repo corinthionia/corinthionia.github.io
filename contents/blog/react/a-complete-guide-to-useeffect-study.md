@@ -3,6 +3,7 @@ date: '2022-02-21'
 title: 'useEffect 완벽 가이드 정리'
 categories: ['react']
 summary: 'useEffect 뿌수기 으아아아아아앙'
+thumbnail: '../../../contents/assets/cat.jpg'
 draft: false
 ---
 

@@ -3,6 +3,9 @@ date: '2022-09-29'
 title: '머신러닝 딥러닝 스터디 3주차'
 categories: ['ml']
 summary: '[혼자 공부하는 머신러닝 + 딥러닝] 읽고 공부하깅'
+thumbnail: '../../../contents/thumbnail/ml-dl-study-3.png'
+
+#thumbnail: 'https://velog.velcdn.com/images/corinthionia/post/b23d1e64-0a6d-4c14-ac78-9f424102ee6b/image.png'
 draft: false
 ---
 

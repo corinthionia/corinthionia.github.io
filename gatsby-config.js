@@ -48,6 +48,13 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'thumbnail',
+        path: `${__dirname}/contents/thumbnail`,
+      },
+    },
+    {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
@@ -106,6 +113,7 @@ module.exports = {
         display: 'swap',
       },
     },
+    `gatsby-plugin-preload-fonts`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-image`,
     'gatsby-plugin-emotion',
