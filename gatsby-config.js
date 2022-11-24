@@ -106,6 +106,7 @@ module.exports = {
         display: 'swap',
       },
     },
+    `gatsby-plugin-preload-fonts`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-image`,
     'gatsby-plugin-emotion',

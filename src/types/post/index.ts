@@ -5,6 +5,12 @@ export interface PostFrontmatterType {
   date: string;
   categories: string[];
   summary: string;
+  thumbnail: {
+    childImageSharp: {
+      gatsbyImageData: IGatsbyImageData;
+    };
+    publicURL: string;
+  };
   draft: boolean;
 }
 

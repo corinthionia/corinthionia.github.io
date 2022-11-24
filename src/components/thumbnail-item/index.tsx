@@ -2,39 +2,29 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 import { PostItemProps } from 'types/post';
-import { StaticImage } from 'gatsby-plugin-image';
-import { css } from '@emotion/react';
+import { GatsbyImage, StaticImage } from 'gatsby-plugin-image';
 
 const ThumbnailItem = ({
   title,
   date,
   categories,
   summary,
+  thumbnail: {
+    childImageSharp: { gatsbyImageData },
+  },
   link,
 }: PostItemProps) => {
   return (
     <Wrapper to={link}>
-      <StaticImage
-        src="./cat.jpg"
-        alt="A kitten"
-        css={css`
-          width: 100%;
-          height: 205px;
-          object-fit: cover;
-        `}
-      />
+      <Image image={gatsbyImageData} alt="Post thumbnail" />
       <PostInfo>
         <div>
           <Title>{title}</Title>
           <Summary>{summary}</Summary>
         </div>
         <PostData>
-          {categories.map((category) => (
-            <>
-              <Category key={category}>{category}</Category>
-              <Category>|</Category>
-            </>
-          ))}
+          <Category>{categories}</Category>
+          <Category>|</Category>
           <Date>{date}</Date>
         </PostData>
       </PostInfo>
@@ -63,7 +53,7 @@ const Wrapper = styled(Link)`
   }
 `;
 
-const Image = styled(StaticImage)`
+const Image = styled(GatsbyImage)`
   width: 100%;
   height: 205px;
   object-fit: cover;
@@ -133,6 +123,10 @@ const Summary = styled.div`
   color: #9b9b9b;
   font-size: 14px;
   line-height: 1.5;
+
+  @media (max-width: 700px) {
+    -webkit-line-clamp: 1;
+  }
 `;
 
 export default ThumbnailItem;

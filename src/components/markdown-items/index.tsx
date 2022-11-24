@@ -107,6 +107,7 @@ const MarkdownRenderer = styled.div`
     font-size: 14px;
     border-radius: 8px;
     overflow: auto;
+    font-family: 'Fira Code', monospace;
   }
 
   /* code[class*='language-'],

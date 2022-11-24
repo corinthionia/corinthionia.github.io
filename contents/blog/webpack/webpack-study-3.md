@@ -3,6 +3,7 @@ date: '2022-06-18'
 title: 'Webpack Study Week 3'
 categories: ['webpack']
 summary: '웹팩 핸드북 읽고 정리하기'
+thumbnail: '../../assets/cat.jpg'
 draft: false
 ---
 

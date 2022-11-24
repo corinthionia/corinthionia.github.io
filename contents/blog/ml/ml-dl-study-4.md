@@ -3,6 +3,7 @@ date: '2022-10-06'
 title: '머신러닝 딥러닝 스터디 4주차'
 categories: ['ml']
 summary: '[혼자 공부하는 머신러닝 + 딥러닝] 읽고 공부하깅'
+thumbnail: '../../assets/cat.jpg'
 draft: false
 ---
 

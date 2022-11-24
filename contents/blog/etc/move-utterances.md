@@ -3,6 +3,7 @@ date: '2021-11-28'
 title: 'Utterances 댓글을 다른 포스트로 옮기기'
 categories: ['etc']
 summary: 'Utterances 댓글을 다른 포스트로 옮겨 보자!'
+thumbnail: '../../assets/profile-image.jpg'
 draft: false
 ---
 

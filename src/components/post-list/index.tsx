@@ -19,8 +19,6 @@ const PostList = function ({ selectedCategory, posts }: PostListProps) {
     [selectedCategory]
   );
 
-  console.log(postListData);
-
   return (
     <Wrapper>
       {postListData.map(
@@ -31,7 +29,7 @@ const PostList = function ({ selectedCategory, posts }: PostListProps) {
             frontmatter,
           },
         }: PostListItemType) => (
-          <ThumbnailItem {...frontmatter} link={slug} key={id} />
+          <ThumbnailItem key={id} {...frontmatter} link={slug} />
         )
       )}
     </Wrapper>

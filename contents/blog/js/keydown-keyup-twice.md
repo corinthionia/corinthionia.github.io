@@ -3,6 +3,7 @@ date: '2022-02-17'
 title: '[JS] keydown/keyup에서 한글 입력 시 함수가 두 번 실행되는 경우'
 categories: ['js']
 summary: '오랫동안 고민하던 에러 해결하기...'
+thumbnail: '../../assets/cat.jpg'
 draft: false
 ---
 
