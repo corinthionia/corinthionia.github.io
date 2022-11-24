@@ -39,7 +39,6 @@ const Wrapper = styled(Link)`
   height: 200px;
   margin: 0 auto;
   overflow: hidden;
-  /* background: pink; */
 
   /* border-radius: 8px;
   box-shadow: 0 0 8px rgba(47, 58, 48, 0.2); */
@@ -53,7 +52,7 @@ const Wrapper = styled(Link)`
   }
 
   & + & {
-    margin-top: 52px;
+    margin-top: 92px;
   }
 
   @media (max-width: 700px) {
@@ -71,6 +70,7 @@ const Image = styled(GatsbyImage)`
   width: 200px;
   object-fit: fill;
   border-radius: 12px;
+  /* border-right: 1px solid rgba(47, 58, 48, 0.2); */
 
   @media (max-width: 700px) {
     width: 100%;
@@ -80,7 +80,7 @@ const Image = styled(GatsbyImage)`
 
 const PostInfo = styled.div`
   width: 444px;
-  padding: 16px 0 16px 24px;
+  padding: 16px 24px 16px 28px;
 
   display: flex;
   flex-direction: column;

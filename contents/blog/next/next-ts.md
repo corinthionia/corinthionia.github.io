@@ -1,8 +1,9 @@
 ---
 date: '2022-07-29'
-title: 'Next.js + TypeScript 개발 환경 구축하기'
-categories: ['test']
-thumbnail: '../../../contents/assets/cat.jpg'
+title: 'Next + TypeScript 개발 환경 구축하기'
+categories: ['next']
+summary: 최근들어 CRA나 CNA를 사용하지 않고 개발환경을 직접 구축해 보고 싶은 마음이 생겼다. 그래서 create-next-app을 사용하지 않고 직접 next + ts 개발환경을 세팅해 보자!
+thumbnail: '../../../contents/thumbnail/next-ts.png'
 draft: false
 ---
 
