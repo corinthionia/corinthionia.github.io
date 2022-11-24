@@ -3,7 +3,9 @@ date: '2022-10-06'
 title: '머신러닝 딥러닝 스터디 4주차'
 categories: ['ml']
 summary: '[혼자 공부하는 머신러닝 + 딥러닝] 읽고 공부하깅'
-thumbnail: '../../assets/cat.jpg'
+thumbnail: '../../../contents/assets/profile-image.jpg'
+
+#thumbnail: 'https://velog.velcdn.com/images/corinthionia/post/3950f585-3b21-4c61-957b-0d35d997e1b0/image.png'
 draft: false
 ---
 

@@ -2,7 +2,7 @@
 date: '2022-07-29'
 title: 'Next.js + TypeScript 개발 환경 구축하기'
 categories: ['test']
-thumbnail: '../../assets/cat.jpg'
+thumbnail: '../../../contents/assets/cat.jpg'
 draft: false
 ---
 
