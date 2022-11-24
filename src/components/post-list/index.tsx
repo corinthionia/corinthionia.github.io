@@ -19,8 +19,6 @@ const PostList = function ({ selectedCategory, posts }: PostListProps) {
     [selectedCategory]
   );
 
-  console.log(postListData);
-
   return (
     <Wrapper>
       {postListData.map(
