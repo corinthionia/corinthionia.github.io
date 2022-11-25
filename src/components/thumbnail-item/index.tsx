@@ -16,7 +16,7 @@ const ThumbnailItem = ({
 }: PostItemProps) => {
   return (
     <Wrapper to={link}>
-      <Image image={gatsbyImageData} alt="Post thumbnail" />
+      <Image image={gatsbyImageData} alt="Post thumbnail" objectFit="cover" />
       <PostInfo>
         <div>
           <Title>{title}</Title>
@@ -68,7 +68,7 @@ const Wrapper = styled(Link)`
 
 const Image = styled(GatsbyImage)`
   width: 200px;
-  object-fit: fill;
+  object-fit: cover;
   border-radius: 12px;
   /* border-right: 1px solid rgba(47, 58, 48, 0.2); */
 
