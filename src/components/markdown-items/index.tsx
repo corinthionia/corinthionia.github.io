@@ -28,10 +28,14 @@ const MarkdownRenderer = styled.div`
 
   // Adjust Heading Element Style
   h1,
-  h2,
-  h3 {
+  h2 {
     font-weight: 800;
     margin: 75px 0 20px 0;
+  }
+
+  h3 {
+    font-weight: 800;
+    margin: 50px 0 20px 0;
   }
 
   h1 + h1,
@@ -98,6 +102,10 @@ const MarkdownRenderer = styled.div`
     &:hover {
       color: #8ad46f;
     }
+  }
+
+  img {
+    max-width: 700px;
   }
 
   // Adjust Code Style
