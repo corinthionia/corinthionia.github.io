@@ -1,9 +1,9 @@
 ---
-date: '2022-11-25'
+date: '2022-11-26'
 title: '졸업 프로젝트 개발 과정 1 - Object Detection / Colab + Google Drive / Tencent Cloud'
 categories: ['astee']
-summary: '저는 현재 졸업 프로젝트를 진행하고 있습니다! 저희 팀의 주제는 '사용자 경험 향상을 위한 UIUX 분석 서비스'로, 모바일 스크린샷을 업로드하면 사진 속 UI 컴포넌트들의 종류를 분류하고, 각각에 맞는 UX 고려 사항들을 제시해 주는 서비스를 기획했습니다. '
-thumbnail: '../../../contents/thumbnail/astee01.png'
+summary: '저는 현재 졸업 프로젝트를 진행하고 있습니다! 저희 팀의 주제는'
+thumbnail: '../../../contents/thumbnail/ml-dl-study-2.png'
 draft: false
 ---
 
