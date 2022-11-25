@@ -3,6 +3,7 @@ date: '2022-11-24'
 title: 'Gatsby의 StaticImage는 styled 적용을 못한다!'
 categories: ['gatsby']
 summary: '포스트 목록에 썸네일 이미지를 추가하고 싶어서 gatsby-plugin-image 라이브러리의 StaticImage로 대충 디자인 해 보고 있었다.'
+thumbnail: '../../../contents/assets/cat.jpg'
 draft: false
 ---
 
