@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://corinthionia.github.io/sitemap-index.xml
+Host: https://corinthionia.github.io
