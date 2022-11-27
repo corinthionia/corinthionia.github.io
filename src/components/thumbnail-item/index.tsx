@@ -75,6 +75,7 @@ const Image = styled(GatsbyImage)`
   @media (max-width: 700px) {
     width: 100%;
     height: 200px;
+    border-radius: 12px;
   }
 `;
 
