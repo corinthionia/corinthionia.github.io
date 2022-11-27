@@ -16,7 +16,12 @@ const ThumbnailItem = ({
 }: PostItemProps) => {
   return (
     <Wrapper to={link}>
-      <Image image={gatsbyImageData} alt="Post thumbnail" objectFit="cover" />
+      <Image
+        image={gatsbyImageData}
+        alt="Post thumbnail"
+        objectFit="cover"
+        imgStyle={{ borderRadius: '12px' }}
+      />
       <PostInfo>
         <div>
           <Title>{title}</Title>
