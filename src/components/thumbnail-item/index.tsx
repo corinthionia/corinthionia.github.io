@@ -45,13 +45,9 @@ const Wrapper = styled(Link)`
   margin: 0 auto;
   overflow: hidden;
 
-  /* border-radius: 8px;
-  box-shadow: 0 0 8px rgba(47, 58, 48, 0.2); */
-
   cursor: pointer;
 
   &:hover {
-    /* box-shadow: 0 0 10px rgba(47, 58, 48, 0.25); */
     text-shadow: 0 0 10px rgba(47, 58, 48, 0.2);
     transition: text-shadow 0.3s, opacity 0.4s;
   }
@@ -75,7 +71,6 @@ const Image = styled(GatsbyImage)`
   width: 200px;
   object-fit: cover;
   border-radius: 12px;
-  /* border-right: 1px solid rgba(47, 58, 48, 0.2); */
 
   @media (max-width: 700px) {
     width: 100%;
@@ -133,19 +128,11 @@ const PostData = styled.div`
 
 const Date = styled.div`
   color: #a9a9a9;
-
-  @media (max-width: 700px) {
-    color: #bababa;
-  }
 `;
 
 const Category = styled.span`
   color: #8fa8c4;
   margin-right: 8px;
-
-  @media (max-width: 700px) {
-    color: #afc1d5;
-  }
 `;
 
 const Summary = styled.div`
