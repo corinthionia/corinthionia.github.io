@@ -82,6 +82,10 @@ const MarkdownRenderer = styled.div`
   ul {
     margin-left: 20px;
   }
+
+  li {
+    margin-top: 8px;
+  }
   // Adjust Horizontal Rule style
   hr {
     border: 1px solid #e4e4e4;
@@ -107,22 +111,18 @@ const MarkdownRenderer = styled.div`
   img {
     max-width: 700px;
     margin-top: 16px;
+    margin-bottom: 32px;
   }
 
   // Adjust Code Style
   pre[class*='language-'] {
-    margin: 20px 0;
+    margin: 16px 0 32px 0;
     padding: 15px;
     font-size: 14px;
     border-radius: 8px;
     overflow: auto;
     font-family: 'Fira Code', monospace;
   }
-
-  /* code[class*='language-'],
-  pre[class*='language-'] {
-    background: #fef9d1;
-  } */
 
   code[class*='language-'],
   pre[class*='language-'] {
