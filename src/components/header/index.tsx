@@ -34,6 +34,10 @@ const Wrapper = styled.div`
   height: 64px;
   padding: 0 24px;
 
+  position: fixed;
+  top: 0;
+  z-index: 3;
+
   display: flex;
   align-items: center;
   justify-content: space-between;

@@ -40,7 +40,7 @@ const ThumbnailItem = ({
 const Wrapper = styled(Link)`
   display: flex;
 
-  width: 92%;
+  width: 96%;
   height: 200px;
   margin: 0 auto;
   overflow: hidden;
@@ -80,8 +80,8 @@ const Image = styled(GatsbyImage)`
 `;
 
 const PostInfo = styled.div`
-  width: 444px;
-  padding: 16px 24px 16px 28px;
+  width: calc(100% - 200px);
+  padding: 16px 28px 16px 32px;
 
   display: flex;
   flex-direction: column;
@@ -144,7 +144,7 @@ const Summary = styled.div`
   text-overflow: ellipsis;
   overflow-wrap: break-word;
 
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 
   color: #8b8b8b;

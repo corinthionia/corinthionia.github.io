@@ -38,7 +38,7 @@ const PostList = function ({ selectedCategory, posts }: PostListProps) {
 
 const Wrapper = styled.div`
   min-height: 100vh;
-  width: 700px;
+  width: 768px;
 
   margin: 0 auto;
   padding: 50px 0 100px;
