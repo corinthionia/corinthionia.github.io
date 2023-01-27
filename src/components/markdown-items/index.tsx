@@ -17,7 +17,7 @@ const MarkdownRenderer = styled.div`
 
   // Markdown Style
   color: #383838;
-  line-height: 1.6;
+  line-height: 1.8;
   font-size: 16px;
   font-weight: 400;
 
@@ -26,16 +26,26 @@ const MarkdownRenderer = styled.div`
     padding: 3px 0;
   }
 
+  p + p {
+    margin-top: 12px;
+  }
+
   // Adjust Heading Element Style
-  h1,
+  h1 {
+    margin-top: 75px;
+    margin-bottom: 10px;
+  }
+
   h2 {
     font-weight: 800;
-    margin: 75px 0 0 0;
+    margin-top: 75px;
+    margin-bottom: 25px;
   }
 
   h3 {
     font-weight: 800;
-    margin: 50px 0 0 0;
+    margin-top: 36px;
+    margin-bottom: 10px;
   }
 
   h1 + h1,
@@ -47,7 +57,7 @@ const MarkdownRenderer = styled.div`
   h3 + h1,
   h3 + h2,
   h3 + h3 {
-    margin: 0;
+    margin-top: 0px;
   }
 
   hr + h1,

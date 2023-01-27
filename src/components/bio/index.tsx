@@ -5,7 +5,11 @@ import { ProfileImageProps } from 'types/bio';
 const Bio = ({ profileImage }: ProfileImageProps) => {
   return (
     <Wrapper>
-      <ProfileImage image={profileImage} alt="Profile image" />
+      <ProfileImage
+        image={profileImage}
+        alt="Profile image"
+        imgStyle={{ borderRadius: '40%' }}
+      />
       <TextWrapper>
         <Author>
           Written by{' '}
