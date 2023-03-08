@@ -5,7 +5,6 @@ import { ProfileImageProps } from 'types/bio';
 const Head = ({ profileImage }: ProfileImageProps) => {
   return (
     <Wrapper>
-      <Text>Corinthionia</Text>
       <Bio profileImage={profileImage} />
     </Wrapper>
   );
@@ -15,29 +14,15 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-top: 64px;
 
-  width: 700px;
+  width: 1024px;
   margin: 0 auto;
-  margin-top: 24px;
+  margin-top: 50px;
 
   @media (max-width: 700px) {
     width: 100%;
     padding: 0 20px;
-    padding-top: 64px;
   }
-`;
-
-const Text = styled.div`
-  height: 75px;
-
-  display: flex;
-  align-items: center;
-
-  color: hotpink;
-  font-size: 24px;
-  font-weight: 700;
-  font-family: 'Press Start 2P', cursive;
 `;
 
 export default Head;

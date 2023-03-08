@@ -2,11 +2,11 @@ import { useMemo } from 'react';
 import { graphql } from 'gatsby';
 import queryString, { ParsedQuery } from 'query-string';
 import { CategoryListProps } from 'types/category';
-import Category from 'components/category';
 import PostList from 'components/post-list';
 import Layout from '../layout';
 import { IndexPageProps } from 'types';
 import Head from 'components/head';
+import styled from '@emotion/styled';
 
 const IndexPage = function ({
   location: { search },
@@ -55,10 +55,6 @@ const IndexPage = function ({
   return (
     <Layout title={title} description={description} url={siteUrl}>
       <Head profileImage={gatsbyImageData} />
-      <Category
-        selectedCategory={selectedCategory}
-        categoryList={categoryList}
-      />
       <PostList selectedCategory={selectedCategory} posts={edges} />
     </Layout>
   );

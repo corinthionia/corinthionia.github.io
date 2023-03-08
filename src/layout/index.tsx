@@ -32,7 +32,9 @@ const Layout = function ({ title, description, url, children }: TemplateProps) {
       </Helmet>
       <GlobalStyle />
       <Container>
-        <Header location={url} />
+        <Pink />
+        <Green />
+        <Header />
         {children}
         <Footer />
       </Container>
@@ -41,8 +43,48 @@ const Layout = function ({ title, description, url, children }: TemplateProps) {
 };
 
 const Container = styled.div`
+  width: 100%;
+  padding: 0 56px;
+  padding-top: 68px;
+
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 700px) {
+    padding: 20px 0 0 0;
+  }
+`;
+
+const Pink = styled.div`
+  position: fixed;
+  width: 1067px;
+  height: 1111px;
+  left: 0;
+  top: 209px;
+
+  background: radial-gradient(
+    49.77% 36.47% at 50.72% 45.42%,
+    #fecfff 0%,
+    rgba(254, 207, 255, 0) 100%
+  );
+  transform: rotate(-39.57deg);
+  z-index: -1;
+`;
+
+const Green = styled.div`
+  position: fixed;
+  width: 1087px;
+  height: 1111px;
+  left: 453px;
+  top: -200px;
+
+  background: radial-gradient(
+    49.77% 36.47% at 50.72% 45.42%,
+    #f3ffcfdd 0%,
+    rgba(240, 255, 207, 0) 100%
+  );
+  transform: rotate(24.12deg);
+  z-index: -1;
 `;
 
 export default Layout;

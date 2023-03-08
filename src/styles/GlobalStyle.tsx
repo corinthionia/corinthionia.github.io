@@ -1,9 +1,6 @@
 import { Global, css } from '@emotion/react';
 
 const defaultStyle = css`
-  @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-  /* @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap'); */
-
   @font-face {
     font-family: 'Pretendard';
     src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
@@ -31,6 +28,7 @@ const defaultStyle = css`
   body,
   #___gatsby {
     height: 100%;
+    box-sizing: border-box;
   }
 
   a,
@@ -41,7 +39,7 @@ const defaultStyle = css`
   }
 `;
 
-const GlobalStyle = function () {
+const GlobalStyle = () => {
   return <Global styles={defaultStyle} />;
 };
 

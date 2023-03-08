@@ -29,6 +29,7 @@ const theme = {
   shadow: {
     text: '0 0 10px rgba(47, 58, 48, 0.2)',
   },
+  border: '#868E96',
 } as const;
 
 export default theme;

@@ -5,25 +5,17 @@ import { ProfileImageProps } from 'types/bio';
 const Bio = ({ profileImage }: ProfileImageProps) => {
   return (
     <Wrapper>
-      <ProfileImage
-        image={profileImage}
-        alt="Profile image"
-        imgStyle={{ borderRadius: '40%' }}
+      <Name
+        src="https://user-images.githubusercontent.com/79887293/223732205-a4d37ab0-fd70-48a1-8f54-c847186d92fd.png"
+        alt="corinthionia"
       />
       <TextWrapper>
-        <Author>
-          Written by{' '}
-          <a href="https://github.com/corinthionia">
-            <AuthorName>@[Joohyun Kim]</AuthorName>
-          </a>
-        </Author>
-        <Introduction>
-          끊임없이 '더 나은 방법'에 대해 고민하며 능동적 성장을 추구합니다 💭
-        </Introduction>
-        <div>
-          <LinkText href="https://github.com/corinthionia">Github</LinkText>
-          <LinkText href="https://velog.io/@corinthionia">Velog</LinkText>
-        </div>
+        <Text>💞 Good vibes only</Text>
+        <Text>☁️ 끊임없이 ‘더 좋은 방식’에 대해 고민합니다</Text>
+        <Text>🌙 스스로의 부족함을 인지하고 이를 채워 나가려 노력합니다</Text>
+        <Text>
+          🚀 새로운 것을 배우고, 새로운 일에 도전하는 것을 좋아합니다{' '}
+        </Text>
       </TextWrapper>
     </Wrapper>
   );
@@ -31,16 +23,42 @@ const Bio = ({ profileImage }: ProfileImageProps) => {
 
 const Wrapper = styled.div`
   width: 100%;
-  height: 120px;
+  height: 160px;
 
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
   padding: 0 12px;
 
-  @media (max-width: 375px) {
-    padding: 0;
-    justify-content: space-between;
+  @media (max-width: 700px) {
+    margin: 0 auto;
+    height: 140px;
+    margin-top: 28px;
   }
+`;
+
+const Name = styled.img`
+  width: 280px;
+
+  @media (max-width: 700px) {
+    width: 200px;
+  }
+`;
+
+const TextWrapper = styled.div`
+  height: 100px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @media (max-width: 700px) {
+    height: 88px;
+  }
+`;
+
+const Text = styled.span`
+  font-size: 14px;
 `;
 
 const ProfileImage = styled(GatsbyImage)`
@@ -48,16 +66,23 @@ const ProfileImage = styled(GatsbyImage)`
   height: 80px;
   margin-right: 16px;
   border-radius: 40%;
-`;
 
-const TextWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-
-  @media (max-width: 375px) {
-    width: 240px;
+  @media (max-width: 700px) {
+    padding: 0;
+    background: pink;
+    height: 140px;
+    margin-top: 28px;
   }
 `;
+
+// const TextWrapper = styled.div`
+//   display: flex;
+//   flex-direction: column;
+
+//   @media (max-width: 375px) {
+//     width: 240px;
+//   }
+// `;
 
 const Author = styled.div`
   color: #555555;
