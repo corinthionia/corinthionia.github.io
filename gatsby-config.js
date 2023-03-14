@@ -16,12 +16,6 @@ module.exports = {
         allExtensions: true,
       },
     },
-    // {
-    //   resolve: 'gatsby-plugin-google-analytics',
-    //   options: {
-    //     trackingId: '',
-    //   },
-    // },
     {
       resolve: `gatsby-plugin-sharp`,
       options: {
@@ -32,7 +26,13 @@ module.exports = {
         },
       },
     },
-
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: [process.env.GA_TRACKING_ID],
+        head: true,
+      },
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {

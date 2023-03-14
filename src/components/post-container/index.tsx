@@ -10,9 +10,6 @@ import styled from '@emotion/styled';
 const PostContainer = ({
   data: {
     allMarkdownRemark: { edges },
-    file: {
-      childImageSharp: { gatsbyImageData },
-    },
   },
   location: { href },
 }: PostTemplateProps) => {
@@ -29,7 +26,7 @@ const PostContainer = ({
       <MarkdownItems html={html} />
       <BioWrapper>
         <Border />
-        <Bio profileImage={gatsbyImageData} />
+        <Bio />
       </BioWrapper>
       <Utterances />
     </Layout>

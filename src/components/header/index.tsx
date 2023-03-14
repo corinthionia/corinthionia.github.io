@@ -38,7 +38,7 @@ const Wrapper = styled.div`
   width: calc(100% - 112px);
   height: 68px;
   padding: 0 8px;
-  background: #ffffffca;
+  background: #ffffff5f;
 
   position: fixed;
   top: 0;
@@ -49,6 +49,7 @@ const Wrapper = styled.div`
   justify-content: space-between;
 
   border-bottom: 1px solid #383838;
+  backdrop-filter: blur(10px);
 
   @media (max-width: 700px) {
     width: 100%;

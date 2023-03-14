@@ -21,7 +21,7 @@ const PostHeadWrapper = styled.header`
 
   @media (max-width: 700px) {
     width: 100%;
-    margin-top: 52px;
+    margin-top: 64px;
     padding: 40px 24px 12px 24px;
   }
 `;

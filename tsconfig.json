@@ -2,6 +2,7 @@
   "compilerOptions": {
     "target": "es5",
     "module": "commonjs",
+    "moduleResolution": "node",
     "allowJs": true,
     "jsx": "preserve",
     "strict": true,

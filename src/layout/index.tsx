@@ -64,11 +64,15 @@ const Pink = styled.div`
 
   background: radial-gradient(
     49.77% 36.47% at 50.72% 45.42%,
-    #fecfff 0%,
+    #fedaff 0%,
     rgba(254, 207, 255, 0) 100%
   );
   transform: rotate(-39.57deg);
   z-index: -1;
+
+  @media (max-width: 700px) {
+    top: 150px;
+  }
 `;
 
 const Green = styled.div`
@@ -85,6 +89,11 @@ const Green = styled.div`
   );
   transform: rotate(24.12deg);
   z-index: -1;
+
+  @media (max-width: 700px) {
+    left: 0;
+    top: -300px;
+  }
 `;
 
 export default Layout;

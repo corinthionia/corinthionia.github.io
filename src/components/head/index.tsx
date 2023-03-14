@@ -1,21 +1,23 @@
 import styled from '@emotion/styled';
 import Bio from 'components/bio';
-import { ProfileImageProps } from 'types/bio';
 
-const Head = ({ profileImage }: ProfileImageProps) => {
+const Head = ({ url }: any) => {
+  const isRoot = url === 'https://corinthionia.github.io';
+
   return (
-    <Wrapper>
-      <Bio profileImage={profileImage} />
+    <Wrapper isRoot={isRoot}>
+      <Bio />
     </Wrapper>
   );
 };
 
-const Wrapper = styled.div`
+const Wrapper = styled.div<{ isRoot: boolean }>`
   display: flex;
   flex-direction: column;
   justify-content: center;
 
-  width: 1024px;
+  width: 100%;
+  max-width: ${({ isRoot }) => (isRoot ? '1224px' : '1024px')};
   margin: 0 auto;
   margin-top: 50px;
 

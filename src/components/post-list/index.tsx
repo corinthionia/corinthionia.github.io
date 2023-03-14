@@ -40,12 +40,13 @@ const PostList = function ({ selectedCategory, posts }: PostListProps) {
 };
 
 const Wrapper = styled.div`
+  width: 92%;
+  max-width: 768px;
   min-height: 100vh;
-  width: 768px;
 
   margin: 0 auto;
-  margin-top: 56px;
-  padding: 50px 0 100px;
+  margin-top: 72px;
+  margin-bottom: 48px;
 
   @media (max-width: 700px) {
     display: grid;

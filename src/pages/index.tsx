@@ -1,66 +1,93 @@
-import { useMemo } from 'react';
-import { graphql } from 'gatsby';
-import queryString, { ParsedQuery } from 'query-string';
-import { CategoryListProps } from 'types/category';
-import PostList from 'components/post-list';
+import { graphql, Link } from 'gatsby';
 import Layout from '../layout';
-import { IndexPageProps } from 'types';
+
 import Head from 'components/head';
 import styled from '@emotion/styled';
+import PinnedThumbnail from 'components/pinned-thumbnail';
 
-const IndexPage = function ({
-  location: { search },
+const Index = function ({
   data: {
     site: {
       siteMetadata: { title, description, siteUrl },
     },
     allMarkdownRemark: { edges },
-    file: {
-      childImageSharp: { gatsbyImageData },
-    },
   },
-}: IndexPageProps) {
-  const parsed: ParsedQuery<string> = queryString.parse(search);
-
-  const selectedCategory: string =
-    typeof parsed.category !== 'string' || !parsed.category
-      ? 'All'
-      : parsed.category;
-
-  const categoryList = useMemo(
-    () =>
-      edges.reduce(
-        (
-          list: CategoryListProps['categoryList'],
-          {
-            node: {
-              frontmatter: { categories },
-            },
-          }
-        ) => {
-          categories.forEach((category) => {
-            if (list[category] === undefined) list[category] = 1;
-            else list[category]++;
-          });
-
-          list['All']++;
-
-          return list;
-        },
-        { All: 0 }
-      ),
-    []
-  );
+}: any) {
+  console.log(edges);
 
   return (
     <Layout title={title} description={description} url={siteUrl}>
-      <Head profileImage={gatsbyImageData} />
-      <PostList selectedCategory={selectedCategory} posts={edges} />
+      <Head url={siteUrl} />
+      <PinnedWrapper>
+        <PinnedTitle
+          src="https://user-images.githubusercontent.com/79887293/224006290-eda97870-b68b-443e-bbc3-9b3489a39c35.png"
+          alt="pinned"
+        />
+        <PostArea>
+          {edges.map((edge: any) => (
+            <PinnedThumbnail key={edge.node.id} {...edge.node} />
+          ))}
+        </PostArea>
+
+        <a href="/blog">
+          <ReadMore>{`View More Posts >`}</ReadMore>
+        </a>
+      </PinnedWrapper>
+
+      <Margin />
     </Layout>
   );
 };
 
-export default IndexPage;
+export default Index;
+
+const PinnedWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  margin: 0 auto;
+
+  margin-top: 57px;
+  margin-bottom: 18px;
+
+  @media (max-width: 700px) {
+    padding: 0 32px;
+  }
+`;
+
+const PinnedTitle = styled.img`
+  width: 109px;
+
+  @media (max-width: 700px) {
+    width: 88px;
+  }
+`;
+
+const PostArea = styled.div`
+  width: 100%;
+  margin-top: 24px;
+  margin-bottom: 36px;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 24px;
+  column-gap: 5%;
+
+  @media (max-width: 1200px) {
+    grid-template-columns: 1fr;
+  }
+`;
+
+const ReadMore = styled.span`
+  color: hotpink;
+  font-size: 14px;
+  text-decoration: underline;
+`;
+
+const Margin = styled.div`
+  height: 48px;
+`;
 
 export const getPostList = graphql`
   query getPostList {
@@ -74,7 +101,11 @@ export const getPostList = graphql`
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date, frontmatter___title] }
       filter: {
-        frontmatter: { categories: { ne: null }, draft: { eq: false } }
+        frontmatter: {
+          categories: { ne: null }
+          draft: { eq: false }
+          pinned: { eq: true }
+        }
       }
     ) {
       edges {
