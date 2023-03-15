@@ -68,7 +68,7 @@ export const getPostList = graphql`
       }
     }
     allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___date, frontmatter___title] }
+      sort: [{ frontmatter: { date: DESC } }, { frontmatter: { title: ASC } }]
       filter: {
         frontmatter: { categories: { ne: null }, draft: { eq: false } }
       }
