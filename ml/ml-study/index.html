@@ -1,0 +1,666 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.7.0"/><style data-href="/styles.57de05492b7d786fd5ad.css" data-identity="gatsby-global-css">code[class*=language-],pre[class*=language-]{word-wrap:normal;color:#657b83;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;-webkit-hyphens:none;hyphens:none;line-height:1.5;tab-size:4;text-align:left;white-space:pre;word-break:normal;word-spacing:normal}code[class*=language-] ::selection,code[class*=language-]::selection,pre[class*=language-] ::selection,pre[class*=language-]::selection{background:#073642}pre[class*=language-]{border-radius:.3em;margin:.5em 0;overflow:auto;padding:1em}:not(pre)>code[class*=language-],pre[class*=language-]{background-color:#fdf6e3}:not(pre)>code[class*=language-]{border-radius:.3em;padding:.1em}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#93a1a1}.token.punctuation{color:#586e75}.token.namespace{opacity:.7}.token.boolean,.token.constant,.token.deleted,.token.number,.token.property,.token.symbol,.token.tag{color:#268bd2}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string,.token.url{color:#2aa198}.token.entity{background:#eee8d5;color:#657b83}.token.atrule,.token.attr-value,.token.keyword{color:#859900}.token.class-name,.token.function{color:#b58900}.token.important,.token.regex,.token.variable{color:#cb4b16}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}</style><link rel="preconnect" href="https://www.googletagmanager.com"/><link rel="dns-prefetch" href="https://www.googletagmanager.com"/><link rel="canonical" href="https://corinthionia.github.io/ml/ml-study/" data-baseprotocol="https:" data-basehost="corinthionia.github.io"/><link href="https://fonts.googleapis.com/css?family=Fira+Code:400&amp;display=swap" rel="stylesheet"/><style>.gatsby-image-wrapper{position:relative;overflow:hidden}.gatsby-image-wrapper picture.object-fit-polyfill{position:static!important}.gatsby-image-wrapper img{bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover}.gatsby-image-wrapper [data-main-image]{opacity:0;transform:translateZ(0);transition:opacity .25s linear;will-change:opacity}.gatsby-image-wrapper-constrained{display:inline-block;vertical-align:top}</style><noscript><style>.gatsby-image-wrapper noscript [data-main-image]{opacity:1!important}.gatsby-image-wrapper [data-placeholder-image]{opacity:0!important}</style></noscript><script type="module">const e="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;e&&document.body.addEventListener("load",(function(e){const t=e.target;if(void 0===t.dataset.mainImage)return;if(void 0===t.dataset.gatsbyImageSsr)return;let a=null,n=t;for(;null===a&&n;)void 0!==n.parentNode.dataset.gatsbyImageWrapper&&(a=n.parentNode),n=n.parentNode;const o=a.querySelector("[data-placeholder-image]"),r=new Image;r.src=t.currentSrc,r.decode().catch((()=>{})).then((()=>{t.style.opacity=1,o&&(o.style.opacity=0,o.style.transition="opacity 500ms linear")}))}),!0);</script><link rel="sitemap" type="application/xml" href="/sitemap-index.xml"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><style data-emotion="css-global vjr0r4">@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');@font-face{font-family:'Pretendard';src:url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');font-weight:400;font-style:normal;}@font-face{font-family:'Pretendard';src:url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff') format('woff');font-weight:600;font-style:normal;}*{padding:0;margin:0;box-sizing:border-box;font-family:'Pretendard',Arial,Helvetica,sans-serif;}html,body,#___gatsby{width:100%;box-sizing:border-box;}a,a:hover{color:inherit;-webkit-text-decoration:none;text-decoration:none;cursor:pointer;}</style><style data-emotion="css 10dijoj">.css-10dijoj{width:100%;padding:0 56px;padding-top:68px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;}@media (max-width: 700px){.css-10dijoj{padding:20px 0 0 0;}}</style><div class="css-10dijoj e1fe9fk52"><style data-emotion="css atk9iv">.css-atk9iv{position:fixed;width:1067px;height:1111px;left:0;top:209px;background:radial-gradient(
+    49.77% 36.47% at 50.72% 45.42%,
+    #fedaff 0%,
+    rgba(254, 207, 255, 0) 100%
+  );-webkit-transform:rotate(-39.57deg);-moz-transform:rotate(-39.57deg);-ms-transform:rotate(-39.57deg);transform:rotate(-39.57deg);z-index:-1;}@media (max-width: 700px){.css-atk9iv{top:150px;}}</style><div class="css-atk9iv e1fe9fk51"></div><style data-emotion="css ro9oxq">.css-ro9oxq{position:fixed;width:1087px;height:1111px;left:453px;top:-200px;background:radial-gradient(
+    49.77% 36.47% at 50.72% 45.42%,
+    #f3ffcfdd 0%,
+    rgba(240, 255, 207, 0) 100%
+  );-webkit-transform:rotate(24.12deg);-moz-transform:rotate(24.12deg);-ms-transform:rotate(24.12deg);transform:rotate(24.12deg);z-index:-1;}@media (max-width: 700px){.css-ro9oxq{left:0;top:-300px;}}</style><div class="css-ro9oxq e1fe9fk50"></div><style data-emotion="css 1ub29et">.css-1ub29et{width:calc(100% - 112px);height:68px;padding:0 8px;background:#ffffff5f;position:fixed;top:0;z-index:3;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;border-bottom:1px solid #383838;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);}@media (max-width: 700px){.css-1ub29et{width:100%;padding:0 16px;}}</style><div class="css-1ub29et ez1qhwl4"><a href="/blog"><style data-emotion="css fhyudi">.css-fhyudi{width:22px;height:22px;}@media (max-width: 700px){.css-fhyudi{width:20px;height:20px;}}</style><img src="https://user-images.githubusercontent.com/79887293/223728512-088d980e-0ab5-40d7-9a4d-d8f3684005ed.svg" alt="post list" class="css-fhyudi ez1qhwl1"/></a><a href="/"><style data-emotion="css pkyx4d">.css-pkyx4d{height:20px;}@media (max-width: 700px){.css-pkyx4d{height:16px;}}</style><img src="https://user-images.githubusercontent.com/79887293/223732692-bd9cd64a-0495-48a0-b724-c6ae50143986.svg" alt="logo" class="css-pkyx4d ez1qhwl3"/></a><style data-emotion="css 1k58b03">.css-1k58b03{width:68px;height:28px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;}@media (max-width: 700px){.css-1k58b03{width:60px;}}</style><div class="css-1k58b03 ez1qhwl2"><a href="mailto:corinthionia@gmail.com"><style data-emotion="css 1omw3h9">.css-1omw3h9{width:28px;height:28px;}@media (max-width: 700px){.css-1omw3h9{width:24px;height:24px;}}</style><img src="https://user-images.githubusercontent.com/79887293/223728516-05d5e781-230c-4448-8c5d-3914968be3e1.svg" alt="mail" class="css-1omw3h9 ez1qhwl0"/></a><a href="https://github.com/corinthionia" target="_blank"><img src="https://user-images.githubusercontent.com/79887293/223728888-06511911-20ce-44e6-b7b1-59791885ecca.svg" alt="github" class="css-1omw3h9 ez1qhwl0"/></a></div></div><style data-emotion="css xn2gaw">.css-xn2gaw{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:end;-ms-flex-pack:end;-webkit-justify-content:flex-end;justify-content:flex-end;width:700px;margin:0 auto;padding:60px 24px 12px 0;}@media (max-width: 700px){.css-xn2gaw{width:100%;margin-top:64px;padding:40px 24px 12px 24px;}}</style><header class="css-xn2gaw ew08wds2"><style data-emotion="css 1i4c6of">.css-1i4c6of{color:#fb83bf;font-size:32px;font-weight:600;line-height:1.3;display:-webkit-box;overflow-wrap:break-word;text-overflow:ellipsis;white-space:normal;-webkit-line-clamp:3;-webkit-box-orient:vertical;}@media (max-width: 700px){.css-1i4c6of{font-size:26px;}}</style><div class="css-1i4c6of ew08wds1">머신러닝 스터디 1주차 - 4주차</div><style data-emotion="css 1hlxbva">.css-1hlxbva{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:end;-ms-flex-pack:end;-webkit-justify-content:flex-end;justify-content:flex-end;margin-top:36px;color:#6f6f6f;font-size:13px;font-weight:500;}</style><div class="css-1hlxbva ew08wds0">September 15, 2022</div></header><style data-emotion="css z5jd2s">.css-z5jd2s{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;width:700px;margin:0 auto;padding:100px 0;word-break:break-all;color:#383838;line-height:1.8;font-size:16px;font-weight:400;}.css-z5jd2s p{padding:3px 0;}.css-z5jd2s p+p{margin-top:12px;}.css-z5jd2s h1{margin-top:75px;margin-bottom:10px;}.css-z5jd2s h2{font-weight:800;margin-top:75px;margin-bottom:25px;}.css-z5jd2s h3{font-weight:800;margin-top:36px;margin-bottom:10px;}.css-z5jd2s h1+h1,.css-z5jd2s h1+h2,.css-z5jd2s h1+h3,.css-z5jd2s h2+h1,.css-z5jd2s h2+h2,.css-z5jd2s h2+h3,.css-z5jd2s h3+h1,.css-z5jd2s h3+h2,.css-z5jd2s h3+h3{margin-top:0px;}.css-z5jd2s hr+h1,.css-z5jd2s hr+h2,.css-z5jd2s hr+h3{margin-top:0;}.css-z5jd2s h1{font-size:32px;}.css-z5jd2s h2{font-size:26px;}.css-z5jd2s h3{font-size:20px;}.css-z5jd2s blockquote{margin:20px 0;padding:0 15px;border-left:3px solid #a9d871;color:#9c9c9c;font-weight:500;}.css-z5jd2s ol,.css-z5jd2s ul{margin-left:20px;}.css-z5jd2s li{margin-top:8px;}.css-z5jd2s hr{border:1px solid #e4e4e4;border-radius:1px;margin:60px 0;}.css-z5jd2s a{color:hotpink;-moz-transition:color 0.3s ease;-o-transition:color 0.3s ease;-ms-transition:color 0.3s ease;-webkit-transition:color 0.3s ease;-webkit-transition:color 0.3s ease;transition:color 0.3s ease;}.css-z5jd2s a:hover{color:#8ad46f;}.css-z5jd2s img{max-width:700px;margin-top:16px;margin-bottom:32px;}.css-z5jd2s pre[class*='language-']{margin:16px 0 32px 0;padding:15px;font-size:14px;border-radius:8px;overflow:auto;font-family:'Fira Code',monospace;}.css-z5jd2s code[class*='language-'],.css-z5jd2s pre[class*='language-']{font-family:'Fira Code',monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.6;font-size:13px;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;-ms-overflow-style:none;overflow:-moz-scrollbars-none;}.css-z5jd2s code[class*='language-']>*,.css-z5jd2s pre[class*='language-']>*{font-family:'Fira Code',monospace;}@media (max-width: 700px){.css-z5jd2s{width:100%;padding:30px 20px 80px 20px;font-size:15px;line-height:1.7;}.css-z5jd2s h1{font-size:23px;}.css-z5jd2s h2{font-size:22px;}.css-z5jd2s h3{font-size:17px;}.css-z5jd2s img{width:100%;}.css-z5jd2s hr{margin:50px 0;}}</style><div class="css-z5jd2s eybq1s70"><p><a href="http://www.yes24.com/Product/Goods/96024871" target="_blank" rel="nofollow">혼자 공부하는 머신러닝+딥러닝</a></p>
+<hr>
+<h1>1주차</h1>
+<h2>1-1 인공지능과 머신러닝, 딥러닝</h2>
+<h3>인공지능</h3>
+<p>사람처럼 학습하고 추론할 수 있는 지능을 가진 컴퓨터 시스템을 만드는 기술
+Strong AI: SF 속 인공지능의 모습
+Weak AI: 특정 분야에서 사람의 일을 도와주는 역할</p>
+<h3>머신러닝</h3>
+<p>자동으로 데이터에서 규칙을 학습하는 알고리즘을 연구하는 분야
+<strong>Scikit-learn</strong> 대표적인 머신러닝 라이브러리</p>
+<h3>딥러닝</h3>
+<p>머신러닝 알고리즘 중 인공신경망을 기반으로 한 방법들
+<strong>TensorFlow, Pytorch</strong> 대표적인 딥러닝 라이브러리</p>
+<h2>1-2 코랩과 주피터 노트북</h2>
+<h3>구글 코랩</h3>
+<p>클라우드 기반의 주피터 노트북 개발 환경</p>
+<h3>텍스트 셀</h3>
+<p>HTML과 마크다운을 혼용해서 사용할 수 있다.
+텍스트 셀의 수정을 끝내려면 ESC 키를 누르면 된다!</p>
+<h3>코드 셀</h3>
+<p>마지막 실행 코드의 반환값만 자동 출력한다.</p>
+<h3>노트북</h3>
+<ul>
+<li>대화식 프로그래밍 환경인 Jupyter를 커스터마이징한 것!</li>
+<li>코랩 노트북은 5개 이상 실행할 수 없기 때문에 [런타임] -> [세션 관리] 메뉴에서 실행 중인 노트북을 종료할 수 있다.</li>
+<li>이 노트북은 구글 클라우드의 컴퓨트 엔진에 연결되어 있다.
+<img src="https://velog.velcdn.com/images/corinthionia/post/e343937a-b244-493a-8d88-5aed16cb1c77/image.png" alt=""></li>
+</ul>
+<h2>1-3 (예제) 마켓과 머신러닝</h2>
+<ul>
+<li>머신러닝은 스스로 기준을 찾아서 일을 함 + 이 기준을 이용해 판별</li>
+<li>분류(classification): 머신러닝에서 여러 개의 종류(class) 중 하나를 구별해 내는 문제</li>
+<li>이진분류(binary classification): 2개의 클래스 중 하나를 고르는 문제</li>
+<li>특성(feature): 데이터의 특징</li>
+</ul>
+<h3>도미 데이터 준비하기</h3>
+<ul>
+<li>matplotlib(plt): 과학계산용 그래프를 그리는 패키지</li>
+<li>산점도(scatter plot): x, y축으로 이루어진 좌표계에 두 변수(x, y)의 관계를 표현하는 방법</li>
+</ul>
+<div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python"><span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+
+plt<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>bream_length<span class="token punctuation">,</span> bream_weight<span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>xlabel<span class="token punctuation">(</span><span class="token string">'length'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>ylabel<span class="token punctuation">(</span><span class="token string">'weight'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre></div>
+<p><img src="https://velog.velcdn.com/images/corinthionia/post/e433a957-1562-4b0b-8cb0-9bce88900eb7/image.png" alt=""></p>
+<h3>빙어 데이터 준비하기</h3>
+<div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python">plt<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>bream_length<span class="token punctuation">,</span> bream_weight<span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>smelt_length<span class="token punctuation">,</span> smelt_weight<span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>xlabel<span class="token punctuation">(</span><span class="token string">'length'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>ylabel<span class="token punctuation">(</span><span class="token string">'weight'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre></div>
+<p><img src="https://velog.velcdn.com/images/corinthionia/post/c93159e6-428f-435c-9d95-0bcfdc43ed15/image.png" alt=""></p>
+<h3>첫 번째 머신러닝 프로그램</h3>
+<ul>
+<li>k-최근접 이웃 알고리즘 사용</li>
+<li>scikit-learn: 머신러닝 패키지이며, 2차원 리스트가 필요함</li>
+<li>python의 zip 함수 사용 - 나열된 리스트에서 원소를 하나씩 꺼냄</li>
+<li>훈련(training): 모델에 데이터를 전달하여 규칙을 학습하는 과정</li>
+<li>모델(model): 머신러닝 알고리즘을 구현한 프로그램/알고리즘을 구체화하여 표현한 것</li>
+</ul>
+<div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python">length <span class="token operator">=</span> bream_length <span class="token operator">+</span> smelt_length
+weight <span class="token operator">=</span> bream_weight <span class="token operator">+</span> smelt_weight
+
+fish_data <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span>l<span class="token punctuation">,</span> w<span class="token punctuation">]</span> <span class="token keyword">for</span> l<span class="token punctuation">,</span> w <span class="token keyword">in</span> <span class="token builtin">zip</span><span class="token punctuation">(</span>length<span class="token punctuation">,</span> weight<span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>fish_data<span class="token punctuation">)</span></code></pre></div>
+<p>정답 제공을 위한 데이터도 만든다.</p>
+<div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python">fish_target <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">*</span> <span class="token number">35</span> <span class="token operator">+</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">*</span> <span class="token number">14</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>fish_target<span class="token punctuation">)</span></code></pre></div>
+<p>사이킷런 패키지에서 k-최근접 이웃 알고리즘을 구현한 클래스인 KNeighborsClassifier를 임포트하고 KNeighborsClassifier 클래스의 객체를 만든다.</p>
+<div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>neighbors <span class="token keyword">import</span> KNeighborsClassifier
+kn <span class="token operator">=</span> KNeighborsClassifier<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre></div>
+<p>사이킷런에서 모델을 평가하는 메서드는 score()로, 0에서 1 사이의 값(정확도)을 반환한다.</p>
+<div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>neighbors <span class="token keyword">import</span> KNeighborsClassifier
+kn <span class="token operator">=</span> KNeighborsClassifier<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+kn<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>fish_data<span class="token punctuation">,</span> fish_target<span class="token punctuation">)</span>
+kn<span class="token punctuation">.</span>score<span class="token punctuation">(</span>fish_data<span class="token punctuation">,</span> fish_target<span class="token punctuation">)</span></code></pre></div>
+<h3>k-최근접 이웃 알고리즘</h3>
+<ul>
+<li>어떤 데이터에 대한 답을 구할 때, 주위의 다른 데이터를 보고 다수를 차지하는 것을 정답으로 사용함</li>
+<li>직선 거리를 계산하는 데에 많은 시간이 들기 때문에 데이터가 많은 경우 사용하기 어렵다.</li>
+</ul>
+<div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python">kn<span class="token punctuation">.</span>predict<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">600</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre></div>
+<p>실행해 보면 <code class="language-text">array([1])</code> 이 출력된다.
+<code class="language-text">predict()</code> 메소드는 새로운 데이터의 정답을 예측한다.</p>
+<div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>kn<span class="token punctuation">.</span>_fit_X<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>kn<span class="token punctuation">.</span>_y<span class="token punctuation">)</span></code></pre></div>
+<p>KNeighborsClassifier 클래스는 <code class="language-text">_fit_X</code> 속성에 <code class="language-text">fish_data</code>를, <code class="language-text">_y</code> 속성에 <code class="language-text">fish_target</code>을 가지고 있다.</p>
+<p>KNeighborsClassifier 클래스는 가장 가까운 데이터 5개를 기본적으로 참고한다. 이 기준은 <code class="language-text">n_neighbors</code> 매개변수로 바꿀 수 있다.</p>
+<div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python">kn49 <span class="token operator">=</span> KNeighborsClassifier<span class="token punctuation">(</span>n_neighbors<span class="token operator">=</span><span class="token number">49</span><span class="token punctuation">)</span></code></pre></div>
+<h2>정리</h2>
+<ul>
+<li>KNeighborsClassifier(): k-최근접이웃분류모델을 만드는 사이킷런 클래스</li>
+<li>fit(특성, 정답 데이터): 사이킷런 모델을 훈련할 때 사용하는 메서드</li>
+<li>predict(특성): 사이킷런 모델을 훈련하고 예측할 때 사용하는 메서드</li>
+<li>score(): 훈련된 사이킷런 모델의 성능을 측정</li>
+</ul>
+<hr>
+<h1>2주차</h1>
+<h2>2-1. 훈련 세트와 테스트 세트</h2>
+<h3>지도 학습과 비지도 학습</h3>
+<ul>
+<li>지도 학습: 정답(target)을 가지고 정답을 학습</li>
+<li>비지도 학습: target 없이 입력 데이터만 사용</li>
+<li>강화 학습: 알고리즘이 행동한 결과로 얻은 보상을 사용해 학습</li>
+</ul>
+<h3>훈련 세트와 테스트 세트</h3>
+<ul>
+<li>훈련 세트: 훈련에 사용되는 데이터</li>
+<li>테스트 세트: 테스트에 사용되는 데이터</li>
+</ul>
+<div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python">train_input <span class="token operator">=</span> fish_data<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">35</span><span class="token punctuation">]</span>
+train_target <span class="token operator">=</span> fish_target<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">35</span><span class="token punctuation">]</span>
+
+test_input <span class="token operator">=</span> fish_data<span class="token punctuation">[</span><span class="token number">35</span><span class="token punctuation">:</span><span class="token punctuation">]</span>
+test_target <span class="token operator">=</span> fish_target<span class="token punctuation">[</span><span class="token number">35</span><span class="token punctuation">:</span><span class="token punctuation">]</span>
+
+kn <span class="token operator">=</span> kn<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>train_input<span class="token punctuation">,</span> train_target<span class="token punctuation">)</span> <span class="token comment"># fit 메서드로 훈련</span>
+kn<span class="token punctuation">.</span>score<span class="token punctuation">(</span>test_input<span class="token punctuation">,</span> test_target<span class="token punctuation">)</span> <span class="token comment"># score 메서드로 평가</span></code></pre></div>
+<p>우와 정확도가 0.0이네요!!
+=> 알고 보니 훈련 세트에는 도미 데이터만, 테스트 세트에는 빙어 데이터만 있어서 그렇군요
+=> 이렇게 샘플이 골고루 섞여 있지 않은 상황을 **샘플링 편향(sampling bias)**라고 한다.</p>
+<h3>Numpy</h3>
+<p>Python의 대표적인 배열 라이브러리 - 고차원 배열을 쉽게 만들고 조작 가능
+python 리스트를 numpy 배열로 바꾸기</p>
+<div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+
+input_arr <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span>fish_data<span class="token punctuation">)</span>
+target_arr <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span>fish_target<span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>target_arr<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>input_arr<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>  <span class="token comment"># (샘플수, 특성수) 출력</span></code></pre></div>
+<p>인덱스 번호가 담긴 배열을 생성하여 인덱스 번호들을 무작위로 섞어 준다.</p>
+<div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python">np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>seed<span class="token punctuation">(</span><span class="token number">42</span><span class="token punctuation">)</span>
+index <span class="token operator">=</span> np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">49</span><span class="token punctuation">)</span>  <span class="token comment"># np.arrange()를 사용해 인덱스 생성</span>
+np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>shuffle<span class="token punctuation">(</span>index<span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>index<span class="token punctuation">)</span></code></pre></div>
+<ul>
+<li>넘파이의 무작위 함수들을 실행 시 다른 결과를 생성한다. 랜덤 시드를 지정하면 이를 방지할 수 있다.</li>
+<li><code class="language-text">np.arange(N)</code>는 0부터 N-1까지의 수가 담긴 배열을 만든다.</li>
+<li><code class="language-text">np.shuffle(arr)</code>은 주어진 배열을 무작위로 섞는다.</li>
+</ul>
+<p>넘파이는 <code class="language-text">배열 인덱싱</code>을 제공한다. 다음과같이 작성하면 2번째와 4번째 샘플을 선택하여 출력한다.</p>
+<div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>input_arr<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre></div>
+<p>배열 인덱싱 대신 넘파이 배열을 인덱스로 전달할 수 있다.</p>
+<div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python">train_input <span class="token operator">=</span> input_arr<span class="token punctuation">[</span>index<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">35</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+train_target <span class="token operator">=</span> target_arr<span class="token punctuation">[</span>index<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">35</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>input_arr<span class="token punctuation">[</span><span class="token number">45</span><span class="token punctuation">]</span><span class="token punctuation">,</span> train_input<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre></div>
+<p>matplotlib을 사용하여 산점도를 그린다.</p>
+<ul>
+<li>2차원 배열은 행과 열 인덱스를 콤마로 나누어 지정한다. 슬라이싱 연산자로 처음부터 마지막 원소까지 모두 선택하는 경우, 시작과 종료 인덱스를 생략할 수 있다.</li>
+</ul>
+<div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python"><span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+
+plt<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>train_input<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> train_input<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>test_input<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> test_input<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+plt<span class="token punctuation">.</span>xlabel<span class="token punctuation">(</span><span class="token string">'length'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>ylabel<span class="token punctuation">(</span><span class="token string">'weight'</span><span class="token punctuation">)</span>
+
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre></div>
+<p><img src="https://velog.velcdn.com/images/corinthionia/post/0aede4bc-ceae-4c20-b30c-d2e13f027560/image.png" alt=""></p>
+<h2>2-2. 데이터 전처리</h2>
+<h3>넘파이로 데이터 준비하기</h3>
+<ul>
+<li><code class="language-text">np.colum_stack()</code>은 전달받은 리스트를 일렬로 세우고 나란히 연결한다.</li>
+<li>튜플은 리스트와 달리 수정이 불가하기 때문에 매개변수 값으로 많이 이용한다.</li>
+</ul>
+<div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python">fish_data <span class="token operator">=</span> np<span class="token punctuation">.</span>column_stack<span class="token punctuation">(</span><span class="token punctuation">(</span>fish_length<span class="token punctuation">,</span> fish_weight<span class="token punctuation">)</span><span class="token punctuation">)</span>
+fish_target <span class="token operator">=</span> np<span class="token punctuation">.</span>concatenate<span class="token punctuation">(</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>ones<span class="token punctuation">(</span><span class="token number">35</span><span class="token punctuation">)</span><span class="token punctuation">,</span> np<span class="token punctuation">.</span>zeros<span class="token punctuation">(</span><span class="token number">14</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>fish_data<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre></div>
+<p><code class="language-text">np.ones()</code>와 <code class="language-text">np.zeros()</code>를 이용하면 타킷데이터를 쉽게 만들 수 있다.
+데이터 크기가 커질 경우 파이썬 리스트보다 넘파이 배열을 사용하는 게 효율적이다.</p>
+<div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python">fish_target <span class="token operator">=</span> np<span class="token punctuation">.</span>concatenate<span class="token punctuation">(</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>ones<span class="token punctuation">(</span><span class="token number">35</span><span class="token punctuation">)</span><span class="token punctuation">,</span> np<span class="token punctuation">.</span>zeros<span class="token punctuation">(</span><span class="token number">14</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre></div>
+<h3>사이킷런으로 훈련 세트와 테스트 세트 나누기</h3>
+<p>저번주차에는 넘파이 배열의 인덱스를 섞어 훈련 세트와 테스트 세트로 나누었는데, 다음으로 소개하는 방법은 이보다 훨씬 세련된 방법이다. <code class="language-text">train_test_split()</code>을 사용하면 알잘딱깔센 비율에 맞게 훈련 세트와 테스트 세트로 나누어 준다.</p>
+<ul>
+<li><code class="language-text">random_state</code>는 저번과같이 42로 설정한다.</li>
+<li><code class="language-text">stratify</code> 매개변수에 타깃 데이터를 전달하면 클래스 비율에 맞게 데이터를 나눈다.</li>
+</ul>
+<div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>model_selection <span class="token keyword">import</span> train_test_split
+
+train_input<span class="token punctuation">,</span> test_input<span class="token punctuation">,</span> train_target<span class="token punctuation">,</span> test_target <span class="token operator">=</span> train_test_split<span class="token punctuation">(</span>fish_data<span class="token punctuation">,</span> fish_target<span class="token punctuation">,</span> stratify<span class="token operator">=</span>fish_target<span class="token punctuation">,</span> random_state<span class="token operator">=</span><span class="token number">42</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>test_target<span class="token punctuation">)</span></code></pre></div>
+<div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>train_input<span class="token punctuation">.</span>shape<span class="token punctuation">,</span> test_input<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>train_target<span class="token punctuation">.</span>shape<span class="token punctuation">,</span> test_target<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>test_target<span class="token punctuation">)</span></code></pre></div>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token punctuation">(</span><span class="token number">36</span>, <span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token number">13</span>, <span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token punctuation">(</span><span class="token number">36</span>,<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token number">13</span>,<span class="token punctuation">)</span>
+<span class="token punctuation">[</span><span class="token number">0</span>. <span class="token number">0</span>. <span class="token number">1</span>. <span class="token number">0</span>. <span class="token number">1</span>. <span class="token number">0</span>. <span class="token number">1</span>. <span class="token number">1</span>. <span class="token number">1</span>. <span class="token number">1</span>. <span class="token number">1</span>. <span class="token number">1</span>. <span class="token number">1</span>.<span class="token punctuation">]</span></code></pre></div>
+<h3>수상한 도미 한 마리</h3>
+<p>도미 데이터를 넣었는데 빙어로 예측함…!</p>
+<div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>neighbors <span class="token keyword">import</span> KNeighborsClassifier
+
+kn <span class="token operator">=</span> KNeighborsClassifier<span class="token punctuation">(</span><span class="token punctuation">)</span>
+kn<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>train_input<span class="token punctuation">,</span> train_target<span class="token punctuation">)</span>
+kn<span class="token punctuation">.</span>score<span class="token punctuation">(</span>test_input<span class="token punctuation">,</span> test_target<span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>kn<span class="token punctuation">.</span>predict<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">25</span><span class="token punctuation">,</span> <span class="token number">150</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre></div>
+<p>한번 산점도를 그려 보자.</p>
+<div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python"><span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+
+plt<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>train_input<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> train_input<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span><span class="token number">25</span><span class="token punctuation">,</span> <span class="token number">150</span><span class="token punctuation">,</span> marker<span class="token operator">=</span><span class="token string">'^'</span><span class="token punctuation">)</span> <span class="token comment"># marker 매개변수는 모양을 지정한다.</span>
+plt<span class="token punctuation">.</span>xlabel<span class="token punctuation">(</span><span class="token string">'length'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>ylabel<span class="token punctuation">(</span><span class="token string">'weight'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre></div>
+<p><img src="https://velog.velcdn.com/images/corinthionia/post/78630aec-a447-41ab-8bc6-77abee0fcdb3/image.png" alt="">
+산점도를 봐도 분명히 도미 데이터에 더 가까운데 왜 빙어로 예측한 걸까?</p>
+<ul>
+<li>k-최근접 이웃은 주변 샘플 중 다수인 클래스를 예측으로 사용한다.</li>
+<li>KNeighborsClassifier 클래스의 이웃 개수인 <code class="language-text">n_neighbors</code>의 기본값은 5이므로 5개의 이웃이 반환된다.</li>
+<li>아래와같이 이웃 샘플을 따로 구분해 산점도를 그려 보자.</li>
+</ul>
+<div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python">distances<span class="token punctuation">,</span> indexes <span class="token operator">=</span> kn<span class="token punctuation">.</span>kneighbors<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">25</span><span class="token punctuation">,</span> <span class="token number">150</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+plt<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>train_input<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> train_input<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span><span class="token number">25</span><span class="token punctuation">,</span> <span class="token number">150</span><span class="token punctuation">,</span> marker<span class="token operator">=</span><span class="token string">'^'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>train_input<span class="token punctuation">[</span>indexes<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> train_input<span class="token punctuation">[</span>indexes<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> marker<span class="token operator">=</span><span class="token string">'D'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>xlabel<span class="token punctuation">(</span><span class="token string">'length'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>ylabel<span class="token punctuation">(</span><span class="token string">'weight'</span><span class="token punctuation">)</span></code></pre></div>
+<p>가장 가까운 데이터 5개 중 4개가 빙어이기 때문에 빙어로 예측한 것이었다.
+<img src="https://velog.velcdn.com/images/corinthionia/post/633fe704-6bc4-4f72-8c67-9337af650085/image.png" alt=""></p>
+<h3>기준을 맞춰라</h3>
+<p>이러한 현상은 x축의 범위(10<del>40)와 y축의 범위(0</del>1000)가 달라서 발생하는 문제였다. (= 스케일이 달라서 발생하는 문제였다.) 따라서 y축으로 조금만 멀어져도 거리가 아주 큰 값으로 계산된다.</p>
+<p>x와 y축의 범위를 동일하게 0~1000으로 맞춰 보자. <code class="language-text">xlim()</code>을 이용한다.</p>
+<div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python">plt<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>train_input<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> train_input<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span><span class="token number">25</span><span class="token punctuation">,</span> <span class="token number">150</span><span class="token punctuation">,</span> marker<span class="token operator">=</span><span class="token string">'^'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>train_input<span class="token punctuation">[</span>indexes<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> train_input<span class="token punctuation">[</span>indexes<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> marker<span class="token operator">=</span><span class="token string">"D"</span><span class="token punctuation">)</span>
+
+plt<span class="token punctuation">.</span>xlim<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>xlabel<span class="token punctuation">(</span><span class="token string">'length'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>ylabel<span class="token punctuation">(</span><span class="token string">'weight'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre></div>
+<p><img src="https://velog.velcdn.com/images/corinthionia/post/97fdb5ac-1e73-4c6e-8419-eedd5ddb1f75/image.png" alt=""></p>
+<p>데이터를 표현하는 기준이 다르면 알고리즘이 올바르게 예측할 수 없다.
+<strong>데이터 전처리</strong>를 통해 특성값을 일정한 기준으로 맞춰 줘야 한다.</p>
+<p>가장 널리 사용하는 방법은 <strong>표준점수</strong>이다. 이는 평균에서 표준편차의 몇 배만큼 떨어져 있는지를 나타낸다.
+계산 방법은 평균을 빼고 표준편차를 나누면 된다.</p>
+<div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python">mean <span class="token operator">=</span> np<span class="token punctuation">.</span>mean<span class="token punctuation">(</span>train_input<span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span>
+std <span class="token operator">=</span> np<span class="token punctuation">.</span>std<span class="token punctuation">(</span>train_input<span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span></code></pre></div>
+<p><code class="language-text">axis=0</code>을 하면 행을 따라 각 열의 통계값을 계산한다.</p>
+<p>넘파이는 <code class="language-text">브로드캐스팅</code> 기능을 제공한다.</p>
+<div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python">train_scaled <span class="token operator">=</span> <span class="token punctuation">(</span>train_input <span class="token operator">-</span> mean<span class="token punctuation">)</span> <span class="token operator">/</span> std</code></pre></div>
+<h3>전처리 데이터로 모델 훈련하기</h3>
+<p>다시 산점도를 그려 보자.</p>
+<div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python">plt<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>train_scaled<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> train_scaled<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span><span class="token number">25</span><span class="token punctuation">,</span> <span class="token number">150</span><span class="token punctuation">,</span> marker<span class="token operator">=</span><span class="token string">'^'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>xlabel<span class="token punctuation">(</span><span class="token string">'length'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>ylabel<span class="token punctuation">(</span><span class="token string">'weight'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre></div>
+<p><img src="https://velog.velcdn.com/images/corinthionia/post/25ce2d00-24c6-4d94-8bbd-26ff0199cadd/image.png" alt="">
+위와 같은 결과가 일어나는 게 당연하다… 샘플 데이터도 mean, std를 이용해 변환해야 한다.
+아래와같이 코드를 수정해 보자.</p>
+<div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python">new <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">25</span><span class="token punctuation">,</span> <span class="token number">150</span><span class="token punctuation">]</span> <span class="token operator">-</span> mean<span class="token punctuation">)</span> <span class="token operator">/</span> std
+plt<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>train_scaled<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> train_scaled<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>new<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> new<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> marker<span class="token operator">=</span><span class="token string">'^'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>xlabel<span class="token punctuation">(</span><span class="token string">'length'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>ylabel<span class="token punctuation">(</span><span class="token string">'weight'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre></div>
+<p><img src="https://velog.velcdn.com/images/corinthionia/post/5e7c903d-c63f-4899-8029-60814e1b6ac9/image.png" alt=""></p>
+<p>이제 x와 y의 스케일이 같아졌으므로 k-최근접 이웃 모델을 다시 훈련해 보자.
+여기서 주의할 점은, <strong>테스트 세트도 훈련 세트의 평균과 표준편차로 변환해야 한다는 것이다.</strong>
+훈련 후 테스트 세트를 평가할 때에는 훈련 세트의 기준으로 테스트 세트를 변환해야 같은 스케일로 산점도를 그릴 수 있기 때문이다.</p>
+<div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python">test_scaled <span class="token operator">=</span> <span class="token punctuation">(</span>test_input <span class="token operator">-</span> mean<span class="token punctuation">)</span> <span class="token operator">/</span> std
+kn<span class="token punctuation">.</span>score<span class="token punctuation">(</span>test_scaled<span class="token punctuation">,</span> test_target<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>kn<span class="token punctuation">.</span>predict<span class="token punctuation">(</span><span class="token punctuation">[</span>new<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre></div>
+<p>드디어!! 도미(1)로 예측에 성공했다.
+산점도를 다시 그려 보자.</p>
+<div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python">distances<span class="token punctuation">,</span> indexes <span class="token operator">=</span> kn<span class="token punctuation">.</span>kneighbors<span class="token punctuation">(</span><span class="token punctuation">[</span>new<span class="token punctuation">]</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>train_scaled<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> train_scaled<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>new<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> new<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> marker<span class="token operator">=</span><span class="token string">'^'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>train_scaled<span class="token punctuation">[</span>indexes<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> train_scaled<span class="token punctuation">[</span>indexes<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> marker<span class="token operator">=</span><span class="token string">'D'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>xlabel<span class="token punctuation">(</span><span class="token string">'length'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>ylabel<span class="token punctuation">(</span><span class="token string">'weight'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre></div>
+<p><img src="https://velog.velcdn.com/images/corinthionia/post/6ed12652-aea6-4ab9-bd3c-e5cd3a9995ec/image.png" alt=""></p>
+<h3>스케일이 다른 특성 처리</h3>
+<p>특성의 스케일을 조정하는 방법은 표준점수 외에도 많지만, 대부분 표준점수를 활용한다.
+데이터 전처리 과정에서 중요한 점은, <strong>훈련 세트를 변환한 방식 그대로 테스트 세트도 변환해야 한다는 것이다.</strong></p>
+<hr>
+<h1>3주차</h1>
+<h2>3-1. k-최근접 이웃 회귀</h2>
+<h3>지도학습 알고리즘</h3>
+<ul>
+<li>분류 (2장)</li>
+<li>회귀 (3장)</li>
+</ul>
+<h3>k-최근접 이웃 회귀</h3>
+<ul>
+<li>회귀(regression): 두 변수 사이의 상관관계를 분석하는 방법 (임의의 숫자를 예측)</li>
+<li>예측하려는 샘플에 가장 가까운 샘플 k개를 선택</li>
+<li>타깃을 예측하는 가장 간단한 방법은 <strong>평균 구하기</strong></li>
+</ul>
+<h3>실습</h3>
+<ul>
+<li>(Remind) 사이킷런에 사용할 훈련 세트는 2차원 배열이어야 함</li>
+<li>넘파이의 <code class="language-text">reshape()</code> 메서드를 사용하면 배열의 크기를 바꿀 수 있음</li>
+<li><code class="language-text">reshape(-1, 1)</code>과같이 사용하면 배열의 전체 원소 개수를 외울 필요가 없음</li>
+</ul>
+<div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python">test_array <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>test_array<span class="token punctuation">.</span>shape<span class="token punctuation">)</span> <span class="token comment"># (4,)</span>
+
+test_array <span class="token operator">=</span> test_array<span class="token punctuation">.</span>reshape<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>test_array<span class="token punctuation">.</span>shape<span class="token punctuation">)</span></code></pre></div>
+<div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python">train_input <span class="token operator">=</span> train_input<span class="token punctuation">.</span>reshape<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+test_input <span class="token operator">=</span> test_input<span class="token punctuation">.</span>reshape<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>train_input<span class="token punctuation">.</span>shape<span class="token punctuation">,</span> test_input<span class="token punctuation">.</span>shape<span class="token punctuation">)</span></code></pre></div>
+<h3>결정계수(R²)</h3>
+<ul>
+<li>회귀는 결정계수 값으로 평가함</li>
+<li>R² = 1- ((타깃-예측)^2 의 합) / ((타깃-평균)^2 의 합)</li>
+<li><code class="language-text">mean_absolute_error</code>는 타깃과 예측의 절댓값 오차를 평균하여 반환</li>
+</ul>
+<div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python"><span class="token comment"># 타깃과 예측한 값 사이의 차이 구해 보기</span>
+
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>metrics <span class="token keyword">import</span> mean_absolute_error
+
+<span class="token comment"># 테스트 세트에 대한 예측을 만듦</span>
+test_prediction <span class="token operator">=</span> knr<span class="token punctuation">.</span>predict<span class="token punctuation">(</span>test_input<span class="token punctuation">)</span>
+
+<span class="token comment"># 테스트 세트에 대한 평균 절댓값 오차를 계산</span>
+mae <span class="token operator">=</span> mean_absolute_error<span class="token punctuation">(</span>test_target<span class="token punctuation">,</span> test_prediction<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>mae<span class="token punctuation">)</span></code></pre></div>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token number">19.157142857142862</span></code></pre></div>
+<p>즉, 19g 정도 타깃값과 다르다는 것!</p>
+<h3>과대적합 vs. 과소적합</h3>
+<ul>
+<li>훈련 세트에 <strong>과대적합</strong>: 훈련 세트에 비해 테스트 세트에서의 점수가 낮을 경우</li>
+<li>훈련 세트에 <strong>과소적합</strong>: 훈련 세트보다 테스트 세트의 점수가 높거나 둘다 낮은 경우</li>
+<li>과소적합은 훈련 세트와 테스트 세트의 크기가 작은 경우 발생할 수 있음 -> 모델을 복잡하게 만들어야 함 -> k-최근접 이웃의 경우 k값을 줄임</li>
+<li>과대적합은 모델을 덜 복잡하게 만들어야 함 -> k-최근접 이웃의 경우 k값을 늘림</li>
+</ul>
+<div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python"><span class="token comment"># 이웃의 개수를 3으로 설정</span>
+knr<span class="token punctuation">.</span>n_neighbors <span class="token operator">=</span> <span class="token number">3</span>
+
+<span class="token comment"># 모델을 다시 훈련</span>
+knr<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>train_input<span class="token punctuation">,</span> train_target<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>knr<span class="token punctuation">.</span>score<span class="token punctuation">(</span>train_input<span class="token punctuation">,</span> train_target<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># 훈련 세트의 R² 점수</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>knr<span class="token punctuation">.</span>score<span class="token punctuation">(</span>test_input<span class="token punctuation">,</span> test_target<span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># 테스트 세트의 R² 점수</span></code></pre></div>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token number">0.9804899950518966</span>
+<span class="token number">0.9746459963987609</span></code></pre></div>
+<p>테스트 세트의 점수가 훈련 세트보다 낮아졌으므로 <strong>과소적합 문제가 해결됨!</strong></p>
+<h3>회귀 문제 다루기</h3>
+<ul>
+<li>사이킷런은 회귀 모델의 점수로 R²(결정계수) 값을 반환하고, 이 값은 1에 가까울수록 좋음</li>
+<li>정량적인 평가를 위해 절댓값 오차를 사용할 수도 있음</li>
+<li>훈련 세트와 테스트 세트의 평가점수 차이가 크면 좋지 않음</li>
+</ul>
+<h2>3-2. 선형 회귀</h2>
+<h3>k-최근접 이웃의 한계</h3>
+<ul>
+<li>k-최근접 이웃 회귀는 가장 가까운 샘플을 찾아 타깃의 평균을 내기 때문에 새로운 샘플이 훈련 세트의 범위를 벗어나면 엉뚱한 값으로 예측할 수 있음</li>
+</ul>
+<h3>선형 회귀</h3>
+<ul>
+<li>특성이 하나인 경우, 그 특성을 잘 나타내는 직선을 학습하는 알고리즘</li>
+<li>사이킷런의 <code class="language-text">LinearRegression</code> 클래스로 선형회귀 알고리즘을 사용할 수 있음</li>
+<li>직선의 기울기와 절편은 <code class="language-text">lr</code> 객체의 <code class="language-text">coef_</code>와 <code class="language-text">intercept_</code> 속성으로 확인할 수 있음</li>
+<li>직선의 기울기와 절편은 ‘모델 파라미터’라 하고, 머신러닝 알고리즘의 훈련 과정은 최적의 모델 파라미터를 찾는 것이라고 할 수 있다. 이를 모델 기반 학습이라고 부른다.</li>
+</ul>
+<div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>linear_model <span class="token keyword">import</span> LinearRegression
+lr <span class="token operator">=</span> LinearRegression<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 선형회귀 모델을 훈련</span>
+lr<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>train_input<span class="token punctuation">,</span> train_target<span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>lr<span class="token punctuation">.</span>predict<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">50</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre></div>
+<div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>lr<span class="token punctuation">.</span>coef_<span class="token punctuation">,</span> lr<span class="token punctuation">.</span>intercept_<span class="token punctuation">)</span> <span class="token comment"># [39.01714496] -709.0186449535477</span></code></pre></div>
+<p>농어의 길이 15에서 50까지 직선으로 그려 보자.
+앞에서 구한 기울기와 절편을 사용하여 (15, 15<em>39-709), (50, 50</em>39-709) 두 점을 이으면 된다.</p>
+<div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python">plt<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>train_input<span class="token punctuation">,</span> train_target<span class="token punctuation">)</span>
+
+<span class="token comment"># 15에서 50까지 1차 방정식 그래프 그리기</span>
+plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">15</span><span class="token operator">*</span>lr<span class="token punctuation">.</span>coef_ <span class="token operator">+</span> lr<span class="token punctuation">.</span>intercept_<span class="token punctuation">,</span> <span class="token number">50</span><span class="token operator">*</span>lr<span class="token punctuation">.</span>coef_ <span class="token operator">+</span> lr<span class="token punctuation">.</span>intercept_<span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+plt<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">,</span> <span class="token number">1241.8</span><span class="token punctuation">,</span> marker<span class="token operator">=</span><span class="token string">'^'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>xlabel<span class="token punctuation">(</span><span class="token string">'length'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>ylabel<span class="token punctuation">(</span><span class="token string">'weight'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre></div>
+<p><img src="https://velog.velcdn.com/images/corinthionia/post/b23d1e64-0a6d-4c14-ac78-9f424102ee6b/image.png" alt=""></p>
+<div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>lr<span class="token punctuation">.</span>score<span class="token punctuation">(</span>train_input<span class="token punctuation">,</span> train_target<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>lr<span class="token punctuation">.</span>score<span class="token punctuation">(</span>test_input<span class="token punctuation">,</span> test_target<span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre></div>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token number">0.939846333997604</span>
+<span class="token number">0.8247503123313558</span></code></pre></div>
+<p>훈련 세트의 점수도 높지 않기 때문에 전체적으로 과소적합되었다 할 수 있음
+현재 그려진 그래프도 데이터를 대표한다고 볼 수는 없음</p>
+<h3>다항 회귀</h3>
+<ul>
+<li>최적의 곡선 찾기</li>
+<li>길이를 제곱한 항을 훈련 세트에 추가해야 함 -> 넘파이 <code class="language-text">column_stack()</code> 사용</li>
+<li>타깃 값은 제곱 항 추가하지 않고 그대로 사용</li>
+</ul>
+<div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python">point <span class="token operator">=</span> np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">)</span>
+
+plt<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>train_input<span class="token punctuation">,</span> train_target<span class="token punctuation">)</span>
+
+plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>point<span class="token punctuation">,</span> <span class="token number">1.01</span><span class="token operator">*</span>point<span class="token operator">**</span><span class="token number">2</span> <span class="token operator">-</span> <span class="token number">21.6</span><span class="token operator">*</span>point <span class="token operator">+</span> <span class="token number">116.05</span><span class="token punctuation">)</span>
+
+plt<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">,</span> <span class="token number">1574</span><span class="token punctuation">,</span> marker<span class="token operator">=</span><span class="token string">'^'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>xlabel<span class="token punctuation">(</span><span class="token string">'length'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>ylabel<span class="token punctuation">(</span><span class="token string">'weight'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre></div>
+<p><img src="https://velog.velcdn.com/images/corinthionia/post/bc6ac3a0-aa4d-4c4c-b0dc-d468cd86c044/image.png" alt=""></p>
+<p>평가해 보면 여전히 과소적합…
+다음 장에 이어서…</p>
+<h2>3-3. 특성 공학과 규제</h2>
+<h3>다중 회귀</h3>
+<ul>
+<li>여러 개의 특성을 사용한 선형회귀</li>
+<li>선형회귀는 특성이 많을수록 효과가 더 좋음! - 사이킷런의 <code class="language-text">PolynomialFeatures</code> 클래스 사용</li>
+<li><strong>특성공학</strong>: 기존의 특성을 사용해 새로운 특성을 뽑아내는 작업</li>
+</ul>
+<h3>데이터 준비</h3>
+<ul>
+<li>데이터 분석 라이브러리인 판다스 사용 - <code class="language-text">.csv</code> 파일</li>
+<li><code class="language-text">.csv</code> 파일을 판다스 데이터프레임에 저장하고, 넘파이 배열로 변환하여 선형 회귀 모델을 훈련해 보자.</li>
+</ul>
+<div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+
+df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'https://bit.ly/perch_csv_data'</span><span class="token punctuation">)</span>
+perch_full <span class="token operator">=</span> df<span class="token punctuation">.</span>to_numpy<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>perch_full<span class="token punctuation">)</span></code></pre></div>
+<h3>사이킷런의 변환기</h3>
+<ul>
+<li><strong>변환기</strong>: 특성을 만들거나 전처리하기 위한 클래스 - <code class="language-text">fit()</code>, <code class="language-text">transform()</code> 메서드 제공</li>
+<li>우리가 사용할 변환기는 사이킷런의 <code class="language-text">PolynomialFeatures</code> 클래스</li>
+<li>훈련을 해야 변환이 가능하기 때문에 <code class="language-text">fit()</code>, <code class="language-text">transform()</code> 메서드를 차례대로 호출</li>
+<li><code class="language-text">PolynomialFeatures</code> 클래스는 각 특성을 제곱한 항을 추가하고 특성끼리 서로 곱한 항을 추가함</li>
+</ul>
+<div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>preprocessing <span class="token keyword">import</span> PolynomialFeatures
+
+poly <span class="token operator">=</span> PolynomialFeatures<span class="token punctuation">(</span>include_bias<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+poly<span class="token punctuation">.</span>fit<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>poly<span class="token punctuation">.</span>transform<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre></div>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">2</span>. <span class="token number">3</span>. <span class="token number">4</span>. <span class="token number">6</span>. <span class="token number">9</span>.<span class="token punctuation">]</span><span class="token punctuation">]</span></code></pre></div>
+<h3>다중 회귀 모델 훈련하기</h3>
+<ul>
+<li>특성이 늘어나면 선형회귀의 능력이 매우 강하다는 것을 알 수 있음</li>
+<li><code class="language-text">PolynomialFeatures</code> 클래스의 <code class="language-text">degree</code> 매개변수를 사용하여 고차항의 최대 차수를 지정할 수 있음</li>
+</ul>
+<div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python">poly <span class="token operator">=</span> PolynomialFeatures<span class="token punctuation">(</span>degree<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">,</span> include_bias<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+
+poly<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>train_input<span class="token punctuation">)</span>
+
+train_poly <span class="token operator">=</span> poly<span class="token punctuation">.</span>transform<span class="token punctuation">(</span>train_input<span class="token punctuation">)</span>
+test_poly <span class="token operator">=</span> poly<span class="token punctuation">.</span>transform<span class="token punctuation">(</span>test_input<span class="token punctuation">)</span>
+
+lr<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>train_poly<span class="token punctuation">,</span> train_target<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>lr<span class="token punctuation">.</span>score<span class="token punctuation">(</span>train_poly<span class="token punctuation">,</span> train_target<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># 0.9999999999991097</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>lr<span class="token punctuation">.</span>score<span class="token punctuation">(</span>test_poly<span class="token punctuation">,</span> test_target<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># -144.40579242684848</span></code></pre></div>
+<p>왜 음수가 나왔을까?
+특성의 개수를 늘리면 선형모델은 강력해지지만 훈련 세트에 과대적합 되므로 테스트 세트에서는 형편없는 점수가 나온다. 이 문제를 해결하기 위해서는 특성의 개수를 줄이거나 <strong>규제</strong>를 사용할 수 있다.</p>
+<h3>규제</h3>
+<ul>
+<li>머신러닝 모델이 훈련 세트를 과도하게 학습하지 못하도록 방해하는 것을 말함. 즉, 모델이 훈련 세트에 과대적합되지 않게 함.</li>
+<li>선형회귀 모델의 경우 특성에 곱해지는 계수의 크기를 작게 만드는 것</li>
+<li>규제를 적용하기 전에 <strong>정규화</strong> 과정을 먼저 거쳐야 함 - 사이킷런의 <code class="language-text">StandardScaler</code> 클래스 사용</li>
+<li>(Remind) 훈련 세트로 학습한 변환기를 사용해 테스트 세트까지 변환해야 함!!</li>
+</ul>
+<div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>preprocessing <span class="token keyword">import</span> StandardScaler
+
+ss <span class="token operator">=</span> StandardScaler<span class="token punctuation">(</span><span class="token punctuation">)</span>
+ss<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>train_poly<span class="token punctuation">)</span>
+
+train_scaled <span class="token operator">=</span> ss<span class="token punctuation">.</span>transform<span class="token punctuation">(</span>train_poly<span class="token punctuation">)</span>
+test_scaled <span class="token operator">=</span> ss<span class="token punctuation">.</span>transform<span class="token punctuation">(</span>test_poly<span class="token punctuation">)</span></code></pre></div>
+<h3>릿지(Ridge) 회귀</h3>
+<ul>
+<li>선형회귀모델에 계수를 제곱한 값을 기준으로 규제를 추가한 모델</li>
+<li>alpha 매개변수로 규제의 강도를 조절 - 이때의 alpha 값은 하이퍼파라미터!</li>
+<li>적절한 알파값은 알파값에 대한 R² 값의 그래프를 그려 보면 된다. 훈련 세트와 테스트 세트의 점수가 가장 가까운 지점이 최적의 알파 값!</li>
+</ul>
+<div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python"><span class="token comment"># alpha 값을 0.001에서 100까지 10배씩 늘려가며 릿지 회귀모델 훈련</span>
+
+<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+
+train_score <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+test_score <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+alpha_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0.001</span><span class="token punctuation">,</span> <span class="token number">0.01</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">]</span>
+
+<span class="token keyword">for</span> alpha <span class="token keyword">in</span> alpha_list<span class="token punctuation">:</span>
+  ridge <span class="token operator">=</span> Ridge<span class="token punctuation">(</span>alpha<span class="token operator">=</span>alpha<span class="token punctuation">)</span>
+  ridge<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>train_scaled<span class="token punctuation">,</span> train_target<span class="token punctuation">)</span>
+
+  train_score<span class="token punctuation">.</span>append<span class="token punctuation">(</span>ridge<span class="token punctuation">.</span>score<span class="token punctuation">(</span>train_scaled<span class="token punctuation">,</span> train_target<span class="token punctuation">)</span><span class="token punctuation">)</span>
+  test_score<span class="token punctuation">.</span>append<span class="token punctuation">(</span>ridge<span class="token punctuation">.</span>score<span class="token punctuation">(</span>test_scaled<span class="token punctuation">,</span> test_target<span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre></div>
+<p>그래프를 그려 보자.</p>
+<div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python">plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>np<span class="token punctuation">.</span>log10<span class="token punctuation">(</span>alpha_list<span class="token punctuation">)</span><span class="token punctuation">,</span> train_score<span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>np<span class="token punctuation">.</span>log10<span class="token punctuation">(</span>alpha_list<span class="token punctuation">)</span><span class="token punctuation">,</span> test_score<span class="token punctuation">)</span>
+
+plt<span class="token punctuation">.</span>xlabel<span class="token punctuation">(</span><span class="token string">'alpha'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>ylabel<span class="token punctuation">(</span><span class="token string">'R²'</span><span class="token punctuation">)</span>
+
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre></div>
+<p><img src="https://velog.velcdn.com/images/corinthionia/post/a553dfeb-ec9d-4201-8969-271d05c50c4b/image.png" alt="">
+훈련 세트와 테스트 세트의 점수 차이가 크다!!
+적절한 알파 값은 두 그래프가 가장 가깝고 테스트 세트의 점수가 가장 높은 -1, 즉 10^(-1)이므로 0.1이다.</p>
+<p>이후 알파 값 0.1로 최종 모델을 훈련해 보면 과대적합과 과소적합 사이에서 균형을 맞추고 있다!</p>
+<h3>라쏘(Lasso) 회귀</h3>
+<ul>
+<li>선형회귀모델에 계수의 절댓값을 기준으로 규제를 적용한 모델</li>
+<li>Ridge 클래스를 Lasso 클래스로 바꾸면 라쏘 모델 훈련이 가능함</li>
+<li>라쏘 모델은 유용한 특성을 골라내는 용도로도 사용할 수 있음</li>
+</ul>
+<div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>linear_model <span class="token keyword">import</span> Lasso
+
+lasso <span class="token operator">=</span> Lasso<span class="token punctuation">(</span><span class="token punctuation">)</span>
+lasso<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>train_scaled<span class="token punctuation">,</span> train_target<span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>lasso<span class="token punctuation">.</span>score<span class="token punctuation">(</span>train_scaled<span class="token punctuation">,</span> train_target<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># 0.989789897208096</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>lasso<span class="token punctuation">.</span>score<span class="token punctuation">(</span>test_scaled<span class="token punctuation">,</span> test_target<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># 0.9800593698421883</span></code></pre></div>
+<p>과대적합을 잘 억제한 결과를 보여준다!
+라쏘 모델도 알파 매개변수로 규제의 강도를 조절할 수 있다.</p>
+<div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python">train_score <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+test_score <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+alpha_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0.001</span><span class="token punctuation">,</span> <span class="token number">0.01</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">]</span>
+
+<span class="token keyword">for</span> alpha <span class="token keyword">in</span> alpha_list<span class="token punctuation">:</span>
+  lasso <span class="token operator">=</span> Lasso<span class="token punctuation">(</span>alpha<span class="token operator">=</span>alpha<span class="token punctuation">,</span> max_iter<span class="token operator">=</span><span class="token number">10000</span><span class="token punctuation">)</span>
+  lasso<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>train_scaled<span class="token punctuation">,</span> train_target<span class="token punctuation">)</span>
+
+  train_score<span class="token punctuation">.</span>append<span class="token punctuation">(</span>lasso<span class="token punctuation">.</span>score<span class="token punctuation">(</span>train_scaled<span class="token punctuation">,</span> train_target<span class="token punctuation">)</span><span class="token punctuation">)</span>
+  test_score<span class="token punctuation">.</span>append<span class="token punctuation">(</span>lasso<span class="token punctuation">.</span>score<span class="token punctuation">(</span>test_scaled<span class="token punctuation">,</span> test_target<span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre></div>
+<p>그래프를 그려 보면 왼쪽은 과대적합이고, 오른쪽으로 갈수록 격차가 줄어들고 있다.
+라쏘 모델에서 최적의 알파 값은 1, 즉 10^1이므로 10이다.
+<img src="https://velog.velcdn.com/images/corinthionia/post/45dd982a-20be-4613-8da7-f3a14201b847/image.png" alt=""></p>
+<p>모델을 다시 훈련해 보자.</p>
+<div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python">lasso <span class="token operator">=</span> Lasso<span class="token punctuation">(</span>alpha<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">)</span>
+lasso<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>train_scaled<span class="token punctuation">,</span> train_target<span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>lasso<span class="token punctuation">.</span>score<span class="token punctuation">(</span>train_scaled<span class="token punctuation">,</span> train_target<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># 0.9888067471131867</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>lasso<span class="token punctuation">.</span>score<span class="token punctuation">(</span>test_scaled<span class="token punctuation">,</span> test_target<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># 0.9824470598706695</span></code></pre></div>
+<p>모델이 잘 훈련되었다! 과대적합을 잘 억제하고 테스트의 성능을 크게 높였다.</p>
+<hr>
+<h1>4주차</h1>
+<h2>로지스틱 회귀</h2>
+<h3>로지스틱 회귀</h3>
+<ul>
+<li>로지스틱 회귀는 회귀 모델이 아닌 <strong>분류 모델</strong></li>
+<li>시그모이드 함수의 범위는 0~1</li>
+<li>이진분류의 경우 시그모이드 함수의 출력이 0.5보다 크면 양성, 작으면 음성 클래스로 판단한다.</li>
+</ul>
+<div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python"><span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+
+z <span class="token operator">=</span> np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">)</span>
+phi <span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">/</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">+</span> np<span class="token punctuation">.</span>exp<span class="token punctuation">(</span><span class="token operator">-</span>z<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>z<span class="token punctuation">,</span> phi<span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>xlabel<span class="token punctuation">(</span><span class="token string">'z'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>ylabel<span class="token punctuation">(</span><span class="token string">'phi'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre></div>
+<p><img src="https://velog.velcdn.com/images/corinthionia/post/3950f585-3b21-4c61-957b-0d35d997e1b0/image.png" alt=""></p>
+<h3>로지스틱 회귀로 다중 분류 수행하기</h3>
+<ul>
+<li>반복적인 알고리즘 사용 (<code class="language-text">max_iter</code> 매개변수로 반복 횟수 지정)</li>
+<li>L2규제: 릿지 회귀와 같이 계수의 제곱을 규제</li>
+<li>이진분류에서는 시그모이드 함수를 사용하고, 다중분류는 소프트맥스 함수를 사용한다.</li>
+<li>다중분류일 경우에는 클래스 개수만큼 방정식을 훈련하고, 각 출력값을 소프트맥스 함수를 통과시켜 전체 클래스에 대한 합이 항상 1이 되도록 만든다. 이 값은 각 클래스에 대한 확률로 이해할 수 있다.</li>
+</ul>
+<div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python"><span class="token keyword">from</span> scipy<span class="token punctuation">.</span>special <span class="token keyword">import</span> softmax
+
+proba <span class="token operator">=</span> softmax<span class="token punctuation">(</span>decision<span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span><span class="token builtin">round</span><span class="token punctuation">(</span>proba<span class="token punctuation">,</span> decimals<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre></div>
+<h2>확률적 경사 하강법</h2>
+<h3>점진적인 학습</h3>
+<ul>
+<li>확률적 경사 하강법: 대표적인 점진적 학습 알고리즘 - 가장 가파른 경사를 따라 원하는 지점에 도달하는 것이 목표!</li>
+<li>에포크: 경사 하강법에서 훈련 세트를 한 번 모두 사용하는 과정</li>
+<li>미니배치 경사 하강법: 여러 개의 샘플을 이용해 경사 하강법을 수행하는 방식</li>
+<li>배치 경사 하강법: 전체 샘플을 사용해 경사 하강법을 수행하는 방식</li>
+<li>손실 함수: 문제에서 머신러닝 알고리즘이 얼마나 엉터리인지 측정하는 기준 (작을수록 좋다)</li>
+</ul>
+<h3>로지스틱 손실 함수</h3>
+<ul>
+<li>이진 크로스엔트로피 손실 함수</li>
+<li>로지스틱 손실 함수를 사용하면 로지스틱 회귀 모델이 만들어짐</li>
+<li>이진분류는 로지스틱 손실함수를 사용하고 다중분류는 크로스 엔트로피 손실함수를 사용!</li>
+</ul>
+<h3>SGDClassifier</h3>
+<ul>
+<li>일정 에포크 동안 성능이 향상되지 않으면 자동으로 멈춘다.</li>
+<li>loss 매개변수의 기본값은 ‘hinge’이다.</li>
+<li>힌지손실(hinge loss)은 서포트 벡터 머신이라는 머신러닝 알고리즘을 위한 손실 함수이다.</li>
+</ul>
+<div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>linear_model <span class="token keyword">import</span> SGDClassifier
+
+sc <span class="token operator">=</span> SGDClassifier<span class="token punctuation">(</span>loss<span class="token operator">=</span><span class="token string">'log'</span><span class="token punctuation">,</span> max_iter<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">,</span> random_state<span class="token operator">=</span><span class="token number">42</span><span class="token punctuation">)</span>
+sc<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>train_scaled<span class="token punctuation">,</span> train_target<span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>sc<span class="token punctuation">.</span>score<span class="token punctuation">(</span>train_scaled<span class="token punctuation">,</span> train_target<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>sc<span class="token punctuation">.</span>score<span class="token punctuation">(</span>test_scaled<span class="token punctuation">,</span> test_target<span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre></div>
+<p>모델을 1 에포크씩 이어서 훈련할 때에는 <code class="language-text">partial_fit()</code> 메서드 사용</p>
+<div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python">sc<span class="token punctuation">.</span>partial_fit<span class="token punctuation">(</span>train_scaled<span class="token punctuation">,</span> train_target<span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>sc<span class="token punctuation">.</span>score<span class="token punctuation">(</span>train_scaled<span class="token punctuation">,</span> train_target<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>sc<span class="token punctuation">.</span>score<span class="token punctuation">(</span>test_scaled<span class="token punctuation">,</span> test_target<span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre></div>
+<p>결과를 보면 점수가 향상됨!!
+그럼 이 모델을 여러 번 훈련해 볼 필요가 있는데, 반복 횟수는 어떻게 정할까?</p>
+<h3>에포크와 과대/과소 적합</h3>
+<ul>
+<li>에포크가 진행됨에 따라 모델의 정확도를 나타내는 그래프를 그려 보면 테스트 세트 점수는 어느 순간 감소하기 시작하는데, 바로 이 지점이 모델이 과대적합되기 시작하는 곳이다.</li>
+<li>조기 종료: 과대적합이 시작하기 전에 훈련을 멈추는 것</li>
+</ul>
+<div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python">train_score <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+test_score <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+classes <span class="token operator">=</span> np<span class="token punctuation">.</span>unique<span class="token punctuation">(</span>train_target<span class="token punctuation">)</span>
+
+<span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">300</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+  sc<span class="token punctuation">.</span>partial_fit<span class="token punctuation">(</span>train_scaled<span class="token punctuation">,</span> train_target<span class="token punctuation">,</span> classes<span class="token operator">=</span>classes<span class="token punctuation">)</span>
+  train_score<span class="token punctuation">.</span>append<span class="token punctuation">(</span>sc<span class="token punctuation">.</span>score<span class="token punctuation">(</span>train_scaled<span class="token punctuation">,</span> train_target<span class="token punctuation">)</span><span class="token punctuation">)</span>
+  test_score<span class="token punctuation">.</span>append<span class="token punctuation">(</span>sc<span class="token punctuation">.</span>score<span class="token punctuation">(</span>test_scaled<span class="token punctuation">,</span> test_target<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>train_score<span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>test_score<span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>xlabel<span class="token punctuation">(</span><span class="token string">'epoch'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>ylabel<span class="token punctuation">(</span><span class="token string">'accuracy'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre></div>
+<p><img src="https://velog.velcdn.com/images/corinthionia/post/7c2da6eb-7ef0-4e13-a9d8-769bc91f8f7f/image.png" alt="">
+그래프를 보면 100번째 에포크 이후에 훈련세트와 테스트세트의 점수가 벌어지고 있다 => 100번째 에포크가 적절한 반복횟수로 보인다!
+그럼 반복횟수를 100에 맞추고 다시 훈련해 보자.</p>
+<div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python">sc <span class="token operator">=</span> SGDClassifier<span class="token punctuation">(</span>loss<span class="token operator">=</span><span class="token string">'log'</span><span class="token punctuation">,</span> max_iter<span class="token operator">=</span><span class="token number">100</span><span class="token punctuation">,</span> tol<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> random_state<span class="token operator">=</span><span class="token number">42</span><span class="token punctuation">)</span>
+sc<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>train_scaled<span class="token punctuation">,</span> train_target<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>sc<span class="token punctuation">.</span>score<span class="token punctuation">(</span>train_scaled<span class="token punctuation">,</span> train_target<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>sc<span class="token punctuation">.</span>score<span class="token punctuation">(</span>test_scaled<span class="token punctuation">,</span> test_target<span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre></div>
+<p>훈련세트와 테스트세트에서의 정확도 점수가 비교적 높게 나왔다!
+힌지손실(hinge loss)은 서포트 벡터 머신이라는 머신러닝 알고리즘을 위한 손실 함수이다.</p>
+<div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python">c <span class="token operator">=</span> SGDClassifier<span class="token punctuation">(</span>loss<span class="token operator">=</span><span class="token string">'hinge'</span><span class="token punctuation">,</span> max_iter<span class="token operator">=</span><span class="token number">100</span><span class="token punctuation">,</span> tol<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> random_state<span class="token operator">=</span><span class="token number">42</span><span class="token punctuation">)</span>
+sc<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>train_scaled<span class="token punctuation">,</span> train_target<span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>sc<span class="token punctuation">.</span>score<span class="token punctuation">(</span>train_scaled<span class="token punctuation">,</span> train_target<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>sc<span class="token punctuation">.</span>score<span class="token punctuation">(</span>test_scaled<span class="token punctuation">,</span> test_target<span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre></div></div><style data-emotion="css 1hq9qwd">.css-1hq9qwd{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;width:700px;margin:0 auto;}@media (max-width: 700px){.css-1hq9qwd{width:100%;padding:0 20px;}}</style><div class="css-1hq9qwd ektx26m1"><style data-emotion="css 1e5obih">.css-1e5obih{width:100%;height:3px;margin:24px auto;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;background-image:linear-gradient(60deg, #c9eb74 0%, #f9c5b4 100%);}@media (max-width: 700px){.css-1e5obih{width:90%;}}</style><div class="css-1e5obih ektx26m0"></div><style data-emotion="css ahipxt">.css-ahipxt{width:100%;height:160px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;padding:0 12px;}@media (max-width: 700px){.css-ahipxt{margin:0 auto;height:140px;margin-top:28px;}}</style><div class="css-ahipxt ez985q03"><style data-emotion="css ycrgzu">.css-ycrgzu{width:280px;}@media (max-width: 700px){.css-ycrgzu{width:200px;}}</style><img src="https://user-images.githubusercontent.com/79887293/223732205-a4d37ab0-fd70-48a1-8f54-c847186d92fd.png" alt="corinthionia" class="css-ycrgzu ez985q02"/><style data-emotion="css 1b1qs3d">.css-1b1qs3d{height:100px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;}@media (max-width: 700px){.css-1b1qs3d{height:88px;}}</style><div class="css-1b1qs3d ez985q01"><style data-emotion="css mmdt3g">.css-mmdt3g{font-size:14px;}</style><span class="css-mmdt3g ez985q00">💞 Good vibes only</span><span class="css-mmdt3g ez985q00">☁️ 끊임없이 ‘더 좋은 방식’에 대해 고민합니다</span><span class="css-mmdt3g ez985q00">🚀 새로운 것을 배우고 도전하는 것을 좋아합니다</span><span class="css-mmdt3g ez985q00">🌙 능동적인 사고를 통한 성장을 위해 노력합니다</span></div></div></div><style data-emotion="css 1nyvpd4">.css-1nyvpd4{margin-top:32px;}@media (max-width: 700px){.css-1nyvpd4{padding:0 20px;}}</style><div class="css-1nyvpd4 e1a396vf0"></div><style data-emotion="css mn5ggv">.css-mn5ggv{height:75px;margin-top:15px;color:#555555;font-size:13px;text-align:center;}</style><footer class="css-mn5ggv e1miuhne0">© Joohyun Kim (김주현) Corinthionia</footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script async="" src="https://www.googletagmanager.com/gtag/js?id=undefined"></script><script>
+      
+      
+      if(true) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'undefined', {"send_page_view":false});
+      }
+      </script><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/ml/ml-study/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+          <script
+            id="gatsby-chunk-mapping"
+          >
+            window.___chunkMapping="{\"app\":[\"/app-546c2f81d7df3102e49b.js\"],\"component---src-components-post-container-index-tsx\":[\"/component---src-components-post-container-index-tsx-0e6d6884472d362d7722.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-e40f79b47bf283236b0d.js\"],\"component---src-pages-blog-tsx\":[\"/component---src-pages-blog-tsx-5a5560542288664d7f05.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-fbebe81d36335ad8ea1e.js\"]}";
+          </script>
+        <script>window.___webpackCompilationHash="02ea759fdfc5047b0eb9";</script><script src="/webpack-runtime-c2d1ad4c6882d0ace1cd.js" async></script><script src="/framework-5f7279923341a0a06902.js" async></script><script src="/app-546c2f81d7df3102e49b.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
