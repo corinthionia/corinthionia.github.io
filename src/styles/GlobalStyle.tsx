@@ -2,7 +2,6 @@ import { Global, css } from '@emotion/react';
 
 const defaultStyle = css`
   @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-  /* @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap'); */
 
   @font-face {
     font-family: 'Pretendard';
@@ -30,7 +29,8 @@ const defaultStyle = css`
   html,
   body,
   #___gatsby {
-    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   a,
@@ -41,7 +41,7 @@ const defaultStyle = css`
   }
 `;
 
-const GlobalStyle = function () {
+const GlobalStyle = () => {
   return <Global styles={defaultStyle} />;
 };
 

@@ -17,19 +17,19 @@ const PostHeadWrapper = styled.header`
 
   width: 700px;
   margin: 0 auto;
-  margin-top: 64px;
   padding: 60px 24px 12px 0;
 
   @media (max-width: 700px) {
     width: 100%;
+    margin-top: 64px;
     padding: 40px 24px 12px 24px;
   }
 `;
 
 const Title = styled.div`
-  color: hotpink;
+  color: #fb83bf;
   font-size: 32px;
-  font-weight: 800;
+  font-weight: 600;
   line-height: 1.3;
 
   display: -webkit-box;

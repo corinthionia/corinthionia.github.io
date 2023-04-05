@@ -40,7 +40,6 @@ const ThumbnailItem = ({
 const Wrapper = styled(Link)`
   display: flex;
 
-  width: 96%;
   height: 200px;
   margin: 0 auto;
   overflow: hidden;
@@ -103,7 +102,7 @@ const Title = styled.div`
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 
-  color: #383838;
+  color: #575757;
   font-size: 22px;
   font-weight: 600;
   line-height: 1.4;

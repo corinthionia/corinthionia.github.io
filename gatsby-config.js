@@ -1,3 +1,7 @@
+// require('dotenv').config({
+//   path: `.env`,
+// });
+
 module.exports = {
   siteMetadata: {
     title: `corinthionia`,
@@ -10,18 +14,19 @@ module.exports = {
 
   plugins: [
     {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: ['G-DGYVBQXYF4'],
+        head: true,
+      },
+    },
+    {
       resolve: 'gatsby-plugin-typescript',
       options: {
         isTSX: true,
         allExtensions: true,
       },
     },
-    // {
-    //   resolve: 'gatsby-plugin-google-analytics',
-    //   options: {
-    //     trackingId: '',
-    //   },
-    // },
     {
       resolve: `gatsby-plugin-sharp`,
       options: {
@@ -32,7 +37,6 @@ module.exports = {
         },
       },
     },
-
     {
       resolve: 'gatsby-source-filesystem',
       options: {

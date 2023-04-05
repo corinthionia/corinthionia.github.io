@@ -1,29 +1,17 @@
 import styled from '@emotion/styled';
-import { GatsbyImage } from 'gatsby-plugin-image';
-import { ProfileImageProps } from 'types/bio';
 
-const Bio = ({ profileImage }: ProfileImageProps) => {
+const Bio = () => {
   return (
     <Wrapper>
-      <ProfileImage
-        image={profileImage}
-        alt="Profile image"
-        imgStyle={{ borderRadius: '40%' }}
+      <Name
+        src="https://user-images.githubusercontent.com/79887293/223732205-a4d37ab0-fd70-48a1-8f54-c847186d92fd.png"
+        alt="corinthionia"
       />
       <TextWrapper>
-        <Author>
-          Written by{' '}
-          <a href="https://github.com/corinthionia">
-            <AuthorName>@[Joohyun Kim]</AuthorName>
-          </a>
-        </Author>
-        <Introduction>
-          끊임없이 '더 나은 방법'에 대해 고민하며 능동적 성장을 추구합니다 💭
-        </Introduction>
-        <div>
-          <LinkText href="https://github.com/corinthionia">Github</LinkText>
-          <LinkText href="https://velog.io/@corinthionia">Velog</LinkText>
-        </div>
+        <Text>💞 Good vibes only</Text>
+        <Text>☁️ 끊임없이 ‘더 좋은 방식’에 대해 고민합니다</Text>
+        <Text>🚀 새로운 것을 배우고 도전하는 것을 좋아합니다</Text>
+        <Text>🌙 능동적인 사고를 통한 성장을 위해 노력합니다</Text>
       </TextWrapper>
     </Wrapper>
   );
@@ -31,116 +19,42 @@ const Bio = ({ profileImage }: ProfileImageProps) => {
 
 const Wrapper = styled.div`
   width: 100%;
-  height: 120px;
+  height: 160px;
 
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
   padding: 0 12px;
 
-  @media (max-width: 375px) {
-    padding: 0;
-    justify-content: space-between;
+  @media (max-width: 700px) {
+    margin: 0 auto;
+    height: 140px;
+    margin-top: 28px;
   }
 `;
 
-const ProfileImage = styled(GatsbyImage)`
-  width: 80px;
-  height: 80px;
-  margin-right: 16px;
-  border-radius: 40%;
+const Name = styled.img`
+  width: 280px;
+
+  @media (max-width: 700px) {
+    width: 200px;
+  }
 `;
 
 const TextWrapper = styled.div`
+  height: 100px;
+
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 
-  @media (max-width: 375px) {
-    width: 240px;
+  @media (max-width: 700px) {
+    height: 88px;
   }
 `;
 
-const Author = styled.div`
-  color: #555555;
-  font-size: 16px;
-`;
-
-const AuthorName = styled.div`
-  display: inline-block;
-  padding: 4px 7px;
-
-  border-radius: 8px;
-  background-color: #ffe5e9;
-
-  color: hotpink;
-  font-weight: 600;
-
-  animation: flutter 2s infinite linear;
-
-  @-webkit-keyframes flutter {
-    0% {
-      transform: rotate(0deg);
-    }
-    35% {
-      transform: rotate(0deg);
-    }
-    40% {
-      transform: rotate(-5deg);
-    }
-    60% {
-      transform: rotate(5deg);
-    }
-    65% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(0deg);
-    }
-  }
-
-  @keyframes flutter {
-    0% {
-      transform: rotate(0deg);
-    }
-    35% {
-      transform: rotate(0deg);
-    }
-    40% {
-      transform: rotate(-5deg);
-    }
-    60% {
-      transform: rotate(5deg);
-    }
-    65% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(0deg);
-    }
-  }
-`;
-
-const Introduction = styled.div`
-  color: #909090;
-  font-size: 13px;
-  font-weight: 400;
-  margin-top: 8px;
-  margin-bottom: 8px;
-  line-height: 1.4;
-
-  @media (max-width: 375px) {
-    font-size: 11px;
-  }
-`;
-
-const LinkText = styled.a`
-  margin-right: 8px;
-
-  font-size: 13px;
-  color: #84bb70;
-
-  &:hover {
-    color: hotpink;
-  }
+const Text = styled.span`
+  font-size: 14px;
 `;
 
 export default Bio;

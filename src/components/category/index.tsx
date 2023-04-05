@@ -23,7 +23,6 @@ const CategoryListWrapper = styled.div`
   display: flex;
   align-items: center;
 
-  width: 740px;
   height: 50px;
 
   padding: 0 20px;
@@ -31,15 +30,11 @@ const CategoryListWrapper = styled.div`
   margin-top: 32px;
 
   overflow-y: auto;
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
   &::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Opera*/
+    display: none;
   }
-
-  background: #e3eedf;
-  border-left: 4px solid #bedeb2;
-  border-right: 4px solid #bedeb2;
 
   @media (max-width: 700px) {
     width: 100%;
@@ -57,7 +52,6 @@ const CategoryItem = styled(CategoryBtn)`
 
   font-size: 14px;
 
-  background: #ffffff;
   ${({ active }) =>
     active
       ? css`
@@ -66,7 +60,6 @@ const CategoryItem = styled(CategoryBtn)`
           border: 2px solid #acc79e;
         `
       : css`
-          color: #6d746b;
           font-weight: 400;
           border: none;
         `}
