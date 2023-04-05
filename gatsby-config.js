@@ -16,7 +16,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingIds: ['G-DGYVBQXYF4'],
+        trackingIds: [`${process.env.GATSBY_GA_TRACKING_ID}`],
         head: true,
       },
     },
@@ -107,6 +107,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
+        host: 'https://corinthionia.github.io',
+        sitemap: 'https://corinthionia.github.io/sitemap.xml',
         policy: [{ userAgent: '*', allow: '/' }],
       },
     },
