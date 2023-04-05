@@ -13,7 +13,7 @@ const Index = function ({
     allMarkdownRemark: { edges },
   },
 }: any) {
-  console.log(edges);
+  // console.log(process.env.GATSBY_GA_TRACKING_ID);
 
   return (
     <Layout title={title} description={description} url={siteUrl}>
