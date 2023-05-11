@@ -11,11 +11,11 @@ const Layout = function ({ title, description, url, children }: TemplateProps) {
     <>
       <Helmet>
         <title>{title}</title>
-
         <meta
           name="google-site-verification"
           content={process.env.GATSBY_GOOGLE_SEARCH_CONSOLE}
         />
+
         <meta name="description" content={description} />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta httpEquiv="Content-Type" content="text/html;charset=UTF-8" />

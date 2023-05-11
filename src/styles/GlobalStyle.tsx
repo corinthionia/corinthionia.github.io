@@ -23,7 +23,7 @@ const defaultStyle = css`
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Pretendard', Arial, Helvetica, sans-serif;
+    /* font-family: 'Pretendard', Arial, Helvetica, sans-serif; */
   }
 
   html,

@@ -1,4 +1,4 @@
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import Layout from '../layout';
 
 import Head from 'components/head';
