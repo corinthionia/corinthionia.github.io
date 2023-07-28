@@ -27,13 +27,11 @@ const PinnedThumbnail = ({
 };
 
 const PinnedPost = styled(Link)`
-  width: 100%;
-  max-width: 700px;
-  height: 200px;
-  border: 1px solid grey;
+  width: 96%;
+  height: 180px;
 
   display: flex;
-  overflow: hidden;
+  overflow: visible;
 
   @media (max-width: 700px) {
     width: 100%;
@@ -41,20 +39,18 @@ const PinnedPost = styled(Link)`
 
     flex-direction: column;
     border: none;
-
-    & + & {
-      margin-top: 32px;
-    }
   }
 `;
 
 const ThumbnailImage = styled(GatsbyImage)`
   width: 200px;
-  height: 200px;
   object-fit: cover;
+  border-radius: 12px;
+  filter: drop-shadow(0px 0px 8px rgba(215, 215, 215, 0.49));
 
   @media (max-width: 700px) {
     width: 100%;
+    height: 200px;
     border-radius: 12px;
   }
 `;
@@ -87,6 +83,10 @@ const ThumbnailTitle = styled.div`
 
   overflow: hidden;
   text-overflow: ellipsis;
+
+  @media (max-width: 700px) {
+    margin-top: 12px;
+  }
 `;
 
 const ThumbnailSummary = styled.div`

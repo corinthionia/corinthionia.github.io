@@ -1,4 +1,10 @@
 const theme = {
+  main: {
+    primary: '#DECFFF',
+    secondary: '#DAEFFF',
+    point1: '#FF81D4',
+    point2: '#8192FF',
+  },
   colors: {
     /* white */
     white: '#ffffff',

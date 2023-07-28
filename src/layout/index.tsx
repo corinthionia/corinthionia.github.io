@@ -5,17 +5,26 @@ import { Helmet } from 'react-helmet';
 import { TemplateProps } from 'types/layout';
 import styled from '@emotion/styled';
 import Header from 'components/header';
+import theme from '../styles/theme';
 
 const Layout = function ({ title, description, url, children }: TemplateProps) {
+  const GTM_SCRIPT = `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer', \`${process.env.GATSBY_GTM_CONTAINER_ID}\`);`;
+
   return (
     <>
       <Helmet>
         <title>{title}</title>
+
+        <script>{GTM_SCRIPT}</script>
+
         <meta
           name="google-site-verification"
           content={process.env.GATSBY_GOOGLE_SEARCH_CONSOLE}
         />
-
         <meta name="description" content={description} />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta httpEquiv="Content-Type" content="text/html;charset=UTF-8" />
@@ -26,18 +35,12 @@ const Layout = function ({ title, description, url, children }: TemplateProps) {
         <meta property="og:url" content={url} />
         <meta property="og:site_name" content={title} />
 
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content={description} />
-        <meta name="twitter:site" content="@corinthionia" />
-        <meta name="twitter:creator" content="@corinthionia" />
-
         <html lang="ko" />
       </Helmet>
       <GlobalStyle />
       <Container>
-        <Pink />
-        <Green />
+        <Gradient1 />
+        <Gradient2 />
         <Header />
         {children}
         <Footer />
@@ -59,7 +62,7 @@ const Container = styled.div`
   }
 `;
 
-const Pink = styled.div`
+const Gradient1 = styled.div`
   position: fixed;
   width: 1067px;
   height: 1111px;
@@ -68,7 +71,7 @@ const Pink = styled.div`
 
   background: radial-gradient(
     49.77% 36.47% at 50.72% 45.42%,
-    #fedaff 0%,
+    ${theme.main.secondary} 0%,
     rgba(254, 207, 255, 0) 100%
   );
   transform: rotate(-39.57deg);
@@ -79,7 +82,7 @@ const Pink = styled.div`
   }
 `;
 
-const Green = styled.div`
+const Gradient2 = styled.div`
   position: fixed;
   width: 1087px;
   height: 1111px;
@@ -88,7 +91,7 @@ const Green = styled.div`
 
   background: radial-gradient(
     49.77% 36.47% at 50.72% 45.42%,
-    #f3ffcfdd 0%,
+    ${theme.main.primary}63 0%,
     rgba(240, 255, 207, 0) 100%
   );
   transform: rotate(24.12deg);

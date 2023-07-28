@@ -1,5 +1,7 @@
 import styled from '@emotion/styled';
+import theme from '../../styles/theme';
 import { PostContentProps } from 'types/post';
+import './prism-one-dark.css';
 
 const MarkdownItems = function ({ html }: PostContentProps) {
   return <MarkdownRenderer dangerouslySetInnerHTML={{ __html: html }} />;
@@ -16,7 +18,7 @@ const MarkdownRenderer = styled.div`
   word-break: break-all;
 
   // Markdown Style
-  color: #383838;
+  color: ${theme.colors.gray6};
   line-height: 1.8;
   font-size: 16px;
   font-weight: 400;
@@ -26,26 +28,26 @@ const MarkdownRenderer = styled.div`
     padding: 3px 0;
   }
 
-  p + p {
-    margin-top: 12px;
-  }
-
   // Adjust Heading Element Style
   h1 {
-    margin-top: 75px;
+    font-size: 32px;
+    font-weight: 600;
+    margin-top: 60px;
     margin-bottom: 10px;
   }
 
   h2 {
-    font-weight: 800;
-    margin-top: 75px;
-    margin-bottom: 25px;
+    font-size: 26px;
+    font-weight: 600;
+    margin-top: 56px;
+    margin-bottom: 8px;
   }
 
   h3 {
-    font-weight: 800;
-    margin-top: 36px;
-    margin-bottom: 10px;
+    font-size: 22px;
+    font-weight: 700;
+    margin-top: 40px;
+    margin-bottom: 8px;
   }
 
   h1 + h1,
@@ -66,46 +68,36 @@ const MarkdownRenderer = styled.div`
     margin-top: 0;
   }
 
-  h1 {
-    font-size: 32px;
-  }
-
-  h2 {
-    font-size: 26px;
-  }
-
-  h3 {
-    font-size: 20px;
-  }
-
   // Adjust Quotation Element Style
   blockquote {
     margin: 20px 0;
     padding: 0 15px;
-    border-left: 3px solid #a9d871;
-    color: #9c9c9c;
-    font-weight: 500;
+    border-left: 3px solid ${theme.colors.pink0};
+    color: ${theme.colors.gray2};
+    font-weight: 400;
   }
 
   // Adjust List Element Style
   ol,
   ul {
-    margin-left: 20px;
+    margin-left: 24px;
   }
 
   li {
-    margin-top: 8px;
+    margin-top: 6px;
   }
+
   // Adjust Horizontal Rule style
   hr {
-    border: 1px solid #e4e4e4;
+    border: 0.5px solid ${theme.colors.gray0};
     border-radius: 1px;
     margin: 60px 0;
   }
 
   // Adjust Link Element Style
   a {
-    color: hotpink;
+    color: ${theme.main.point2};
+    margin-left: 3px;
 
     -moz-transition: color 0.3s ease;
     -o-transition: color 0.3s ease;
@@ -114,7 +106,7 @@ const MarkdownRenderer = styled.div`
     transition: color 0.3s ease;
 
     &:hover {
-      color: #8ad46f;
+      color: ${theme.main.point1};
     }
   }
 
@@ -124,51 +116,11 @@ const MarkdownRenderer = styled.div`
     margin-bottom: 32px;
   }
 
-  // Adjust Code Style
-  pre[class*='language-'] {
-    margin: 16px 0 32px 0;
-    padding: 15px;
-    font-size: 14px;
-    border-radius: 8px;
-    overflow: auto;
-    font-family: 'Fira Code', monospace;
-  }
-
-  code[class*='language-'],
-  pre[class*='language-'] {
-    font-family: 'Fira Code', monospace;
-
-    text-align: left;
-    white-space: pre;
-    word-spacing: normal;
-    word-break: normal;
-    word-wrap: normal;
-    line-height: 1.6;
-    font-size: 13px;
-
-    -moz-tab-size: 2;
-    -o-tab-size: 2;
-    tab-size: 2;
-
-    -webkit-hyphens: none;
-    -moz-hyphens: none;
-    -ms-hyphens: none;
-    hyphens: none;
-
-    -ms-overflow-style: none; // IE 10+
-    overflow: -moz-scrollbars-none; // Firefox
-
-    & > * {
-      font-family: 'Fira Code', monospace;
-    }
-  }
-
   // Markdown Responsive Design
   @media (max-width: 700px) {
     width: 100%;
-    padding: 30px 20px 80px 20px;
     font-size: 15px;
-    line-height: 1.7;
+    padding: 30px 20px 80px 20px;
 
     h1 {
       font-size: 23px;

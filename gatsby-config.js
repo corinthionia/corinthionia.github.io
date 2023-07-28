@@ -4,9 +4,9 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: `corinthionia`,
+    title: `Corinthionia`,
     siteUrl: `https://corinthionia.github.io/`,
-    description: `Corinthionia`,
+    description: `기술 블로그 - Tech blog by @corinthionia`,
     author: `Joohyun Kim`,
   },
   graphqlTypegen: true,
@@ -106,7 +106,7 @@ module.exports = {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
         host: 'https://corinthionia.github.io',
-        sitemap: 'https://corinthionia.github.io/sitemap.xml',
+        sitemap: 'https://corinthionia.github.io/sitemap-0.xml',
         policy: [{ userAgent: '*', allow: '/' }],
       },
     },
@@ -117,135 +117,13 @@ module.exports = {
         display: 'swap',
       },
     },
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-advanced-sitemap`,
     `gatsby-plugin-preload-fonts`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-image`,
-    'gatsby-plugin-emotion',
-    'gatsby-plugin-image',
-    'gatsby-plugin-sitemap',
-    'gatsby-plugin-mdx',
+    `gatsby-plugin-emotion`,
+    `gatsby-plugin-image`,
+    `gatsby-plugin-mdx`,
   ],
 };
-
-// export const siteMetadata = {
-//   title: `corinthionia`,
-//   siteUrl: `https://corinthionia.github.io/`,
-//   description: `Corinthionia`,
-//   author: `Joohyun Kim`,
-// };
-// export const graphqlTypegen = true;
-// export const plugins = [
-//   {
-//     resolve: `gatsby-plugin-google-gtag`,
-//     options: {
-//       trackingIds: [`${process.env.GATSBY_GA_TRACKING_ID}`],
-//       head: true,
-//     },
-//   },
-//   {
-//     resolve: 'gatsby-plugin-typescript',
-//     options: {
-//       isTSX: true,
-//       allExtensions: true,
-//     },
-//   },
-//   {
-//     resolve: `gatsby-plugin-sharp`,
-//     options: {
-//       defaults: {
-//         formats: ['auto', 'webp'],
-//         quality: 100,
-//         placeholder: 'blurred',
-//       },
-//     },
-//   },
-//   {
-//     resolve: 'gatsby-source-filesystem',
-//     options: {
-//       name: 'contents',
-//       path: `${__dirname}/contents/blog`,
-//     },
-//   },
-//   {
-//     resolve: 'gatsby-source-filesystem',
-//     options: {
-//       name: 'images',
-//       path: `${__dirname}/contents/assets`,
-//     },
-//   },
-//   {
-//     resolve: 'gatsby-source-filesystem',
-//     options: {
-//       name: 'thumbnail',
-//       path: `${__dirname}/contents/thumbnail`,
-//     },
-//   },
-//   {
-//     resolve: `gatsby-transformer-remark`,
-//     options: {
-//       plugins: [
-//         {
-//           resolve: 'gatsby-remark-smartypants',
-//           options: {
-//             dashes: 'oldschool',
-//           },
-//         },
-//         {
-//           resolve: 'gatsby-remark-prismjs',
-//           options: {
-//             classPrefix: 'language-',
-//           },
-//         },
-//         {
-//           resolve: 'gatsby-remark-images',
-//           options: {
-//             maxWidth: 768,
-//             quality: 100,
-//             withWebp: true,
-//           },
-//         },
-//         {
-//           resolve: 'gatsby-remark-copy-linked-files',
-//           options: {},
-//         },
-//         {
-//           resolve: 'gatsby-remark-external-links',
-//           options: {
-//             target: '_blank',
-//             rel: 'nofollow',
-//           },
-//         },
-//         `gatsby-remark-emojis`,
-//       ],
-//     },
-//   },
-//   {
-//     resolve: 'gatsby-plugin-canonical-urls',
-//     options: {
-//       siteUrl: 'https://corinthionia.github.io/',
-//       stripQueryString: true,
-//     },
-//   },
-//   {
-//     resolve: 'gatsby-plugin-robots-txt',
-//     options: {
-//       host: 'https://corinthionia.github.io',
-//       sitemap: 'https://corinthionia.github.io/sitemap.xml',
-//       policy: [{ userAgent: '*', allow: '/' }],
-//     },
-//   },
-//   {
-//     resolve: `gatsby-plugin-google-fonts`,
-//     options: {
-//       fonts: [`Fira+Code\:400`],
-//       display: 'swap',
-//     },
-//   },
-//   `gatsby-plugin-preload-fonts`,
-//   `gatsby-transformer-sharp`,
-//   `gatsby-plugin-image`,
-//   'gatsby-plugin-emotion',
-//   'gatsby-plugin-image',
-//   'gatsby-plugin-sitemap',
-//   'gatsby-plugin-mdx',
-// ];

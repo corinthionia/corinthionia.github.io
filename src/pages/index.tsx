@@ -13,8 +13,6 @@ const Index = function ({
     allMarkdownRemark: { edges },
   },
 }: any) {
-  // console.log(process.env.GATSBY_GA_TRACKING_ID);
-
   return (
     <Layout title={title} description={description} url={siteUrl}>
       <Head url={siteUrl} />
@@ -44,7 +42,6 @@ export default Index;
 const PinnedWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 
   margin: 0 auto;
 
@@ -67,15 +64,15 @@ const PinnedTitle = styled.img`
 const PostArea = styled.div`
   width: 100%;
   margin-top: 24px;
-  margin-bottom: 36px;
+  margin-bottom: 56px;
 
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  row-gap: 24px;
-  column-gap: 5%;
+  row-gap: 100px;
 
   @media (max-width: 1200px) {
     grid-template-columns: 1fr;
+    row-gap: 48px;
   }
 `;
 

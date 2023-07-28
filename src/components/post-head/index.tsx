@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import theme from '../../styles/theme';
 import { PostHeadInfoProps } from 'types/post';
 
 const PostHead = function ({ title, date }: PostHeadInfoProps) {
@@ -27,10 +28,10 @@ const PostHeadWrapper = styled.header`
 `;
 
 const Title = styled.div`
-  color: #fb83bf;
-  font-size: 32px;
+  color: ${theme.colors.gray6};
+  font-size: 36px;
   font-weight: 600;
-  line-height: 1.3;
+  line-height: 1.6;
 
   display: -webkit-box;
   overflow-wrap: break-word;

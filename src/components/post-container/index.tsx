@@ -6,6 +6,7 @@ import PostHead from 'components/post-head';
 import MarkdownItems from 'components/markdown-items';
 import Bio from 'components/bio';
 import styled from '@emotion/styled';
+import theme from '../../styles/theme';
 
 const PostContainer = ({
   data: {
@@ -54,10 +55,15 @@ const Border = styled.div`
   width: 100%;
   height: 3px;
   margin: 24px auto;
+  margin-bottom: 48px;
 
   display: flex;
   align-items: center;
-  background-image: linear-gradient(60deg, #c9eb74 0%, #f9c5b4 100%);
+  background-image: linear-gradient(
+    60deg,
+    ${theme.main.secondary} 0%,
+    ${theme.main.primary} 100%
+  );
 
   @media (max-width: 700px) {
     width: 90%;
