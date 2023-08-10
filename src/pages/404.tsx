@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 import Layout from '../layout';
 import GlobalStyle from '../styles/GlobalStyle';
+import theme from '../styles/theme';
 
 const NotFoundPage = function () {
   return (
@@ -27,7 +28,7 @@ const NotFoundPageWrapper = styled.div`
 const NotFoundText = styled.div`
   font-size: 28px;
   font-weight: 600;
-  color: hotpink;
+  color: ${theme.main.point2};
   font-family: 'Press Start 2P', cursive;
 
   @media (max-width: 700px) {
@@ -36,9 +37,9 @@ const NotFoundText = styled.div`
 `;
 
 const NotFoundDescription = styled.div`
-  margin-top: 20px;
-  font-size: 18px;
-  color: hotpink;
+  margin-top: 24px;
+  font-size: 16px;
+  color: ${theme.main.point2};
   text-align: center;
   line-height: 1.5;
 
@@ -50,10 +51,10 @@ const NotFoundDescription = styled.div`
 const GoToMainButton = styled(Link)`
   padding: 12px 20px;
   margin-top: 48px;
-  font-size: 16px;
+  font-size: 14px;
 
   color: #ffffff;
-  background: hotpink;
+  background: ${theme.main.point2};
   border-radius: 12px;
 
   &:hover {

@@ -4,6 +4,7 @@ import Layout from '../layout';
 import Head from 'components/head';
 import styled from '@emotion/styled';
 import PinnedThumbnail from 'components/pinned-thumbnail';
+import theme from '../styles/theme';
 
 const Index = function ({
   data: {
@@ -77,7 +78,7 @@ const PostArea = styled.div`
 `;
 
 const ReadMore = styled.span`
-  color: hotpink;
+  color: ${theme.main.point2};
   font-size: 14px;
   text-decoration: underline;
 `;

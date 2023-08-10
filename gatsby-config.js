@@ -12,12 +12,21 @@ module.exports = {
   graphqlTypegen: true,
   plugins: [
     {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://corinthionia.github.io',
+        sitemap: 'https://corinthionia.github.io/sitemap.xml',
+        policy: [{ userAgent: '*', allow: '/' }],
+      },
+    },
+    {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
         trackingIds: [`${process.env.GATSBY_GA_TRACKING_ID}`],
         head: true,
       },
     },
+
     {
       resolve: 'gatsby-plugin-typescript',
       options: {
@@ -39,9 +48,10 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'contents',
-        path: `${__dirname}/contents/blog`,
+        path: `${__dirname}/contents/post`,
       },
     },
+
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -102,14 +112,7 @@ module.exports = {
         stripQueryString: true,
       },
     },
-    {
-      resolve: 'gatsby-plugin-robots-txt',
-      options: {
-        host: 'https://corinthionia.github.io',
-        sitemap: 'https://corinthionia.github.io/sitemap-0.xml',
-        policy: [{ userAgent: '*', allow: '/' }],
-      },
-    },
+
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
@@ -117,8 +120,8 @@ module.exports = {
         display: 'swap',
       },
     },
-    `gatsby-plugin-react-helmet`,
     `gatsby-plugin-advanced-sitemap`,
+    `gatsby-plugin-react-helmet`,
     `gatsby-plugin-preload-fonts`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-image`,

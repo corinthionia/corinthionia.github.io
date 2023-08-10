@@ -1,7 +1,5 @@
-import { useMemo } from 'react';
 import { graphql } from 'gatsby';
 import queryString, { ParsedQuery } from 'query-string';
-import { CategoryListProps } from 'types/category';
 import PostList from 'components/post-list';
 import Layout from '../layout';
 import { IndexPageProps } from 'types';
@@ -22,31 +20,6 @@ const Blog = function ({
     typeof parsed.category !== 'string' || !parsed.category
       ? 'All'
       : parsed.category;
-
-  const categoryList = useMemo(
-    () =>
-      edges.reduce(
-        (
-          list: CategoryListProps['categoryList'],
-          {
-            node: {
-              frontmatter: { categories },
-            },
-          }
-        ) => {
-          categories.forEach((category) => {
-            if (list[category] === undefined) list[category] = 1;
-            else list[category]++;
-          });
-
-          list['All']++;
-
-          return list;
-        },
-        { All: 0 }
-      ),
-    []
-  );
 
   return (
     <Layout title={title} description={description} url={siteUrl}>

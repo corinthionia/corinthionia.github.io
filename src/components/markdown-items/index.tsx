@@ -34,6 +34,12 @@ const MarkdownRenderer = styled.div`
     font-weight: 600;
     margin-top: 60px;
     margin-bottom: 10px;
+
+    code[class*='language-'] {
+      font-size: 32px;
+      font-weight: 600;
+      color: ${theme.colors.gray6};
+    }
   }
 
   h2 {
@@ -41,6 +47,12 @@ const MarkdownRenderer = styled.div`
     font-weight: 600;
     margin-top: 56px;
     margin-bottom: 8px;
+
+    code[class*='language-'] {
+      font-size: 26px;
+      font-weight: 600;
+      color: ${theme.colors.gray6};
+    }
   }
 
   h3 {
@@ -48,6 +60,12 @@ const MarkdownRenderer = styled.div`
     font-weight: 700;
     margin-top: 40px;
     margin-bottom: 8px;
+
+    code[class*='language-'] {
+      font-size: 18px;
+      font-weight: 600;
+      color: ${theme.colors.gray6};
+    }
   }
 
   h1 + h1,

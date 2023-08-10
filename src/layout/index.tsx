@@ -25,7 +25,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           name="google-site-verification"
           content={process.env.GATSBY_GOOGLE_SEARCH_CONSOLE}
         />
+        <meta name="author" content="corinthionia Joohyun Kim 김주현" />
         <meta name="description" content={description} />
+
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta httpEquiv="Content-Type" content="text/html;charset=UTF-8" />
 

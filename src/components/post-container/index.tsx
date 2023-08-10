@@ -7,6 +7,7 @@ import MarkdownItems from 'components/markdown-items';
 import Bio from 'components/bio';
 import styled from '@emotion/styled';
 import theme from '../../styles/theme';
+import SEO from 'components/SEO';
 
 const PostContainer = ({
   data: {
@@ -23,6 +24,7 @@ const PostContainer = ({
 
   return (
     <Layout title={title} description={summary} url={href}>
+      <SEO title={title} description={summary} url={href} />
       <PostHead title={title} date={date} />
       <MarkdownItems html={html} />
       <BioWrapper>
