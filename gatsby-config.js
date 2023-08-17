@@ -15,7 +15,7 @@ module.exports = {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
         host: 'https://corinthionia.github.io',
-        sitemap: 'https://corinthionia.github.io/sitemap.xml',
+        sitemap: 'https://corinthionia.github.io/sitemap-pages.xml',
         policy: [{ userAgent: '*', allow: '/' }],
       },
     },

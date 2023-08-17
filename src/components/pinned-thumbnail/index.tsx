@@ -44,6 +44,7 @@ const PinnedPost = styled(Link)`
 
 const ThumbnailImage = styled(GatsbyImage)`
   width: 200px;
+  height: 200px;
   object-fit: cover;
   border-radius: 12px;
   filter: drop-shadow(0px 0px 8px rgba(215, 215, 215, 0.49));
