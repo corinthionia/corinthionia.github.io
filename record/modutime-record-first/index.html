@@ -56,7 +56,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <img src="https://velog.velcdn.com/images/corinthionia/post/610ff8e6-1f84-4a31-a7dc-b3f6e94fdae4/image.gif" alt=""></p>
 <p>처음에 일정 등록 페이지의 디자인을 받아보았을 때 몇 가지 어려움을 예상했다…</p>
 <ol>
-<li>오른쪽의 스크롤바를 이용해야지만 표를 아래로 내릴 수 있다</li>
+<li>오른쪽의 스크롤바를 이용해야지만 표를 아래로 내릴 수 있다 (화면 전체는 스크롤 금지)</li>
 <li>드래그 또는 클릭/터치를 통해 칸을 선택할 수 있다</li>
 <li>날짜는 3일씩 화면에 보여지고, 전체 날짜가 3일씩 떨어지지 않는 경우 남는 날은 비활성화 처리 한다.</li>
 <li>화살표 버튼을 클릭하여 날짜가 바뀌어도 이전에 선택한 값은 유지되어야 한다.</li>
@@ -64,7 +64,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <br/>
 이게 주어진 기간 안에 구현이 가능할까 싶었지만 직접 구현해 보고 싶은 욕심이 매우 컸기 때문에 일단 해 보겠다고 했다!!
 <h3>3-2-1. 스크롤바 기능 구현하기</h3>
-<p>일단 스크롤바 기능은 useRef를 잘 이용한다면 충분히 구현 가능할 것이라 생각했다. 하지만 생각보다 일이 잘 풀리지는 않았는데, 우연히 찾아본 <a href="https://javascript.info/mouse-drag-and-drop" target="_blank" rel="nofollow">Drag’n’Drop with mouse events</a> 글이 정말 많은 도움이 되었다. 특히 글 아래에 <a href="https://javascript.info/task/slider" target="_blank" rel="nofollow">슬라이더를 직접 구현해 보는 과제</a>의 코드를 참고하여 기능을 구현할 수 있었다!! 이 부분도 추후에 다른 글로 작성해 봐야겠다 🙂</p>
+<p>처음에 디자인을 받아봤을 때, 기존의 Native 스크롤바를 커스텀하여 구현하기에는 한계가 있었다. Native 스크롤바를 이용하면 표 전체의 길이만큼 스크롤바 Track이 형성되는데, 우리 서비스에서는 표의 길이에 관계없이 Track의 길이는 고정되기 때문이다. 또한 스크롤바의 위치도 디자인처럼 고정시키기 어렵다는 문제가 있었다.</p>
+<p>따라서 직접 스크롤바 기능을 만들어 보기로 했고, useRef를 잘 이용한다면 충분히 구현 가능할 것이라 생각했다. 하지만 생각보다 일이 잘 풀리지는 않았는데, 우연히 찾아본 <a href="https://javascript.info/mouse-drag-and-drop" target="_blank" rel="nofollow">Drag’n’Drop with mouse events</a> 글이 정말 많은 도움이 되었다. 특히 글 아래에 <a href="https://javascript.info/task/slider" target="_blank" rel="nofollow">슬라이더를 직접 구현해 보는 과제</a>의 코드를 참고하여 기능을 구현할 수 있었다!! 이 부분도 추후에 다른 글로 작성해 봐야겠다 🙂</p>
 <h3>3-2-2. 드래그/터치/클릭 이벤트를 통해 칸 선택하기</h3>
 <p>초반에는 외부 라이브러리 없이 직접 이벤트 핸들러를 구현해 보려 했다. 하지만 터치 이벤트까지 고려해야 한다는 점이 난항이었다. PC 환경에서 클릭/드래그 이벤트는 잘 동작했는데, 모바일 환경에서 이용하려면 터치 이벤트를 따로 핸들링 해야 한다는 점이 어려웠다.</p>
 <p>특히 여러 칸을 드래그 해서 선택할 때 <code class="language-text">onMouseMove</code> 이벤트를 사용하여 구현했는데, 모바일 환경에서 이를 단순히 <code class="language-text">onTouchMove</code>로 바꾸어 사용하기에는 문제가 있었다. <code class="language-text">onMouseMove</code>를 이용할 시 마우스는 언제나 화면 속에 존재하기 때문에 마우스의 위치를 파악하기가 쉽지만, <code class="language-text">onTouchMove</code>는 사용자가 어느 부분을 터치할지 미리 예상하는 것이 불가능하기 때문이었다.</p>
