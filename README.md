@@ -1,7 +1,5 @@
 ### [corinthionia.github.io](corinthionia.github.io)
 
-React
+Next 13
 TypeScript
-Gatsby
-GraphQL
 Github Pages
