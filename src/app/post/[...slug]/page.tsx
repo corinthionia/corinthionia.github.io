@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import { getMatchedPost } from 'src/libs/post';
-import convertMarkdownToHtml from '@libs/mdx';
 import Link from 'next/link';
+import { MDXRemote } from 'next-mdx-remote/rsc';
 
 interface ParamType {
   params: {
@@ -58,12 +58,9 @@ export default async function Post({ params }: ParamType) {
         </div>
       </article>
 
-      <div
-        className="text-black"
-        dangerouslySetInnerHTML={{
-          __html: await convertMarkdownToHtml(content),
-        }}
-      />
+      <div className="prose dark:prose-dark">
+        <MDXRemote source={content} />
+      </div>
     </>
   );
 }
