@@ -5,7 +5,7 @@ import Layout from '../layout';
 import { IndexPageProps } from 'types';
 import Head from 'components/head';
 
-const Blog = function ({
+const Snippet = function ({
   location: { search },
   data: {
     site: {
@@ -29,10 +29,10 @@ const Blog = function ({
   );
 };
 
-export default Blog;
+export default Snippet;
 
-export const getPostList = graphql`
-  query getPostList {
+export const getSnippetList = graphql`
+  query getSnippetList {
     site {
       siteMetadata {
         title
@@ -43,7 +43,10 @@ export const getPostList = graphql`
     allMarkdownRemark(
       sort: [{ frontmatter: { date: DESC } }, { frontmatter: { title: ASC } }]
       filter: {
-        frontmatter: { categories: { ne: null }, draft: { eq: false } }
+        frontmatter: {
+          categories: { regex: "/snippet/", ne: null }
+          draft: { eq: false }
+        }
       }
     ) {
       edges {

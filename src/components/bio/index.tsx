@@ -8,7 +8,7 @@ const Bio = () => {
         alt="corinthionia"
       />
       <TextWrapper>
-        <Text>🧞‍♂️ Good vibes only</Text>
+        <Text>🍀 Winning Mentality</Text>
         <Text>💭 능동적인 사고를 통한 성장을 위해 노력합니다</Text>
       </TextWrapper>
     </Wrapper>

@@ -5,5 +5,5 @@ src/gatsby-types.d.ts
 
 draft/
 .env
-yarn.lock
+
 contents

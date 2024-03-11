@@ -4,13 +4,13 @@ const Header = () => {
   return (
     <Wrapper>
       <IconWrapperLeft>
-        <a href="/blog">
+        <a href="/post">
           <PostIcon
             src="https://user-images.githubusercontent.com/79887293/223728512-088d980e-0ab5-40d7-9a4d-d8f3684005ed.svg"
             alt="posts"
           />
         </a>
-        {/* <a href="/til">
+        <a href="/til">
           <TILIcon
             src="https://github.com/corinthionia/corinthionia.github.io/assets/79887293/8b44fab2-5c4f-4fca-a607-9544a7b6c3f4"
             alt="today i learned"
@@ -21,7 +21,7 @@ const Header = () => {
             src="https://github.com/corinthionia/corinthionia.github.io/assets/79887293/b6dcc737-3029-4017-9f92-b202f484ed92"
             alt="snippet"
           />
-        </a> */}
+        </a>
       </IconWrapperLeft>
       <a href="/">
         <Logo
@@ -31,12 +31,6 @@ const Header = () => {
       </a>
 
       <IconWrapperRight>
-        <a href="mailto:corinthionia@gmail.com">
-          <RightIcon
-            src="https://user-images.githubusercontent.com/79887293/223728516-05d5e781-230c-4448-8c5d-3914968be3e1.svg"
-            alt="mail"
-          />
-        </a>
         <a href="https://github.com/corinthionia" target="_blank">
           <RightIcon
             src="https://user-images.githubusercontent.com/79887293/223728888-06511911-20ce-44e6-b7b1-59791885ecca.svg"
@@ -94,7 +88,7 @@ const IconWrapperLeft = styled.div`
 `;
 
 const IconWrapperRight = styled.div`
-  width: 68px;
+  width: 32px;
   height: 28px;
 
   display: flex;

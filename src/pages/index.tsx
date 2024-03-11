@@ -28,7 +28,7 @@ const Index = function ({
           ))}
         </PostArea>
 
-        <a href="/blog">
+        <a href="/post">
           <ReadMore>{`View More Posts >`}</ReadMore>
         </a>
       </PinnedWrapper>
