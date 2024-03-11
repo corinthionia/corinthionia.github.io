@@ -23,10 +23,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     setIsMenuOpened(!isMenuOpened);
   };
 
-  if (isMenuOpened) {
-    document.body.style.overflow = 'hidden';
-  } else {
-    document.body.style.overflow = 'auto';
+  if (typeof window !== 'undefined') {
+    if (isMenuOpened) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
   }
 
   return (

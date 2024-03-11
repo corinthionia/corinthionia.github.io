@@ -1,30 +1,21 @@
 import { graphql } from 'gatsby';
-import queryString, { ParsedQuery } from 'query-string';
-import PostList from 'components/post-list';
 import Layout from '../layout';
-import { IndexPageProps } from 'types';
+import { SnippetPageProps } from 'types';
 import Head from 'components/head';
+import SnippetList from 'components/snippet-list';
 
 const Snippet = function ({
-  location: { search },
   data: {
     site: {
       siteMetadata: { title, description, siteUrl },
     },
     allMarkdownRemark: { edges },
   },
-}: IndexPageProps) {
-  const parsed: ParsedQuery<string> = queryString.parse(search);
-
-  const selectedCategory: string =
-    typeof parsed.category !== 'string' || !parsed.category
-      ? 'All'
-      : parsed.category;
-
+}: SnippetPageProps) {
   return (
     <Layout title={title} description={description} url={siteUrl}>
       <Head />
-      <PostList selectedCategory={selectedCategory} posts={edges} />
+      <SnippetList edges={edges} />
     </Layout>
   );
 };
@@ -52,19 +43,12 @@ export const getSnippetList = graphql`
       edges {
         node {
           id
-          fields {
-            slug
-          }
+          html
           frontmatter {
             title
             summary
             date(formatString: "MMMM DD, YYYY")
             categories
-            thumbnail {
-              childImageSharp {
-                gatsbyImageData
-              }
-            }
             draft
           }
         }

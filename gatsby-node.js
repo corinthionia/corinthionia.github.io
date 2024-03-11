@@ -176,7 +176,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   // Import Post Template Component
   const SnippetTemplateComponent = path.resolve(
     __dirname,
-    'src/components/post-container/index.tsx'
+    'src/components/snippet/index.tsx'
   );
 
   // Page Generating Function
