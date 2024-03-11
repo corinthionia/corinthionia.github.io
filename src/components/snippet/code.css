@@ -16,6 +16,9 @@ pre[class*='language-'] {
   -moz-hyphens: none;
   -ms-hyphens: none;
   hyphens: none;
+  @media (max-width: 700px) {
+    font-size: 11px;
+  }
 }
 
 /* Selection */

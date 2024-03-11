@@ -31,16 +31,21 @@ const Snippet = function (props: Props) {
     setIsCollapsed(!isCollapsed);
   };
 
-  const handleCopyToClipBoard = async (e: any) => {
+  const handleCopyToClipBoard = async (
+    e: React.MouseEvent<HTMLImageElement>
+  ) => {
+    e.stopPropagation();
+
     try {
-      const coppiedSnippet =
-        e.target.parentNode.childNodes[1].childNodes[0].childNodes[0]
-          .childNodes[0].textContent;
-      console.log(
-        e.target.parentNode.childNodes[1].childNodes[0].childNodes[0]
-      );
-      await navigator.clipboard.writeText(coppiedSnippet);
-      alert('클립보드에 복사되었습니다.');
+      if (childRef.current) {
+        const coppiedSnippet =
+          childRef.current.childNodes[0].childNodes[0].childNodes[0]
+            .childNodes[0].textContent!;
+
+        await navigator.clipboard.writeText(coppiedSnippet);
+
+        alert('클립보드에 복사되었습니다.');
+      }
     } catch {
       alert('링크 복사에 실패했습니다.\n다시 시도해 주세요.');
     }
@@ -80,7 +85,7 @@ const Snippet = function (props: Props) {
 };
 
 const Wrapper = styled.div`
-  width: 100%;
+  width: 90%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -94,9 +99,9 @@ const Wrapper = styled.div`
   }
 
   @media (max-width: 700px) {
+    width: 100%;
     font-size: 14px;
     font-weight: 400;
-    padding: 18px 20px;
 
     & + & {
       margin-top: 28px;
@@ -106,7 +111,7 @@ const Wrapper = styled.div`
 
 const TitleWrapper = styled.section<{ isCollapsed: boolean }>`
   width: 100%;
-  padding: 20px 32px;
+  padding: 20px 28px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -128,6 +133,7 @@ const TitleItems = styled.div`
   font-size: 18px;
   font-weight: 500;
   @media (max-width: 700px) {
+    font-size: 14px;
     gap: 8px;
   }
 `;
@@ -137,8 +143,8 @@ const CopyButton = styled.img`
   height: 24px;
   cursor: pointer;
   @media (max-width: 700px) {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
   }
 `;
 
@@ -152,6 +158,9 @@ const ListWrapper = styled.div`
 
 const ListItem = styled.div`
   padding: 16px 0;
+  @media (max-width: 700px) {
+    padding: 12px 0;
+  }
 `;
 
 const AccordionIcon = styled.img`
