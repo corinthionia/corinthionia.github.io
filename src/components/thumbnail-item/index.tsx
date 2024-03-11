@@ -28,7 +28,7 @@ const ThumbnailItem = ({
           <Summary>{summary}</Summary>
         </div>
         <PostData>
-          <Category>{categories}</Category>
+          <Category>{categories[1] ?? categories[0]}</Category>
           <Category>|</Category>
           <Date>{date}</Date>
         </PostData>

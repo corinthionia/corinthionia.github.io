@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import GlobalStyle from '../styles/GlobalStyle';
 import Footer from 'components/footer';
 import { Helmet } from 'react-helmet';
@@ -6,6 +6,8 @@ import { TemplateProps } from 'types/layout';
 import styled from '@emotion/styled';
 import Header from 'components/header';
 import theme from '../styles/theme';
+import Menu from 'components/menu';
+import { useMediaQuery } from 'react-responsive';
 
 const Layout = function ({ title, description, url, children }: TemplateProps) {
   const GTM_SCRIPT = `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -13,6 +15,19 @@ new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer', \`${process.env.GATSBY_GTM_CONTAINER_ID}\`);`;
+
+  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
+
+  const [isMenuOpened, setIsMenuOpened] = useState<boolean>(false);
+  const handleClickMenu = () => {
+    setIsMenuOpened(!isMenuOpened);
+  };
+
+  if (isMenuOpened) {
+    document.body.style.overflow = 'hidden';
+  } else {
+    document.body.style.overflow = 'auto';
+  }
 
   return (
     <>
@@ -43,7 +58,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <Container>
         <Gradient1 />
         <Gradient2 />
-        <Header />
+        <Header onClick={handleClickMenu} />
+        {isTabletOrMobile && isMenuOpened && <Menu onClick={handleClickMenu} />}
         {children}
         <Footer />
       </Container>

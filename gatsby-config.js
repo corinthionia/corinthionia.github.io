@@ -97,7 +97,6 @@ module.exports = {
         stripQueryString: true,
       },
     },
-
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {

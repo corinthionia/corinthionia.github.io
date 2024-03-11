@@ -1,28 +1,48 @@
+import React from 'react';
 import styled from '@emotion/styled';
+import { useMediaQuery } from 'react-responsive';
 
-const Header = () => {
+interface Props {
+  onClick: () => void;
+}
+
+const Header = (props: Props) => {
+  const { onClick } = props;
+  const isMobile = useMediaQuery({ query: '(max-width: 700px)' });
+
   return (
     <Wrapper>
       <IconWrapperLeft>
-        <a href="/post">
-          <PostIcon
-            src="https://user-images.githubusercontent.com/79887293/223728512-088d980e-0ab5-40d7-9a4d-d8f3684005ed.svg"
-            alt="posts"
+        {isMobile ? (
+          <MenuIcon
+            src="https://github.com/corinthionia/corinthionia.github.io/assets/79887293/a0ab6937-29ec-4eab-afd3-d1e630777827"
+            alt="menu"
+            onClick={onClick}
           />
-        </a>
-        <a href="/til">
-          <TILIcon
-            src="https://github.com/corinthionia/corinthionia.github.io/assets/79887293/8b44fab2-5c4f-4fca-a607-9544a7b6c3f4"
-            alt="today i learned"
-          />
-        </a>
-        <a href="/snippet">
-          <SnippetIcon
-            src="https://github.com/corinthionia/corinthionia.github.io/assets/79887293/b6dcc737-3029-4017-9f92-b202f484ed92"
-            alt="snippet"
-          />
-        </a>
+        ) : (
+          <>
+            <a href="/post">
+              <PostIcon
+                src="https://user-images.githubusercontent.com/79887293/223728512-088d980e-0ab5-40d7-9a4d-d8f3684005ed.svg"
+                alt="posts"
+              />
+            </a>
+            <a href="/til">
+              <TILIcon
+                src="https://github.com/corinthionia/corinthionia.github.io/assets/79887293/8b44fab2-5c4f-4fca-a607-9544a7b6c3f4"
+                alt="today i learned"
+              />
+            </a>
+            <a href="/snippet">
+              <SnippetIcon
+                src="https://github.com/corinthionia/corinthionia.github.io/assets/79887293/b6dcc737-3029-4017-9f92-b202f484ed92"
+                alt="snippet"
+              />
+            </a>
+          </>
+        )}
       </IconWrapperLeft>
+
       <a href="/">
         <Logo
           src="https://user-images.githubusercontent.com/79887293/223732692-bd9cd64a-0495-48a0-b724-c6ae50143986.svg"
@@ -67,7 +87,6 @@ const Wrapper = styled.div`
 
 const Logo = styled.img`
   height: 18px;
-  margin-right: 60px;
 
   @media (max-width: 700px) {
     height: 16px;
@@ -75,69 +94,43 @@ const Logo = styled.img`
 `;
 
 const IconWrapperLeft = styled.div`
-  width: 142px;
-  height: 28px;
-
+  gap: 28px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  @media (max-width: 700px) {
-    width: 90px;
-  }
+  padding: 0 8px;
 `;
 
 const IconWrapperRight = styled.div`
-  width: 32px;
-  height: 28px;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0 8px;
+`;
 
-  @media (max-width: 700px) {
-    width: 60px;
-  }
+const MenuIcon = styled.img`
+  width: 24px;
+  height: 24px;
 `;
 
 const PostIcon = styled.img`
   width: 22px;
   height: 22px;
-
-  @media (max-width: 700px) {
-    width: 20px;
-    height: 20px;
-  }
 `;
 
 const TILIcon = styled.img`
   width: 25px;
   height: 25px;
-
-  @media (max-width: 700px) {
-    width: 20px;
-    height: 20px;
-  }
 `;
 
 const SnippetIcon = styled.img`
   width: 28px;
   height: 28px;
-
-  @media (max-width: 700px) {
-    width: 20px;
-    height: 20px;
-  }
 `;
 
 const RightIcon = styled.img`
   width: 28px;
   height: 28px;
-
-  @media (max-width: 700px) {
-    width: 24px;
-    height: 24px;
-  }
 `;
 
 export default Header;
