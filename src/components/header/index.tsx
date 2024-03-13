@@ -43,12 +43,12 @@ const Header = (props: Props) => {
         )}
       </IconWrapperLeft>
 
-      <a href="/">
+      <LogoWrapper href="/">
         <Logo
           src="https://user-images.githubusercontent.com/79887293/223732692-bd9cd64a-0495-48a0-b724-c6ae50143986.svg"
           alt="logo"
         />
-      </a>
+      </LogoWrapper>
 
       <IconWrapperRight>
         <a href="https://github.com/corinthionia" target="_blank">
@@ -67,15 +67,12 @@ const Wrapper = styled.div`
   height: 68px;
   padding: 0 8px;
   background: #ffffff5f;
-
   position: fixed;
   top: 0;
   z-index: 3;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   border-bottom: 1px solid #383838;
   backdrop-filter: blur(10px);
 
@@ -83,6 +80,13 @@ const Wrapper = styled.div`
     width: 100%;
     padding: 0 16px;
   }
+`;
+
+const LogoWrapper = styled.a`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `;
 
 const Logo = styled.img`

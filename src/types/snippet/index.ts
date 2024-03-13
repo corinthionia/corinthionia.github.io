@@ -8,6 +8,12 @@ export interface SnippetListType {
   };
 }
 
+export interface SnippetNodeType {
+  id: string;
+  html: string;
+  frontmatter: SnippetFrontmatterType;
+}
+
 export interface SnippetFrontmatterType {
   title: string;
   date: string;

@@ -1,15 +1,10 @@
 import { useRef, useState } from 'react';
 import styled from '@emotion/styled';
 import theme from '../../styles/theme';
-import { SnippetFrontmatterType } from 'types/snippet';
+import { SnippetNodeType } from 'types/snippet';
 import './code.css';
 
-interface Props {
-  html: string;
-  frontmatter: SnippetFrontmatterType;
-}
-
-const Snippet = function (props: Props) {
+const Snippet = function (props: SnippetNodeType) {
   const { html, frontmatter } = props;
 
   const parentRef = useRef<HTMLDivElement>(null);
@@ -93,7 +88,6 @@ const Wrapper = styled.div`
   border-radius: 4px;
   border: 1px solid #c6c8d1;
   color: ${theme.colors.gray5};
-
   & + & {
     margin-top: 48px;
   }
@@ -157,10 +151,7 @@ const ListWrapper = styled.div`
 `;
 
 const ListItem = styled.div`
-  padding: 16px 0;
-  @media (max-width: 700px) {
-    padding: 12px 0;
-  }
+  padding: 0;
 `;
 
 const AccordionIcon = styled.img`
@@ -173,14 +164,23 @@ const AccordionIcon = styled.img`
 `;
 
 const MarkdownRenderer = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
-  width: 100%;
-  word-break: break-all;
-  line-height: 1.8;
+
   @media (max-width: 700px) {
     width: 100%;
     font-size: 12px;
+  }
+
+  pre {
+    ::-webkit-scrollbar-thumb {
+      background-color: ${theme.colors.gray0};
+      border-radius: 15px;
+    }
+    ::-webkit-scrollbar {
+      height: 4px;
+    }
   }
 `;
 

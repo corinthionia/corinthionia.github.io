@@ -65,7 +65,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     'src/components/post-container/index.tsx'
   );
 
-  // Page Generating Function
+  // Post Page Generating Function
   const generatePostPage = ({
     node: {
       fields: { slug },
@@ -82,47 +82,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   // Generate Post Page And Passing Slug Props for Query
   queryAllMarkdownData.data.allMarkdownRemark.edges.forEach(generatePostPage);
-};
 
-// Generate TIL Page Through Markdown Data
-exports.createPages = async ({ actions, graphql, reporter }) => {
-  const { createPage } = actions;
-
-  // Get All Markdown File For Paging
-  const queryAllMarkdownData = await graphql(
-    `
-      {
-        allMarkdownRemark(
-          sort: [
-            { frontmatter: { date: DESC } }
-            { frontmatter: { title: ASC } }
-          ]
-        ) {
-          edges {
-            node {
-              fields {
-                slug
-              }
-            }
-          }
-        }
-      }
-    `
-  );
-
-  // Handling GraphQL Query Error
-  if (queryAllMarkdownData.errors) {
-    reporter.panicOnBuild(`Error while running query`);
-    return;
-  }
-
-  // Import TIL Template Component
-  const TILTemplateComponent = path.resolve(
-    __dirname,
-    'src/components/post-container/index.tsx'
-  );
-
-  // Page Generating Function
+  // TIL Page Generating Function
   const generateTILPage = ({
     node: {
       fields: { slug },
@@ -130,72 +91,12 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   }) => {
     const pageOptions = {
       path: slug,
-      component: TILTemplateComponent,
+      component: PostTemplateComponent,
       context: { slug },
     };
 
     createPage(pageOptions);
   };
 
-  // Generate Post Page And Passing Slug Props for Query
   queryAllMarkdownData.data.allMarkdownRemark.edges.forEach(generateTILPage);
-};
-
-// Generate Snippet Page Through Markdown Data
-exports.createPages = async ({ actions, graphql, reporter }) => {
-  const { createPage } = actions;
-
-  // Get All Markdown File For Paging
-  const queryAllMarkdownData = await graphql(
-    `
-      {
-        allMarkdownRemark(
-          sort: [
-            { frontmatter: { date: DESC } }
-            { frontmatter: { title: ASC } }
-          ]
-        ) {
-          edges {
-            node {
-              fields {
-                slug
-              }
-            }
-          }
-        }
-      }
-    `
-  );
-
-  // Handling GraphQL Query Error
-  if (queryAllMarkdownData.errors) {
-    reporter.panicOnBuild(`Error while running query`);
-    return;
-  }
-
-  // Import Post Template Component
-  const SnippetTemplateComponent = path.resolve(
-    __dirname,
-    'src/components/snippet/index.tsx'
-  );
-
-  // Page Generating Function
-  const generateSnippetPage = ({
-    node: {
-      fields: { slug },
-    },
-  }) => {
-    const pageOptions = {
-      path: slug,
-      component: SnippetTemplateComponent,
-      context: { slug },
-    };
-
-    createPage(pageOptions);
-  };
-
-  // Generate Post Page And Passing Slug Props for Query
-  queryAllMarkdownData.data.allMarkdownRemark.edges.forEach(
-    generateSnippetPage
-  );
 };

@@ -106,7 +106,7 @@ module.exports = {
         display: 'swap',
       },
     },
-    `gatsby-plugin-advanced-sitemap`,
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-preload-fonts`,
     `gatsby-transformer-sharp`,

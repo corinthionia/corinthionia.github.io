@@ -87,8 +87,8 @@ const Margin = styled.div`
   height: 48px;
 `;
 
-export const getPostList = graphql`
-  query getPostList {
+export const getPinnedPostList = graphql`
+  query getPinnedPostList {
     site {
       siteMetadata {
         title

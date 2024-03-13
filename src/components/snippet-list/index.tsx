@@ -9,10 +9,11 @@ interface Props {
 
 const SnippetList = function (props: Props) {
   const { edges } = props;
+  console.log(edges);
   return (
     <>
       <Wrapper>
-        {edges.map(({ node }: any) => (
+        {edges.map(({ node }: SnippetListType) => (
           <Snippet key={node.id} {...node} />
         ))}
       </Wrapper>
@@ -23,7 +24,6 @@ const SnippetList = function (props: Props) {
 const Wrapper = styled.div`
   width: 92%;
   max-width: 768px;
-  min-height: 100vh;
   margin: 0 auto;
   margin-top: 72px;
   margin-bottom: 48px;

@@ -21,6 +21,6 @@
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true
   },
-  "include": ["src/**/*", "src/types/svg.d.ts"],
+  "include": ["src/**/*", "src/types/svg.d.ts", "src/types/css.d.ts"],
   "exclude": ["node_modules"]
 }
