@@ -1,0 +1,30 @@
+* {
+  padding: 0;
+  box-sizing: border-box !important;
+  font-display: fallback;
+  font-family: 'Pretendard', Arial, Helvetica, sans-serif;
+}
+
+*::before,
+*::after {
+  box-sizing: border-box !important;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  outline: none;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  background: none;
+}

@@ -3,16 +3,14 @@ import path from 'path';
 import matter from 'gray-matter';
 
 import { sync } from 'glob';
-import { PostType } from '@interfaces/post';
+import { PostType } from '@/interfaces/post';
 
 const BASE_PATH = 'contents/posts';
 const CONTENTS_DIR = path.join(process.cwd(), BASE_PATH);
 
 export async function getMatchedPost(slug: string[]) {
   const posts = await getAllPosts();
-  return posts.find(
-    (post: PostType) => post.fields.slug === [...slug].join('/')
-  );
+  return posts.find((post: PostType) => post.fields.slug === [...slug].join('/'));
 }
 
 export async function getPinnedPostList() {
@@ -39,9 +37,7 @@ const parsePost = (path: string) => {
   const file = fs.readFileSync(path, { encoding: 'utf8' });
   const { data, content } = matter(file);
 
-  const slug = path
-    .slice(path.indexOf(BASE_PATH) + BASE_PATH.length + 1)
-    .replace('.md', '');
+  const slug = path.slice(path.indexOf(BASE_PATH) + BASE_PATH.length + 1).replace('.md', '');
 
   if (data.draft) return;
 
