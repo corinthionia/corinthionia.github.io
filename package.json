@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prepare": "husky install && chmod ug+x .husky/*"
+    "prepare": "husky install"
   },
   "lint-staged": {
     "*.{ts,tsx}": [
