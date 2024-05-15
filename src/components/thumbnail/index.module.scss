@@ -6,16 +6,11 @@
   overflow: hidden;
 
   cursor: pointer;
-  border: 1px solid $primary;
   &:hover {
     text-shadow: 0 0 10px rgba(47, 58, 48, 0.2);
     transition:
       text-shadow 0.3s,
       opacity 0.4s;
-  }
-
-  & + & {
-    margin-top: 92px;
   }
 
   @media (max-width: 768px) {
