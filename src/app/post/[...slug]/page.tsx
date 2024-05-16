@@ -58,17 +58,27 @@ export default async function Post({ params }: ParamType) {
         />
       </MDX>
 
-      {prev && (
-        <Link href={`/post/${prev.fields.slug}`}>
-          <div>이전 포스트 {prev.frontMatter.title}</div>
-        </Link>
-      )}
+      <div className={styles.neighborPostWrapper}>
+        {prev ? (
+          <Link href={`/post/${prev.fields.slug}`}>
+            <div className={styles.neighborPost}>
+              <div>이전 글</div>
+              <div>{prev.frontMatter.title}</div>
+            </div>
+          </Link>
+        ) : (
+          <div />
+        )}
 
-      {next && (
-        <Link href={`/post/${next.fields.slug}`}>
-          <div>다음 포스트 {next.frontMatter.title}</div>
-        </Link>
-      )}
+        {next && (
+          <Link href={`/post/${next.fields.slug}`}>
+            <div className={styles.neighborPost}>
+              <div>다음 글</div>
+              <div>{next.frontMatter.title}</div>
+            </div>
+          </Link>
+        )}
+      </div>
     </>
   );
 }

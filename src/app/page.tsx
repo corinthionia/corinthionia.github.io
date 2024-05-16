@@ -8,6 +8,10 @@ export default async function Home() {
 
   return (
     <div className={styles.thumbnailList}>
+      <div className={styles.heading}>
+        <h2>고정된 포스트</h2>
+        <h2>전체 포스트</h2>
+      </div>
       {posts.map((post: PostType) => (
         <Thumbnail key={post.fields.slug} {...post} />
       ))}

@@ -18,14 +18,14 @@ export async function getNeighborPosts(slug: string[]): Promise<{ prev: PostType
   const index = posts.findIndex((post: PostType) => post.fields.slug === [...slug].join('/'));
 
   if (index === 0) {
-    return { prev: null, next: posts[index + 1] };
+    return { prev: posts[index + 1], next: null };
   }
 
   if (index === posts.length - 1) {
-    return { prev: posts[index - 1], next: null };
+    return { prev: null, next: posts[index - 1] };
   }
 
-  return { prev: posts[index - 1], next: posts[index + 1] };
+  return { prev: posts[index + 1], next: posts[index - 1] };
 }
 
 export async function getPinnedPostList(): Promise<PostType[]> {
