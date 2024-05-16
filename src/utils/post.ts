@@ -5,20 +5,35 @@ import matter from 'gray-matter';
 import { sync } from 'glob';
 import { PostType } from '@/interfaces/post';
 
-const BASE_PATH = 'contents/posts';
+const BASE_PATH = 'contents/post';
 const CONTENTS_DIR = path.join(process.cwd(), BASE_PATH);
 
-export async function getMatchedPost(slug: string[]) {
+export async function getMatchedPost(slug: string[]): Promise<PostType | undefined> {
   const posts = await getAllPosts();
   return posts.find((post: PostType) => post.fields.slug === [...slug].join('/'));
 }
 
-export async function getPinnedPostList() {
+export async function getNeighborPosts(slug: string[]): Promise<{ prev: PostType | null; next: PostType | null }> {
+  const posts = await getAllPosts();
+  const index = posts.findIndex((post: PostType) => post.fields.slug === [...slug].join('/'));
+
+  if (index === 0) {
+    return { prev: null, next: posts[index + 1] };
+  }
+
+  if (index === posts.length - 1) {
+    return { prev: posts[index - 1], next: null };
+  }
+
+  return { prev: posts[index - 1], next: posts[index + 1] };
+}
+
+export async function getPinnedPostList(): Promise<PostType[]> {
   const posts = await getAllPosts();
   return posts.filter((post: any) => post.frontMatter.pinned);
 }
 
-export async function getAllPosts() {
+export async function getAllPosts(): Promise<PostType[]> {
   const paths: string[] = sync(`${CONTENTS_DIR}/**/*.md*`);
 
   const posts = paths

@@ -40,6 +40,10 @@
     "husky": "^8.0.3",
     "lint-staged": "^15.2.0",
     "prettier": "^3.2.5",
+    "rehype-autolink-headings": "^7.1.0",
+    "rehype-code-titles": "^1.2.0",
+    "remark-breaks": "^4.0.0",
+    "remark-gfm": "3.0.1",
     "sass": "^1.77.1",
     "typescript": "^5"
   }

@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  padding: 60px 20px;
+  padding: 60px 0;
   color: $gray700;
   line-height: 2;
   font-size: 16px;
@@ -11,6 +11,10 @@
 
   p {
     margin: 0;
+  }
+
+  strong {
+    font-weight: 600;
   }
 
   h1 {
@@ -66,9 +70,8 @@
   blockquote {
     margin: 20px 0;
     padding: 0 15px;
-    border-left: 3px solid $primary;
-    color: $gray200;
-    font-weight: 400;
+    border-left: 3px solid $secondary;
+    color: $gray600;
   }
 
   ol,
@@ -86,7 +89,7 @@
   }
 
   a {
-    color: $secondary;
+    color: $point2;
     margin-left: 3px;
 
     -moz-transition: color 0.3s ease;
@@ -96,7 +99,7 @@
     transition: color 0.3s ease;
 
     &:hover {
-      color: $primary;
+      color: $point1;
     }
   }
 
@@ -105,9 +108,10 @@
   }
 
   img {
-    max-width: 768px;
+    max-width: 500px;
     margin-top: 16px;
     margin-bottom: 32px;
+    border-radius: 4px;
   }
 
   table {
@@ -147,6 +151,10 @@
 
     hr {
       margin: 50px 0;
+    }
+
+    img {
+      max-width: 100%;
     }
   }
 
