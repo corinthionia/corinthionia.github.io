@@ -89,7 +89,7 @@
   }
 
   a {
-    color: $point2;
+    color: #6bceee;
     margin-left: 3px;
 
     -moz-transition: color 0.3s ease;
@@ -213,12 +213,14 @@
 
   /* Inline code */
   :not(pre) > code {
-    background: none;
-    color: #da615c;
-    padding: 0 0.2em;
+    background: #f3f3f3;
+    padding: 2px 4px;
+    border-radius: 3px;
+    color: #fb6762;
+    margin-right: 2px;
     white-space: normal;
     border: none;
-    font-size: 14px;
+    font-size: 13px;
   }
 
   /* Print */
