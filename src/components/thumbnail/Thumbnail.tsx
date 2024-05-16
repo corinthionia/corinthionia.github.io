@@ -1,9 +1,8 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import styles from './index.module.scss';
 import { PostType } from '@/interfaces/post';
-
-// import thumbnail from '../../../contents/thumbnail/post/modutime-record-first.png';
-import Image from 'next/image';
+import { formatDate } from '@/utils/date';
 
 const Thumbnail = (props: PostType) => {
   const { frontMatter, fields } = props;
@@ -17,17 +16,9 @@ const Thumbnail = (props: PostType) => {
           alt="thumbnail"
           style={{ objectFit: 'cover', borderRadius: '8px' }}
           quality={100}
-          // layout="fixed"
-          priority
           src={frontMatter.thumbnail}
+          priority
         />
-        {/* <img
-          alt="thumbnail"
-          src={'/thumbnail/post/react-google-login-library.png'}
-          style={{ objectFit: 'cover', width: '200px', height: '200px' }}
-        /> */}
-
-        {/* <div style={{ width: '160px', height: '160px', borderRadius: '8px', border: '1px solid gray' }} /> */}
 
         <div className={styles.postInfo}>
           <div>
@@ -37,13 +28,7 @@ const Thumbnail = (props: PostType) => {
           <div className={styles.postData}>
             <div className={styles.category}>{frontMatter.categories[1]}</div>
             <div className={styles.category}>|</div>
-            <div className={styles.date}>
-              {new Date(frontMatter.date).toLocaleDateString('en-us', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-              })}
-            </div>
+            <div className={styles.date}>{formatDate(frontMatter.date)}</div>
           </div>
         </div>
       </div>

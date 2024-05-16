@@ -15,6 +15,7 @@ import Link from 'next/link';
 
 import styles from './index.module.scss';
 import Giscus from '@/components/giscus/Giscus';
+import { formatDate } from '@/utils/date';
 
 interface ParamType {
   params: {
@@ -43,13 +44,7 @@ export default async function Post({ params }: ParamType) {
           <Link href="https://github.com/corinthionia" target="_blank">
             <span>@corinthionia</span>
           </Link>
-          <span>
-            {new Date(date).toLocaleDateString('en-us', {
-              year: 'numeric',
-              month: 'long',
-              day: 'numeric',
-            })}
-          </span>
+          <span>{formatDate(date)}</span>
         </div>
       </div>
 
