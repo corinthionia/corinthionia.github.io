@@ -1,0 +1,16 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  padding: 4px 8px;
+  display: flex;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.snippet {
+  width: 100%;
+  padding: 8px;
+}

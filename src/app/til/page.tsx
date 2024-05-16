@@ -1,10 +1,10 @@
 import Thumbnail from '@/components/thumbnail/Thumbnail';
 import { PostType } from '@/interfaces/post';
-import { getAllPosts } from 'src/utils/post';
+import { getAllTILs } from 'src/utils/post';
 import styles from './index.module.scss';
 
 export default async function Page() {
-  const posts = await getAllPosts();
+  const posts = await getAllTILs();
 
   return (
     <div className={styles.thumbnailList}>

@@ -1,21 +1,11 @@
-import { notFound } from 'next/navigation';
-import { MDXRemote } from 'next-mdx-remote/rsc';
-import { getMatchedPost, getNeighborPosts } from '@/utils/post';
-import MDX from '@/components/mdx/MDX';
-
-import prism from 'rehype-prism-plus';
-import rehypeSlug from 'rehype-slug';
-import remarkToc from 'remark-toc';
-import remarkGfm from 'remark-gfm';
-import rehypeAutolinkHeadings from 'rehype-autolink-headings';
-import remarkBreaks from 'remark-breaks';
-import rehypeCodeTitles from 'rehype-code-titles';
-
 import Link from 'next/link';
+import { notFound } from 'next/navigation';
+import { getMatchedPost, getNeighborPosts } from '@/utils/post';
 
-import styles from './index.module.scss';
+import MDX from '@/components/mdx/MDX';
 import Giscus from '@/components/giscus/Giscus';
 import { formatDate } from '@/utils/date';
+import styles from './index.module.scss';
 
 interface ParamType {
   params: {
@@ -23,7 +13,7 @@ interface ParamType {
   };
 }
 
-export default async function Post({ params }: ParamType) {
+export default async function Page({ params }: ParamType) {
   const { slug } = params;
 
   const post = await getMatchedPost(slug);
@@ -48,17 +38,7 @@ export default async function Post({ params }: ParamType) {
         </div>
       </div>
 
-      <MDX>
-        <MDXRemote
-          source={content}
-          options={{
-            mdxOptions: {
-              remarkPlugins: [remarkToc, remarkBreaks, remarkGfm],
-              rehypePlugins: [prism as any, rehypeSlug, rehypeAutolinkHeadings, rehypeCodeTitles],
-            },
-          }}
-        />
-      </MDX>
+      <MDX content={content} />
 
       <div className={styles.neighborPostWrapper}>
         {prev ? (

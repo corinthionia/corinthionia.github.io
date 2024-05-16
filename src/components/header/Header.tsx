@@ -30,7 +30,7 @@ const Header = () => {
         </Link>
 
         <div className={styles.items}>
-          <Link href="/guestbook">
+          <Link href="/guest-book">
             <span>방명록</span>
           </Link>
           <Link href="https://github.com/corinthionia" target="_blank">

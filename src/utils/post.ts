@@ -5,8 +5,11 @@ import matter from 'gray-matter';
 import { sync } from 'glob';
 import { PostType } from '@/interfaces/post';
 
-const BASE_PATH = 'contents/post';
-const CONTENTS_DIR = path.join(process.cwd(), BASE_PATH);
+const POST_PATH = 'contents/post';
+const TIL_PATH = 'contents/til';
+const SNIPPET_PATH = 'contents/snippet';
+
+const getContentsDir = (basePath: string) => path.join(process.cwd(), basePath);
 
 export async function getMatchedPost(slug: string[]): Promise<PostType | undefined> {
   const posts = await getAllPosts();
@@ -34,11 +37,11 @@ export async function getPinnedPostList(): Promise<PostType[]> {
 }
 
 export async function getAllPosts(): Promise<PostType[]> {
-  const paths: string[] = sync(`${CONTENTS_DIR}/**/*.md*`);
+  const paths: string[] = sync(`${getContentsDir(POST_PATH)}/**/*.md*`);
 
   const posts = paths
     .reduce((acc: any, path: string) => {
-      const post = parsePost(path);
+      const post = parsePost(POST_PATH, path);
 
       if (!post) return acc;
 
@@ -48,11 +51,41 @@ export async function getAllPosts(): Promise<PostType[]> {
   return posts;
 }
 
-const parsePost = (path: string) => {
+export async function getAllTILs(): Promise<PostType[]> {
+  const paths: string[] = sync(`${getContentsDir(TIL_PATH)}/**/*.md*`);
+
+  const posts = paths
+    .reduce((acc: any, path: string) => {
+      const post = parsePost(TIL_PATH, path);
+
+      if (!post) return acc;
+
+      return [...acc, post];
+    }, [])
+    .sort((a: PostType, b: PostType) => sortPostByDate(a, b));
+  return posts;
+}
+
+export async function getAllSnippets(): Promise<PostType[]> {
+  const paths: string[] = sync(`${getContentsDir(SNIPPET_PATH)}/**/*.md*`);
+
+  const posts = paths
+    .reduce((acc: any, path: string) => {
+      const post = parsePost(SNIPPET_PATH, path);
+
+      if (!post) return acc;
+
+      return [...acc, post];
+    }, [])
+    .sort((a: PostType, b: PostType) => sortPostByDate(a, b));
+  return posts;
+}
+
+const parsePost = (base: string, path: string) => {
   const file = fs.readFileSync(path, { encoding: 'utf8' });
   const { data, content } = matter(file);
 
-  const slug = path.slice(path.indexOf(BASE_PATH) + BASE_PATH.length + 1).replace('.md', '');
+  const slug = path.slice(path.indexOf(base) + base.length + 1).replace('.md', '');
 
   if (data.draft) return;
 
