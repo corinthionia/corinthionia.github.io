@@ -2,7 +2,7 @@ import Link from 'next/link';
 import styles from './index.module.scss';
 import { PostType } from '@/interfaces/post';
 
-import thumbnail from '../../../contents/thumbnail/post/modutime-record-first.png';
+// import thumbnail from '../../../contents/thumbnail/post/modutime-record-first.png';
 import Image from 'next/image';
 
 const Thumbnail = (props: PostType) => {
@@ -19,7 +19,7 @@ const Thumbnail = (props: PostType) => {
           quality={100}
           // layout="fixed"
           priority
-          src={thumbnail}
+          src={frontMatter.thumbnail}
         />
         {/* <img
           alt="thumbnail"
@@ -37,7 +37,13 @@ const Thumbnail = (props: PostType) => {
           <div className={styles.postData}>
             <div className={styles.category}>{frontMatter.categories[1]}</div>
             <div className={styles.category}>|</div>
-            <div className={styles.date}>{frontMatter.date.slice(0, 10)}</div>
+            <div className={styles.date}>
+              {new Date(frontMatter.date).toLocaleDateString('en-us', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+              })}
+            </div>
           </div>
         </div>
       </div>

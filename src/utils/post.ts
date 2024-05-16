@@ -18,11 +18,11 @@ export async function getNeighborPosts(slug: string[]): Promise<{ prev: PostType
   const index = posts.findIndex((post: PostType) => post.fields.slug === [...slug].join('/'));
 
   if (index === 0) {
-    return { prev: posts[index + 1], next: null };
+    return { prev: null, next: posts[index - 1] };
   }
 
   if (index === posts.length - 1) {
-    return { prev: null, next: posts[index - 1] };
+    return { prev: posts[index + 1], next: null };
   }
 
   return { prev: posts[index + 1], next: posts[index - 1] };
@@ -59,7 +59,6 @@ const parsePost = (path: string) => {
   return {
     frontMatter: {
       ...data,
-      date: new Date(data.date).toISOString().substring(0, 19),
     },
     content,
     fields: {

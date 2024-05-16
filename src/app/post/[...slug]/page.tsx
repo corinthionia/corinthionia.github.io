@@ -14,6 +14,7 @@ import rehypeCodeTitles from 'rehype-code-titles';
 import Link from 'next/link';
 
 import styles from './index.module.scss';
+import Giscus from '@/components/giscus/Giscus';
 
 interface ParamType {
   params: {
@@ -42,7 +43,13 @@ export default async function Post({ params }: ParamType) {
           <Link href="https://github.com/corinthionia" target="_blank">
             <span>@corinthionia</span>
           </Link>
-          <span>{new Date(date).toLocaleDateString()}</span>
+          <span>
+            {new Date(date).toLocaleDateString('en-us', {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric',
+            })}
+          </span>
         </div>
       </div>
 
@@ -52,7 +59,7 @@ export default async function Post({ params }: ParamType) {
           options={{
             mdxOptions: {
               remarkPlugins: [remarkToc, remarkBreaks, remarkGfm],
-              rehypePlugins: [prism, rehypeSlug, rehypeAutolinkHeadings, rehypeCodeTitles],
+              rehypePlugins: [prism as any, rehypeSlug, rehypeAutolinkHeadings, rehypeCodeTitles],
             },
           }}
         />
@@ -79,6 +86,8 @@ export default async function Post({ params }: ParamType) {
           </Link>
         )}
       </div>
+
+      <Giscus />
     </>
   );
 }
