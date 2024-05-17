@@ -27,12 +27,12 @@ export default async function Page({ params }: ParamType) {
   } = post;
 
   return (
-    <>
+    <article className={styles.wrapper}>
       <Header title={title} date={formatDate(date)} />
       <MDX content={content} />
       <div className={styles.border} />
       <NeighborPost pageType="til" neighborPost={{ prev, next }} />
       <Giscus />
-    </>
+    </article>
   );
 }
