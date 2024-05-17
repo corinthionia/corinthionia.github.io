@@ -1,0 +1,44 @@
+.section {
+  width: 100%;
+  padding: 36px 16px;
+  margin: 4px 0 64px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wrapper {
+  width: 240px;
+  padding: 8px;
+  border-radius: 6px;
+
+  @include flex-col(8px);
+  @include typo-regular(14px);
+
+  cursor: pointer;
+  &:hover {
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition:
+      text-shadow 0.5s,
+      opacity 0.5s;
+  }
+}
+
+.top {
+  color: $point3;
+  &:hover {
+    color: #86b0df;
+  }
+}
+
+.bottom {
+  color: $gray600;
+  line-height: 1.5;
+
+  overflow: hidden;
+  @include ellipsis(2);
+
+  &:hover {
+    color: $gray700;
+  }
+}

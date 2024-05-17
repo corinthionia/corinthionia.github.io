@@ -1,10 +1,10 @@
-import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { getMatchedTIL, getNeighborTILs } from '@/utils/post';
-
-import MDX from '@/components/mdx/MDX';
-import Giscus from '@/components/giscus/Giscus';
+import MDX from '@/components/MDX/MDX';
+import Header from '@/components/Post/Header';
+import NeighborPost from '@/components/Post/NeighborPost';
+import Giscus from '@/components/Giscus/Giscus';
 import { formatDate } from '@/utils/date';
+import { getMatchedTIL, getNeighborTILs } from '@/utils/post';
 import styles from './index.module.scss';
 
 interface ParamType {
@@ -28,40 +28,10 @@ export default async function Page({ params }: ParamType) {
 
   return (
     <>
-      <div className={styles.postHeader}>
-        <h2 className={styles.postTitle}>{title}</h2>
-        <div className={styles.postData}>
-          <Link href="https://github.com/corinthionia" target="_blank">
-            <span>@corinthionia</span>
-          </Link>
-          <span>{formatDate(date)}</span>
-        </div>
-      </div>
-
+      <Header title={title} date={formatDate(date)} />
       <MDX content={content} />
-
-      <div className={styles.neighborPostWrapper}>
-        {prev ? (
-          <Link href={`/post/${prev.fields.slug}`}>
-            <div className={styles.neighborPost}>
-              <div>이전 글</div>
-              <div>{prev.frontMatter.title}</div>
-            </div>
-          </Link>
-        ) : (
-          <div />
-        )}
-
-        {next && (
-          <Link href={`/post/${next.fields.slug}`}>
-            <div className={styles.neighborPost}>
-              <div>다음 글</div>
-              <div>{next.frontMatter.title}</div>
-            </div>
-          </Link>
-        )}
-      </div>
-
+      <div className={styles.border} />
+      <NeighborPost pageType="til" neighborPost={{ prev, next }} />
       <Giscus />
     </>
   );

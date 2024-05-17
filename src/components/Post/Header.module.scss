@@ -1,0 +1,25 @@
+.header {
+  width: 100%;
+  margin: 0 auto 96px;
+  justify-content: flex-end;
+
+  @include flex-col;
+}
+
+.title {
+  margin-top: 0;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.6;
+
+  @include ellipsis(3);
+}
+
+.info {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+  color: $gray300;
+
+  @include typo-medium(13px);
+}

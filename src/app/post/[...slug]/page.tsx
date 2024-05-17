@@ -1,10 +1,10 @@
-import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { getMatchedPost, getNeighborPosts } from '@/utils/post';
-
-import MDX from '@/components/mdx/MDX';
-import Giscus from '@/components/giscus/Giscus';
+import MDX from '@/components/MDX/MDX';
+import Header from '@/components/Post/Header';
+import NeighborPost from '@/components/Post/NeighborPost';
+import Giscus from '@/components/Giscus/Giscus';
 import { formatDate } from '@/utils/date';
+import { getMatchedPost, getNeighborPosts } from '@/utils/post';
 import styles from './index.module.scss';
 
 interface ParamType {
@@ -28,42 +28,10 @@ export default async function Page({ params }: ParamType) {
 
   return (
     <>
-      <div className={styles.postHeader}>
-        <h2 className={styles.postTitle}>{title}</h2>
-        <div className={styles.postData}>
-          <Link href="https://github.com/corinthionia" target="_blank">
-            <span>@corinthionia</span>
-          </Link>
-          <span>{formatDate(date)}</span>
-        </div>
-      </div>
-
+      <Header title={title} date={formatDate(date)} />
       <MDX content={content} />
-
       <div className={styles.border} />
-
-      <div className={styles.neighborPostWrapper}>
-        {prev ? (
-          <Link href={`/post/${prev.fields.slug}`}>
-            <div className={styles.neighborPost}>
-              <div className={styles.neighborPostArrow}>← 이전 글</div>
-              <div className={styles.neighborPostTitle}>{prev.frontMatter.title}</div>
-            </div>
-          </Link>
-        ) : (
-          <div />
-        )}
-
-        {next && (
-          <Link href={`/post/${next.fields.slug}`}>
-            <div className={styles.neighborPost}>
-              <div className={styles.neighborPostArrow}>다음 글 →</div>
-              <div className={styles.neighborPostTitle}>{next.frontMatter.title}</div>
-            </div>
-          </Link>
-        )}
-      </div>
-
+      <NeighborPost pageType="post" neighborPost={{ prev, next }} />
       <Giscus />
     </>
   );

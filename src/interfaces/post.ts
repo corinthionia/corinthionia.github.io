@@ -16,3 +16,8 @@ export interface PostType {
   };
   path: string;
 }
+
+export interface NeighborPostType {
+  prev: PostType | null;
+  next: PostType | null;
+}

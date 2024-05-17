@@ -6,7 +6,6 @@ import remarkGfm from 'remark-gfm';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import remarkBreaks from 'remark-breaks';
 import rehypeCodeTitles from 'rehype-code-titles';
-
 import styles from './index.module.scss';
 import './prism-one-dark.scss';
 
@@ -18,7 +17,7 @@ const MDX = (props: Props) => {
   const { content } = props;
 
   return (
-    <div className={styles.mdx}>
+    <main className={styles.mdx}>
       <MDXRemote
         source={content}
         options={{
@@ -28,7 +27,7 @@ const MDX = (props: Props) => {
           },
         }}
       />
-    </div>
+    </main>
   );
 };
 

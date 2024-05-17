@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './index.module.scss';
-import MDX from '@/components/mdx/MDX';
+import MDX from '@/components/MDX/MDX';
 
 interface Props {
   title: string;

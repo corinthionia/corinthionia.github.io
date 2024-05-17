@@ -3,7 +3,7 @@ import path from 'path';
 import matter from 'gray-matter';
 
 import { sync } from 'glob';
-import { PostType } from '@/interfaces/post';
+import { NeighborPostType, PostType } from '@/interfaces/post';
 
 const POST_PATH = 'contents/post';
 const TIL_PATH = 'contents/til';
@@ -21,7 +21,7 @@ export async function getMatchedTIL(slug: string[]): Promise<PostType | undefine
   return posts.find((post: PostType) => post.fields.slug === [...slug].join('/'));
 }
 
-export async function getNeighborPosts(slug: string[]): Promise<{ prev: PostType | null; next: PostType | null }> {
+export async function getNeighborPosts(slug: string[]): Promise<NeighborPostType> {
   const posts = await getAllPosts();
   const index = posts.findIndex((post: PostType) => post.fields.slug === [...slug].join('/'));
 
@@ -36,16 +36,16 @@ export async function getNeighborPosts(slug: string[]): Promise<{ prev: PostType
   return { prev: posts[index + 1], next: posts[index - 1] };
 }
 
-export async function getNeighborTILs(slug: string[]): Promise<{ prev: PostType | null; next: PostType | null }> {
+export async function getNeighborTILs(slug: string[]): Promise<NeighborPostType> {
   const posts = await getAllTILs();
   const index = posts.findIndex((post: PostType) => post.fields.slug === [...slug].join('/'));
 
   if (index === 0) {
-    return { prev: null, next: posts[index - 1] };
+    return { prev: posts[index + 1], next: null };
   }
 
   if (index === posts.length - 1) {
-    return { prev: posts[index + 1], next: null };
+    return { prev: null, next: posts[index - 1] };
   }
 
   return { prev: posts[index + 1], next: posts[index - 1] };
@@ -72,7 +72,7 @@ export async function getAllPosts(): Promise<PostType[]> {
 }
 
 export async function getAllTILs(): Promise<PostType[]> {
-  const paths: string[] = sync(`${getContentsDir(TIL_PATH)}/**/*.md*`);
+  const paths: string[] = sync(`${getContentsDir(TIL_PATH)}/**/**/*.md*`);
 
   const posts = paths
     .reduce((acc: any, path: string) => {
@@ -105,7 +105,7 @@ const parsePost = (base: string, path: string) => {
   const file = fs.readFileSync(path, { encoding: 'utf8' });
   const { data, content } = matter(file);
 
-  const slug = path.slice(path.indexOf(base) + base.length + 1).replace('.md', '');
+  const slug = path.slice(path.indexOf(base) + base.length + 1).replace(/\.mdx?/g, '');
 
   if (data.draft) return;
 

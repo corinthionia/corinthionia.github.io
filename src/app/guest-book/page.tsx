@@ -1,7 +1,7 @@
 import { getAllPosts, getMatchedPost } from '@/utils/post';
 import styles from './index.module.scss';
-import MDX from '@/components/mdx/MDX';
-import Giscus from '@/components/giscus/Giscus';
+import MDX from '@/components/MDX/MDX';
+import Giscus from '@/components/Giscus/Giscus';
 
 export default async function Page() {
   return (

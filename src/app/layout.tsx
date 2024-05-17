@@ -3,9 +3,9 @@ import '@/styles/globals.css';
 
 import styles from './index.module.scss';
 import { Pretendard } from '@/styles/fonts';
-import Header from '@/components/header/Header';
-import Bio from '@/components/bio/Bio';
-import Footer from '@/components/footer/Footer';
+import Header from '@/components/Header/Header';
+import Bio from '@/components/Bio/Bio';
+import Footer from '@/components/Footer/Footer';
 
 export const metadata: Metadata = {
   title: 'Corinthionia',

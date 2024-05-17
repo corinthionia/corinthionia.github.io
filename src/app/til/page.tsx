@@ -1,4 +1,4 @@
-import Thumbnail from '@/components/thumbnail/Thumbnail';
+import Thumbnail from '@/components/Thumbnail/Thumbnail';
 import { PostType } from '@/interfaces/post';
 import { getAllTILs } from 'src/utils/post';
 import styles from './index.module.scss';
