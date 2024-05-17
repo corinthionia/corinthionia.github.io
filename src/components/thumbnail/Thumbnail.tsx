@@ -1,14 +1,22 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './index.module.scss';
-import { PostType } from '@/interfaces/post';
+import { FrontMatterType, PostType } from '@/interfaces/post';
 import { formatDate } from '@/utils/date';
 
-const Thumbnail = (props: PostType) => {
-  const { frontMatter, fields } = props;
+interface Props {
+  post: PostType;
+  to: string;
+}
+
+const Thumbnail = (props: Props) => {
+  const {
+    post: { frontMatter, fields },
+    to,
+  } = props;
 
   return (
-    <Link key={frontMatter.title} href={`/post/${fields.slug}`}>
+    <Link key={frontMatter.title} href={`/${to}/${fields.slug}`}>
       <div className={styles.wrapper}>
         <Image
           width={160}

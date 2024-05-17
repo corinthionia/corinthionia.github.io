@@ -16,8 +16,28 @@ export async function getMatchedPost(slug: string[]): Promise<PostType | undefin
   return posts.find((post: PostType) => post.fields.slug === [...slug].join('/'));
 }
 
+export async function getMatchedTIL(slug: string[]): Promise<PostType | undefined> {
+  const posts = await getAllTILs();
+  return posts.find((post: PostType) => post.fields.slug === [...slug].join('/'));
+}
+
 export async function getNeighborPosts(slug: string[]): Promise<{ prev: PostType | null; next: PostType | null }> {
   const posts = await getAllPosts();
+  const index = posts.findIndex((post: PostType) => post.fields.slug === [...slug].join('/'));
+
+  if (index === 0) {
+    return { prev: null, next: posts[index - 1] };
+  }
+
+  if (index === posts.length - 1) {
+    return { prev: posts[index + 1], next: null };
+  }
+
+  return { prev: posts[index + 1], next: posts[index - 1] };
+}
+
+export async function getNeighborTILs(slug: string[]): Promise<{ prev: PostType | null; next: PostType | null }> {
+  const posts = await getAllTILs();
   const index = posts.findIndex((post: PostType) => post.fields.slug === [...slug].join('/'));
 
   if (index === 0) {

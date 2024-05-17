@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { getMatchedPost, getNeighborPosts } from '@/utils/post';
+import { getMatchedTIL, getNeighborTILs } from '@/utils/post';
 
 import MDX from '@/components/mdx/MDX';
 import Giscus from '@/components/giscus/Giscus';
@@ -16,8 +16,8 @@ interface ParamType {
 export default async function Page({ params }: ParamType) {
   const { slug } = params;
 
-  const post = await getMatchedPost(slug);
-  const { prev, next } = await getNeighborPosts(slug);
+  const post = await getMatchedTIL(slug);
+  const { prev, next } = await getNeighborTILs(slug);
 
   if (!post) return notFound();
 
@@ -40,14 +40,12 @@ export default async function Page({ params }: ParamType) {
 
       <MDX content={content} />
 
-      <div className={styles.border} />
-
       <div className={styles.neighborPostWrapper}>
         {prev ? (
           <Link href={`/post/${prev.fields.slug}`}>
             <div className={styles.neighborPost}>
-              <div className={styles.neighborPostArrow}>← 이전 글</div>
-              <div className={styles.neighborPostTitle}>{prev.frontMatter.title}</div>
+              <div>이전 글</div>
+              <div>{prev.frontMatter.title}</div>
             </div>
           </Link>
         ) : (
@@ -57,8 +55,8 @@ export default async function Page({ params }: ParamType) {
         {next && (
           <Link href={`/post/${next.fields.slug}`}>
             <div className={styles.neighborPost}>
-              <div className={styles.neighborPostArrow}>다음 글 →</div>
-              <div className={styles.neighborPostTitle}>{next.frontMatter.title}</div>
+              <div>다음 글</div>
+              <div>{next.frontMatter.title}</div>
             </div>
           </Link>
         )}

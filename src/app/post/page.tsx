@@ -9,7 +9,7 @@ export default async function Page() {
   return (
     <div className={styles.thumbnailList}>
       {posts.map((post: PostType) => (
-        <Thumbnail key={post.fields.slug} {...post} />
+        <Thumbnail key={post.fields.slug} post={post} to="post" />
       ))}
     </div>
   );

@@ -13,7 +13,7 @@ export default async function Home() {
         <h2>전체 포스트</h2>
       </div>
       {posts.map((post: PostType) => (
-        <Thumbnail key={post.fields.slug} {...post} />
+        <Thumbnail key={post.fields.slug} post={post} to="post" />
       ))}
     </div>
   );
