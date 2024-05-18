@@ -21,11 +21,11 @@ const Thumbnail = (props: Props) => {
         <Image
           width={160}
           height={160}
-          alt="thumbnail"
-          style={{ objectFit: 'cover', borderRadius: '8px' }}
           quality={100}
           src={frontMatter.thumbnail}
+          alt="thumbnail"
           priority
+          style={{ objectFit: 'cover', borderRadius: '8px' }}
         />
 
         <div className={styles.postInfo}>

@@ -5,7 +5,7 @@ import styles from './index.module.scss';
 
 const Bio = () => {
   return (
-    <div className={styles.wrapper}>
+    <section className={styles.wrapper}>
       <div className={styles.profile}>
         <Image width={160} height={160} alt="Profile Image" src={profileImage} />
         <div className={styles.text}>
@@ -18,7 +18,7 @@ const Bio = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

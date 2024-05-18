@@ -18,13 +18,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={Pretendard.className}>
         <div className={styles.layout}>
           <Header />
+
           <div className={styles.grid}>
             <Bio />
 
-            <div className={styles.wrapper}>
-              {children}
-              <Footer />
-            </div>
+            <main className={styles.contents}>
+              <div>
+                {children}
+                <Footer />
+              </div>
+            </main>
 
             <Aside />
           </div>

@@ -3,24 +3,23 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  overflow: hidden;
 }
 
 .grid {
   width: 100%;
   max-width: 1500px;
-  height: 100%;
   display: grid;
   grid-template-columns: 1fr 768px 1fr;
 }
 
-.wrapper {
+.contents {
   width: 100%;
   max-width: 768px;
+  height: 100vh;
   padding-top: calc(64px + 64px);
-  overflow: auto;
   display: flex;
   flex-direction: column;
+  overflow: auto;
 }
 
 .thumbnailList {
