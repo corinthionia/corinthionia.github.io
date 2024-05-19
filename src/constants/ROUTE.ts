@@ -3,5 +3,5 @@ export const ROUTE = {
   POST: '/post',
   TIL: '/til',
   SNIPPET: '/snippet',
-  GUESTBOOK: '/guestbook',
+  GUESTBOOK: '/guest-book',
 } as const;
