@@ -29,20 +29,26 @@
   font-size: $size;
 }
 
-@mixin responsive($point: medium) {
-  @if $point == small {
-    @media (max-width: 375px) {
+@mixin responsive($point: m) {
+  @if $point == s {
+    @media (max-width: 576px) {
       @content;
     }
   }
 
-  @if $point == medium {
+  @if $point == m {
     @media (max-width: 768px) {
       @content;
     }
   }
 
-  @if $point == large {
+  @if $point == l {
+    @media (max-width: 992px) {
+      @content;
+    }
+  }
+
+  @if $point == xl {
     @media (max-width: 1200px) {
       @content;
     }

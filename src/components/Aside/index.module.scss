@@ -1,6 +1,6 @@
 .wrapper {
   width: 100%;
-  @media (max-width: 768px) {
+  @include responsive(xl) {
     display: none;
   }
 }

@@ -1,42 +1,47 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './index.module.scss';
-import { FrontMatterType, PostType } from '@/interfaces/post';
+import { PostType } from '@/interfaces/post';
 import { formatDate } from '@/utils/date';
 
 interface Props {
-  post: PostType;
   to: string;
+  post: PostType;
 }
 
 const Thumbnail = (props: Props) => {
   const {
-    post: { frontMatter, fields },
     to,
+    post: {
+      frontMatter: { title, thumbnail, summary, categories, date },
+      fields,
+    },
   } = props;
 
   return (
-    <Link key={frontMatter.title} href={`/${to}/${fields.slug}`}>
+    <Link key={title} href={`/${to}/${fields.slug}`}>
       <div className={styles.wrapper}>
         <Image
+          className={styles.image}
           width={160}
           height={160}
           quality={100}
-          src={frontMatter.thumbnail}
+          src={thumbnail}
           alt="thumbnail"
-          priority
           style={{ objectFit: 'cover', borderRadius: '8px' }}
+          sizes="(max-width: 768px) 100%"
+          priority
         />
 
         <div className={styles.postInfo}>
           <div>
-            <div className={styles.title}>{frontMatter.title}</div>
-            <div className={styles.summary}>{frontMatter.summary}</div>
+            <div className={styles.title}>{title}</div>
+            <div className={styles.summary}>{summary}</div>
           </div>
           <div className={styles.postData}>
-            <div className={styles.category}>{frontMatter.categories[1]}</div>
+            <div className={styles.category}>{categories[1]}</div>
             <div className={styles.category}>|</div>
-            <div className={styles.date}>{formatDate(frontMatter.date)}</div>
+            <div className={styles.date}>{formatDate(date)}</div>
           </div>
         </div>
       </div>

@@ -10,6 +10,11 @@
   max-width: 1500px;
   display: grid;
   grid-template-columns: 1fr 768px 1fr;
+  @include responsive(xl) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .contents {
@@ -20,6 +25,12 @@
   display: flex;
   flex-direction: column;
   overflow: auto;
+  @include responsive(l) {
+    padding-top: 80px;
+  }
+  @include responsive(s) {
+    padding-top: 48px;
+  }
 }
 
 .thumbnailList {
@@ -27,11 +38,14 @@
   flex-direction: column;
   gap: 64px;
 
-  @media (max-width: 768px) {
+  @include responsive(l) {
+    padding: 30px 32px;
+  }
+
+  @include responsive(s) {
     display: grid;
     grid-template-columns: 1fr;
     row-gap: 52px;
-
     width: 100%;
     padding: 30px 0;
     margin-top: 28px;
@@ -56,5 +70,9 @@
     color: $gray400;
     text-decoration: #ffe53f wavy underline;
     text-underline-position: under;
+  }
+
+  @include responsive(s) {
+    margin: 0 auto;
   }
 }

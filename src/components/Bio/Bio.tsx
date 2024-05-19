@@ -7,7 +7,7 @@ const Bio = () => {
   return (
     <section className={styles.wrapper}>
       <div className={styles.profile}>
-        <Image width={160} height={160} alt="Profile Image" src={profileImage} />
+        <Image width={150} height={150} alt="Profile Image" src={profileImage} />
         <div className={styles.text}>
           <div className={styles.name}>Joohyun Kim</div>
           <div className={styles.description}>

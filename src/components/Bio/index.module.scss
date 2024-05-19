@@ -6,6 +6,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @include responsive(xl) {
+    display: none;
+  }
 }
 
 .profile {
@@ -18,19 +22,19 @@
 .text {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  font-size: 14px;
-  color: $gray600;
-}
-
-.description {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
+  gap: 16px;
 }
 
 .name {
   font-size: 18px;
   font-weight: 700;
   color: $gray700;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+  color: $gray600;
 }
