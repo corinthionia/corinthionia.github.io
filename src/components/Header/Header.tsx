@@ -1,14 +1,13 @@
-import React from 'react';
-import styles from './index.module.scss';
 import Link from 'next/link';
-
+import { ROUTE } from '@/constants/ROUTE';
+import styles from './index.module.scss';
 import logo from 'public/header_logo.svg';
 import Image from 'next/image';
 
 const menus = [
-  { title: '포스트', href: '/post' },
-  { title: '기록', href: '/til' },
-  { title: '조각', href: '/snippet' },
+  { title: '포스트', href: ROUTE.POST },
+  { title: '기록', href: ROUTE.TIL },
+  { title: '조각', href: ROUTE.SNIPPET },
 ];
 
 const Header = () => {
@@ -23,14 +22,14 @@ const Header = () => {
           ))}
         </div>
 
-        <Link href="/">
+        <Link href={ROUTE.MAIN}>
           <div className={styles.logo}>
             <Image width={205} height={14} alt="logo" src={logo} />
           </div>
         </Link>
 
         <div className={styles.items}>
-          <Link href="/guest-book">
+          <Link href={ROUTE.GUESTBOOK}>
             <span>방명록</span>
           </Link>
           <Link href="https://github.com/corinthionia" target="_blank">

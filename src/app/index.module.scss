@@ -41,10 +41,20 @@
 .heading {
   display: flex;
   gap: 24px;
-  color: $gray400;
+  color: $gray200;
 
   h2 {
-    text-decoration: #ffe53f wavy underline;
     cursor: pointer;
+    &:hover {
+      color: $gray400;
+      text-decoration: #ffe53f wavy underline;
+      text-underline-position: under;
+    }
+  }
+
+  h2.fixed {
+    color: $gray400;
+    text-decoration: #ffe53f wavy underline;
+    text-underline-position: under;
   }
 }
