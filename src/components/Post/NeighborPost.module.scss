@@ -1,19 +1,19 @@
 .section {
   width: 100%;
-  padding: 28px 16px 0 16px;
-  margin-bottom: 64px;
+  padding: 0 16px;
+  margin: 28px 0 64px 0;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+
+  @include responsive(s) {
+    flex-direction: column;
+    gap: 6px;
+  }
 }
 
 .wrapper {
   width: 240px;
   padding: 8px;
-  border-radius: 6px;
-
-  @include flex-col(8px);
-  @include typo-regular(14px);
 
   cursor: pointer;
   &:hover {
@@ -22,10 +22,25 @@
       text-shadow 0.5s,
       opacity 0.5s;
   }
+
+  @include flex-col(8px);
+  @include typo-regular(14px);
+
+  @include responsive(s) {
+    gap: 4px;
+    border-radius: 8px;
+    font-size: 12px;
+    background: #f0f7ff;
+  }
+
+  @include responsive(xs) {
+    width: 100%;
+  }
 }
 
 .top {
   color: $point3;
+
   &:hover {
     color: #86b0df;
   }
@@ -40,5 +55,9 @@
 
   &:hover {
     color: $gray700;
+  }
+
+  @include responsive(s) {
+    @include ellipsis(1);
   }
 }

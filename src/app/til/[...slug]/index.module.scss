@@ -2,6 +2,15 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  @include responsive(l) {
+    padding: 32px 32px 0 32px;
+  }
+  @include responsive(m) {
+    padding: 32px 52px 0 52px;
+  }
+  @include responsive(s) {
+    padding: 48px 32px 0 32px;
+  }
 }
 
 .border {
@@ -10,4 +19,7 @@
   margin-top: 100px;
   border-radius: 1px;
   background-image: linear-gradient(60deg, $secondary 0%, $primary 100%);
+  @include responsive(m) {
+    margin-top: 32px;
+  }
 }

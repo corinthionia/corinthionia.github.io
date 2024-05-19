@@ -4,6 +4,9 @@
   justify-content: flex-end;
 
   @include flex-col;
+  @include responsive(l) {
+    margin-bottom: 60px;
+  }
 }
 
 .title {
@@ -12,7 +15,9 @@
   font-weight: 600;
   line-height: 1.6;
 
-  @include ellipsis(3);
+  @include responsive(l) {
+    margin-bottom: 60px;
+  }
 }
 
 .info {

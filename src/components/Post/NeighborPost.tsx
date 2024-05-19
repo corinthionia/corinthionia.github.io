@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { NeighborPostType } from '@/interfaces/post';
 import styles from './NeighborPost.module.scss';
-
+import cn from 'classnames';
 interface Props {
   pageType: 'post' | 'til';
   neighborPost: NeighborPostType;
@@ -19,8 +19,8 @@ const NeighborPost = (props: Props) => {
         {prev ? (
           <Link href={`/${pageType}/${prev.fields.slug}`}>
             <div className={styles.wrapper}>
-              <div className={styles.top}>← 이전 글</div>
-              <div className={styles.bottom}>{prev.frontMatter.title}</div>
+              <span className={styles.top}>← 이전 글</span>
+              <span className={styles.bottom}>{prev.frontMatter.title}</span>
             </div>
           </Link>
         ) : (
@@ -30,8 +30,8 @@ const NeighborPost = (props: Props) => {
         {next && (
           <Link href={`/${pageType}/${next.fields.slug}`}>
             <div className={styles.wrapper}>
-              <div className={styles.top}>다음 글 →</div>
-              <div className={styles.bottom}>{next.frontMatter.title}</div>
+              <span className={styles.top}>다음 글 →</span>
+              <span className={styles.bottom}>{next.frontMatter.title}</span>
             </div>
           </Link>
         )}

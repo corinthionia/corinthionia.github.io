@@ -30,6 +30,12 @@
 }
 
 @mixin responsive($point: m) {
+  @if $point == xs {
+    @media (max-width: 480px) {
+      @content;
+    }
+  }
+
   @if $point == s {
     @media (max-width: 576px) {
       @content;

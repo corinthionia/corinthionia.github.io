@@ -1,13 +1,16 @@
-.thumbnailList {
+.wrapper {
   display: flex;
   flex-direction: column;
   gap: 64px;
 
-  @media (max-width: 768px) {
+  @include responsive(l) {
+    padding: 30px 32px;
+  }
+
+  @include responsive(s) {
     display: grid;
     grid-template-columns: 1fr;
     row-gap: 52px;
-
     width: 100%;
     padding: 30px 0;
     margin-top: 28px;
