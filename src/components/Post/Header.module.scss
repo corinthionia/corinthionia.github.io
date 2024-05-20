@@ -4,20 +4,13 @@
   justify-content: flex-end;
 
   @include flex-col;
-  @include responsive(l) {
-    margin-bottom: 60px;
-  }
 }
 
 .title {
-  margin-top: 0;
   font-size: 32px;
   font-weight: 600;
   line-height: 1.6;
-
-  @include responsive(l) {
-    margin-bottom: 60px;
-  }
+  margin-top: 0;
 }
 
 .info {

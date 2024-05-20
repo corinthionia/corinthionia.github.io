@@ -1,5 +1,10 @@
-.thumbnailList {
+.wrapper {
   display: flex;
   flex-direction: column;
-  gap: 64px;
+  gap: 24px;
+
+  @include responsive(l) {
+    margin-top: 36px;
+    padding: 0 32px;
+  }
 }
