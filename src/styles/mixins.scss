@@ -77,3 +77,14 @@
   -webkit-line-clamp: $lineClamp;
   -webkit-box-orient: vertical;
 }
+
+@mixin keyframes($name) {
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+@mixin animation($keyframes, $duration: 1s) {
+  animation: $keyframes $duration;
+  -webkit-animation: $keyframes $duration;
+}

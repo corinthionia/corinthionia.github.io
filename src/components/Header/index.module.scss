@@ -30,11 +30,22 @@
   align-items: center;
   justify-content: space-between;
   font-size: 14px;
+
   span:hover {
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     transition:
       text-shadow 0.3s,
       opacity 0.4s;
+  }
+
+  @include responsive(s) {
+    display: none;
+  }
+}
+
+.menu {
+  @media (min-width: 577px) {
+    display: none;
   }
 }
 

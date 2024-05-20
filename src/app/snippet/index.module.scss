@@ -1,11 +1,9 @@
 .wrapper {
   display: flex;
   flex-direction: column;
-  gap: 24px;
   padding-top: calc(64px + 64px);
 
   @include responsive(l) {
-    margin-top: 36px;
-    padding: 0 32px;
+    padding: 96px 32px 0 32px;
   }
 }

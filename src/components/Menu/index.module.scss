@@ -1,0 +1,45 @@
+.wrapper {
+  position: fixed;
+  z-index: 3;
+  top: 80px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+
+  width: 80%;
+  padding: 16px 32px 20px 32px;
+  border-radius: 16px;
+  border: 1px solid $gray200;
+  filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.1));
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 12px;
+
+  font-size: 14px;
+  color: $gray500;
+  background: $white;
+  animation: slide-down 0.5s;
+}
+
+.top {
+  width: 100%;
+  text-align: center;
+  color: $blue500;
+}
+
+.bottom {
+  width: 100%;
+  padding: 0 8px;
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.active {
+  color: $gray800;
+  font-weight: 500;
+  text-decoration: $purple300 wavy underline;
+  text-underline-position: under;
+}

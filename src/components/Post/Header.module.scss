@@ -4,6 +4,9 @@
   justify-content: flex-end;
 
   @include flex-col;
+  @include responsive(xs) {
+    margin: 0 auto 36px;
+  }
 }
 
 .title {

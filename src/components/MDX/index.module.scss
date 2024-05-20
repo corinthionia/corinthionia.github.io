@@ -2,7 +2,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
+  margin: 0 auto 100px auto;
   color: $gray700;
   line-height: 2;
   font-size: 16px;
@@ -73,10 +73,10 @@
   blockquote {
     width: 100%;
     margin: 20px 0;
-    padding: 8px 16px;
-    border-radius: 8px;
+    padding: 12px 20px;
+    border-radius: 12px;
     background: $blue100;
-    color: $gray600;
+    color: $gray500;
   }
 
   ol,
@@ -136,34 +136,6 @@
     td {
       border: 1px solid $gray100;
       padding: 4px 0;
-    }
-  }
-
-  @include responsive(l) {
-    font-size: 15px;
-
-    h1 {
-      font-size: 23px;
-    }
-
-    h2 {
-      font-size: 22px;
-    }
-
-    h3 {
-      font-size: 17px;
-    }
-
-    img {
-      width: 100%;
-    }
-
-    hr {
-      margin: 50px 0;
-    }
-
-    img {
-      max-width: 100%;
     }
   }
 
@@ -238,5 +210,36 @@
     pre[class*='language-'] {
       text-shadow: none;
     }
+  }
+
+  @include responsive(l) {
+    font-size: 15px;
+    margin-bottom: 60px h1 {
+      font-size: 23px;
+    }
+
+    h2 {
+      font-size: 22px;
+    }
+
+    h3 {
+      font-size: 17px;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    hr {
+      margin: 50px 0;
+    }
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  @include responsive(m) {
+    margin-bottom: 32px;
   }
 }

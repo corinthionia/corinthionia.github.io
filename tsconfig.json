@@ -27,6 +27,7 @@
       "@/interfaces/*": ["src/interfaces/*"],
       "@/layouts/*": ["src/layouts/*"],
       "@/styles/*": ["src/styles/*"],
+      "@/ui/*": ["src/ui/*"],
       "@/utils/*": ["src/utils/*"]
     }
   },
