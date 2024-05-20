@@ -25,13 +25,6 @@
   display: flex;
   flex-direction: column;
   overflow: auto;
-
-  @include responsive(l) {
-    margin-top: 80px;
-  }
-  @include responsive(s) {
-    margin-top: 48px;
-  }
 }
 
 .list {

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { NeighborPostType } from '@/interfaces/post';
 import styles from './NeighborPost.module.scss';
-import cn from 'classnames';
+
 interface Props {
   pageType: 'post' | 'til';
   neighborPost: Pick<NeighborPostType, 'prev' | 'next'>;

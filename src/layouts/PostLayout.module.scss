@@ -1,16 +1,18 @@
 .wrapper {
   width: 100%;
+  height: 100%;
+  top: 0;
   display: flex;
   flex-direction: column;
   padding-top: calc(64px + 64px);
 
   @include responsive(l) {
-    padding: 32px 32px 0 32px;
+    padding: 128px 32px 0 32px;
   }
   @include responsive(m) {
-    padding: 32px 52px 0 52px;
+    padding: 128px 52px 0 52px;
   }
   @include responsive(s) {
-    padding: 48px 32px 0 32px;
+    padding: 100px 32px 0 32px;
   }
 }
