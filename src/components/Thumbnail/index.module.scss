@@ -28,6 +28,7 @@
   @include responsive(s) {
     width: 100%;
     border-radius: 12px;
+    border: 1px solid $gray100;
   }
 }
 

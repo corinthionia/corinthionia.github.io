@@ -3,15 +3,18 @@ import { PostType } from '@/interfaces/post';
 import { getAllPosts } from 'src/utils/post';
 import PostList from '@/components/PostList/PostList';
 import { CONTENTS_PATH } from '@/constants/CONTENTS_PATH';
+import styles from './index.module.scss';
 
 export default async function Page() {
   const posts = await getAllPosts(CONTENTS_PATH.TIL_PATH);
 
   return (
-    <PostList>
-      {posts.map((post: PostType) => (
-        <Thumbnail key={post.fields.slug} post={post} to="til" />
-      ))}
-    </PostList>
+    <main className={styles.wrapper}>
+      <PostList>
+        {posts.map((post: PostType) => (
+          <Thumbnail key={post.fields.slug} post={post} to="til" />
+        ))}
+      </PostList>
+    </main>
   );
 }
