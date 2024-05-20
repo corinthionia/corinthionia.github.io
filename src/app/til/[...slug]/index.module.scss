@@ -2,6 +2,8 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  padding-top: calc(64px + 64px);
+
   @include responsive(l) {
     padding: 32px 32px 0 32px;
   }

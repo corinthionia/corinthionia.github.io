@@ -8,8 +8,16 @@ export interface FrontMatterType {
   pinned: boolean;
 }
 
+export interface PostInfoType {
+  frontMatter: { [key: string]: any };
+  fields: {
+    slug: string;
+  };
+  path: string;
+}
+
 export interface PostType {
-  frontMatter: FrontMatterType;
+  frontMatter: { [key: string]: any };
   content: string;
   fields: {
     slug: string;
@@ -19,5 +27,6 @@ export interface PostType {
 
 export interface NeighborPostType {
   prev: PostType | null;
+  curr: PostType | undefined;
   next: PostType | null;
 }

@@ -1,10 +1,11 @@
 import Thumbnail from '@/components/Thumbnail/Thumbnail';
 import { PostType } from '@/interfaces/post';
-import { getAllTILs } from 'src/utils/post';
+import { getAllPosts } from 'src/utils/post';
 import PostList from '@/components/PostList/PostList';
+import { CONTENTS_PATH } from '@/constants/CONTENTS_PATH';
 
 export default async function Page() {
-  const posts = await getAllTILs();
+  const posts = await getAllPosts(CONTENTS_PATH.TIL_PATH);
 
   return (
     <PostList>

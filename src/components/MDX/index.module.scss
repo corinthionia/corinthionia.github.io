@@ -113,12 +113,15 @@
   }
 
   img {
-    width: 100%;
+    display: block;
     max-width: 600px;
+    // margin: 8px auto 36px auto;
     margin: 8px 0 36px 0;
+
     border-radius: 4px;
     & + & {
-      margin: 4px;
+      // margin: 4px auto;
+      margin: 4px 0;
     }
   }
 

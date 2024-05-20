@@ -4,7 +4,7 @@ import styles from './NeighborPost.module.scss';
 import cn from 'classnames';
 interface Props {
   pageType: 'post' | 'til';
-  neighborPost: NeighborPostType;
+  neighborPost: Pick<NeighborPostType, 'prev' | 'next'>;
 }
 
 const NeighborPost = (props: Props) => {

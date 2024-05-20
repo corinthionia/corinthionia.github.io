@@ -4,7 +4,8 @@ import Header from '@/components/Post/Header';
 import NeighborPost from '@/components/Post/NeighborPost';
 import Giscus from '@/components/Giscus/Giscus';
 import { formatDate } from '@/utils/date';
-import { getMatchedTIL, getNeighborTILs } from '@/utils/post';
+import { getNeighborPosts } from '@/utils/post';
+import { CONTENTS_PATH } from '@/constants/CONTENTS_PATH';
 import styles from './index.module.scss';
 
 interface ParamType {
@@ -16,15 +17,14 @@ interface ParamType {
 export default async function Page({ params }: ParamType) {
   const { slug } = params;
 
-  const post = await getMatchedTIL(slug);
-  const { prev, next } = await getNeighborTILs(slug);
+  const { prev, curr, next } = await getNeighborPosts(CONTENTS_PATH.TIL_PATH, slug);
 
-  if (!post) return notFound();
+  if (!curr) return notFound();
 
   const {
     frontMatter: { title, date },
     content,
-  } = post;
+  } = curr;
 
   return (
     <article className={styles.wrapper}>

@@ -1,67 +1,18 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-
 import { sync } from 'glob';
-import { NeighborPostType, PostType } from '@/interfaces/post';
-
-const POST_PATH = 'contents/post';
-const TIL_PATH = 'contents/til';
-const SNIPPET_PATH = 'contents/snippet';
+import { NeighborPostType, PostInfoType, PostType } from '@/interfaces/post';
+import { CONTENTS_PATH } from '@/constants/CONTENTS_PATH';
 
 const getContentsDir = (basePath: string) => path.join(process.cwd(), basePath);
 
-export async function getMatchedPost(slug: string[]): Promise<PostType | undefined> {
-  const posts = await getAllPosts();
-  return posts.find((post: PostType) => post.fields.slug === [...slug].join('/'));
-}
-
-export async function getMatchedTIL(slug: string[]): Promise<PostType | undefined> {
-  const posts = await getAllTILs();
-  return posts.find((post: PostType) => post.fields.slug === [...slug].join('/'));
-}
-
-export async function getNeighborPosts(slug: string[]): Promise<NeighborPostType> {
-  const posts = await getAllPosts();
-  const index = posts.findIndex((post: PostType) => post.fields.slug === [...slug].join('/'));
-
-  if (index === 0) {
-    return { prev: null, next: posts[index - 1] };
-  }
-
-  if (index === posts.length - 1) {
-    return { prev: posts[index + 1], next: null };
-  }
-
-  return { prev: posts[index + 1], next: posts[index - 1] };
-}
-
-export async function getNeighborTILs(slug: string[]): Promise<NeighborPostType> {
-  const posts = await getAllTILs();
-  const index = posts.findIndex((post: PostType) => post.fields.slug === [...slug].join('/'));
-
-  if (index === 0) {
-    return { prev: posts[index + 1], next: null };
-  }
-
-  if (index === posts.length - 1) {
-    return { prev: null, next: posts[index - 1] };
-  }
-
-  return { prev: posts[index + 1], next: posts[index - 1] };
-}
-
-export async function getPinnedPostList(): Promise<PostType[]> {
-  const posts = await getAllPosts();
-  return posts.filter((post: any) => post.frontMatter.pinned);
-}
-
-export async function getAllPosts(): Promise<PostType[]> {
-  const paths: string[] = sync(`${getContentsDir(POST_PATH)}/**/*.md*`);
+export async function getAllPosts(contentsPath: string): Promise<PostType[]> {
+  const paths: string[] = sync(`${getContentsDir(contentsPath)}/**/*.md*`);
 
   const posts = paths
     .reduce((acc: any, path: string) => {
-      const post = parsePost(POST_PATH, path);
+      const post = getPostInfo(CONTENTS_PATH.POST_PATH, path);
 
       if (!post) return acc;
 
@@ -71,12 +22,12 @@ export async function getAllPosts(): Promise<PostType[]> {
   return posts;
 }
 
-export async function getAllTILs(): Promise<PostType[]> {
-  const paths: string[] = sync(`${getContentsDir(TIL_PATH)}/**/**/*.md*`);
+export async function getAllSnippets(contentsPath: string): Promise<PostType[]> {
+  const paths: string[] = sync(`${getContentsDir(contentsPath)}/*.md*`);
 
   const posts = paths
     .reduce((acc: any, path: string) => {
-      const post = parsePost(TIL_PATH, path);
+      const post = getMatchedPostContents(CONTENTS_PATH.POST_PATH, path);
 
       if (!post) return acc;
 
@@ -86,22 +37,26 @@ export async function getAllTILs(): Promise<PostType[]> {
   return posts;
 }
 
-export async function getAllSnippets(): Promise<PostType[]> {
-  const paths: string[] = sync(`${getContentsDir(SNIPPET_PATH)}/**/*.md*`);
+const getPostInfo = (base: string, path: string): PostInfoType | undefined => {
+  const file = fs.readFileSync(path, { encoding: 'utf8' });
+  const { data } = matter(file);
 
-  const posts = paths
-    .reduce((acc: any, path: string) => {
-      const post = parsePost(SNIPPET_PATH, path);
+  const slug = path.slice(path.indexOf(base) + base.length + 1).replace(/\.mdx?/g, '');
 
-      if (!post) return acc;
+  if (data.draft) return;
 
-      return [...acc, post];
-    }, [])
-    .sort((a: PostType, b: PostType) => sortPostByDate(a, b));
-  return posts;
-}
+  return {
+    frontMatter: {
+      ...data,
+    },
+    fields: {
+      slug,
+    },
+    path,
+  };
+};
 
-const parsePost = (base: string, path: string) => {
+const getMatchedPostContents = (base: string, path: string): PostType | undefined => {
   const file = fs.readFileSync(path, { encoding: 'utf8' });
   const { data, content } = matter(file);
 
@@ -120,6 +75,28 @@ const parsePost = (base: string, path: string) => {
     path,
   };
 };
+
+export async function getNeighborPosts(contentsPath: string, slug: string[]): Promise<NeighborPostType> {
+  const posts = await getAllPosts(contentsPath);
+  const index = posts.findIndex((post: PostType) => post.fields.slug === [...slug].join('/'));
+
+  const curr = getMatchedPostContents(contentsPath, posts[index].path);
+
+  if (index === 0) {
+    return { prev: null, curr: curr, next: posts[index - 1] };
+  }
+
+  if (index === posts.length - 1) {
+    return { prev: posts[index + 1], curr, next: null };
+  }
+
+  return { prev: posts[index + 1], curr, next: posts[index - 1] };
+}
+
+export async function getPinnedPostList(): Promise<PostType[]> {
+  const posts = await getAllPosts(CONTENTS_PATH.POST_PATH);
+  return posts.filter((post: any) => post.frontMatter.pinned);
+}
 
 const sortPostByDate = (a: PostType, b: PostType) => {
   if (a.frontMatter.date < b.frontMatter.date) {
