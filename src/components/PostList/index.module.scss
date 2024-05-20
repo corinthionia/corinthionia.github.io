@@ -2,9 +2,10 @@
   display: flex;
   flex-direction: column;
   gap: 64px;
+  padding-top: calc(64px + 64px);
 
   @include responsive(l) {
-    padding: 30px 32px;
+    padding: 36px 32px;
   }
 
   @include responsive(s) {
@@ -12,7 +13,7 @@
     grid-template-columns: 1fr;
     row-gap: 52px;
     width: 100%;
-    padding: 30px 0;
+    padding: 36px 0;
     margin-top: 28px;
   }
 }

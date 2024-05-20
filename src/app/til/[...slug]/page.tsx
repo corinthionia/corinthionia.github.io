@@ -1,12 +1,13 @@
 import { notFound } from 'next/navigation';
-import MDX from '@/components/MDX/MDX';
+import PostLayout from '@/layouts/PostLayout';
 import Header from '@/components/Post/Header';
+import MDX from '@/components/MDX/MDX';
+import Border from 'src/ui/Border/Border';
 import NeighborPost from '@/components/Post/NeighborPost';
 import Giscus from '@/components/Giscus/Giscus';
 import { formatDate } from '@/utils/date';
 import { getNeighborPosts } from '@/utils/post';
 import { CONTENTS_PATH } from '@/constants/CONTENTS_PATH';
-import styles from './index.module.scss';
 
 interface ParamType {
   params: {
@@ -27,12 +28,12 @@ export default async function Page({ params }: ParamType) {
   } = curr;
 
   return (
-    <article className={styles.wrapper}>
+    <PostLayout>
       <Header title={title} date={formatDate(date)} />
       <MDX content={content} />
-      <div className={styles.border} />
+      <Border />
       <NeighborPost pageType="til" neighborPost={{ prev, next }} />
       <Giscus />
-    </article>
+    </PostLayout>
   );
 }
