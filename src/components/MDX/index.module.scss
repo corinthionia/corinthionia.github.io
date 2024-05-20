@@ -1,4 +1,5 @@
 .mdx {
+  width: 100%;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
@@ -70,9 +71,11 @@
   }
 
   blockquote {
+    width: 100%;
     margin: 20px 0;
-    padding: 0 15px;
-    border-left: 3px solid $secondary;
+    padding: 8px 16px;
+    border-radius: 8px;
+    background: $blue100;
     color: $gray600;
   }
 
@@ -92,29 +95,31 @@
   }
 
   a {
-    color: #6bceee;
+    color: $mint100;
     -moz-transition: color 0.3s ease;
     -o-transition: color 0.3s ease;
     -ms-transition: color 0.3s ease;
     -webkit-transition: color 0.3s ease;
     transition: color 0.3s ease;
     &:hover {
-      color: $point1;
+      color: $pink100;
     }
   }
 
   u {
-    text-decoration: #ffe979 wavy underline;
+    text-decoration: $yellow100 wavy underline;
     text-underline-position: under;
     text-underline-offset: 3px;
   }
 
   img {
-    // max-width: 500px;
-    max-width: 100%;
-    margin-top: 16px;
-    margin-bottom: 32px;
+    width: 100%;
+    max-width: 600px;
+    margin: 8px 0 36px 0;
     border-radius: 4px;
+    & + & {
+      margin: 4px;
+    }
   }
 
   table {
@@ -132,7 +137,6 @@
   }
 
   @include responsive(l) {
-    width: 100%;
     font-size: 15px;
 
     h1 {
@@ -169,7 +173,7 @@
   code[class*='language-'],
   pre[class*='language-'] {
     font-size: 12px;
-    color: #373530;
+    color: $gray800;
     direction: ltr;
     text-align: left;
     white-space: pre;
@@ -189,7 +193,7 @@
   code[class*='language-']::-moz-selection,
   code[class*='language-'] *::-moz-selection,
   pre[class*='language-'] *::-moz-selection {
-    background: #f0f0f0;
+    background: $gray50;
     color: inherit;
     text-shadow: none;
   }
@@ -197,7 +201,7 @@
   code[class*='language-']::selection,
   code[class*='language-'] *::selection,
   pre[class*='language-'] *::selection {
-    background: #f0f0f0;
+    background: $gray50;
     color: inherit;
     text-shadow: none;
   }
@@ -210,15 +214,15 @@
     margin-top: 12px;
     margin-bottom: 36px;
     border-radius: 4px;
-    border: 0.5px solid #c6c8d1;
+    border: 0.5px solid $gray100;
   }
 
   /* Inline code */
   :not(pre) > code {
-    background: #f3f3f3;
+    background: $gray50;
     padding: 2px 4px;
     border-radius: 3px;
-    color: #fb6762;
+    color: $red100;
     margin-right: 2px;
     white-space: normal;
     border: none;

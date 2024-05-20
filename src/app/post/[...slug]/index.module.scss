@@ -19,7 +19,7 @@
   height: 3px;
   margin-top: 100px;
   border-radius: 1px;
-  background-image: linear-gradient(60deg, $secondary 0%, $primary 100%);
+  background-image: linear-gradient(60deg, $blue200 0%, $purple100 100%);
   @include responsive(l) {
     margin-top: 60px;
   }

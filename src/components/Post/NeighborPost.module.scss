@@ -30,7 +30,7 @@
     gap: 4px;
     border-radius: 8px;
     font-size: 12px;
-    background: #f0f7ff;
+    background: $blue100;
   }
 
   @include responsive(xs) {
@@ -39,10 +39,10 @@
 }
 
 .top {
-  color: $point3;
+  color: $blue400;
 
   &:hover {
-    color: #86b0df;
+    color: $blue300;
   }
 }
 
