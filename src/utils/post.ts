@@ -12,13 +12,14 @@ export async function getAllPosts(contentsPath: string): Promise<PostType[]> {
 
   const posts = paths
     .reduce((acc: any, path: string) => {
-      const post = getPostInfo(CONTENTS_PATH.POST_PATH, path);
+      const post = getPostInfo(contentsPath, path);
 
       if (!post) return acc;
 
       return [...acc, post];
     }, [])
     .sort((a: PostType, b: PostType) => sortPostByDate(a, b));
+
   return posts;
 }
 
@@ -27,7 +28,7 @@ export async function getAllSnippets(contentsPath: string): Promise<PostType[]> 
 
   const posts = paths
     .reduce((acc: any, path: string) => {
-      const post = getMatchedPostContents(CONTENTS_PATH.POST_PATH, path);
+      const post = getMatchedPostContents(contentsPath, path);
 
       if (!post) return acc;
 
@@ -61,7 +62,6 @@ const getMatchedPostContents = (base: string, path: string): PostType | undefine
   const { data, content } = matter(file);
 
   const slug = path.slice(path.indexOf(base) + base.length + 1).replace(/\.mdx?/g, '');
-
   if (data.draft) return;
 
   return {
@@ -83,14 +83,14 @@ export async function getNeighborPosts(contentsPath: string, slug: string[]): Pr
   const curr = getMatchedPostContents(contentsPath, posts[index].path);
 
   if (index === 0) {
-    return { prev: null, curr: curr, next: posts[index - 1] };
+    return { prev: posts[index + 1], curr: curr, next: null };
   }
 
   if (index === posts.length - 1) {
-    return { prev: posts[index + 1], curr, next: null };
+    return { prev: null, curr: curr, next: posts[index - 1] };
   }
 
-  return { prev: posts[index + 1], curr, next: posts[index - 1] };
+  return { prev: posts[index + 1], curr: curr, next: posts[index - 1] };
 }
 
 export async function getPinnedPostList(): Promise<PostType[]> {

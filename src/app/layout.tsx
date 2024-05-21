@@ -6,6 +6,7 @@ import Bio from '@/components/Bio/Bio';
 import Footer from '@/components/Footer/Footer';
 import Aside from '@/components/Aside/Aside';
 import '@/styles/globals.css';
+import TOC from '@/components/TOC/TOC';
 
 export const metadata: Metadata = {
   title: 'Corinthionia',
@@ -19,18 +20,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <div className={styles.layout}>
           <Header />
 
+          <Bio />
+
           <div className={styles.grid}>
-            <Bio />
-
-            <main className={styles.contents}>
-              <div>
-                {children}
-                <Footer />
-              </div>
-            </main>
-
-            <Aside />
+            <main className={styles.contents}>{children}</main>
           </div>
+
+          <Footer />
         </div>
       </body>
     </html>

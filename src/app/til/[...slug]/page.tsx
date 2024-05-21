@@ -5,6 +5,7 @@ import MDX from '@/components/MDX/MDX';
 import Border from 'src/ui/Border/Border';
 import NeighborPost from '@/components/Post/NeighborPost';
 import Giscus from '@/components/Giscus/Giscus';
+import TOC from '@/components/TOC/TOC';
 import { formatDate } from '@/utils/date';
 import { getNeighborPosts } from '@/utils/post';
 import { CONTENTS_PATH } from '@/constants/CONTENTS_PATH';
@@ -28,12 +29,16 @@ export default async function Page({ params }: ParamType) {
   } = curr;
 
   return (
-    <PostLayout>
-      <Header title={title} date={formatDate(date)} />
-      <MDX content={content} />
-      <Border />
-      <NeighborPost pageType="til" neighborPost={{ prev, next }} />
-      <Giscus />
-    </PostLayout>
+    <>
+      <PostLayout>
+        <Header title={title} date={formatDate(date)} />
+        <MDX content={content} />
+        <Border />
+        <NeighborPost pageType="til" neighborPost={{ prev, next }} />
+        <Giscus />
+      </PostLayout>
+
+      <TOC />
+    </>
   );
 }

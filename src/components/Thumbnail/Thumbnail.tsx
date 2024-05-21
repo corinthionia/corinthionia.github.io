@@ -19,7 +19,7 @@ const Thumbnail = (props: Props) => {
   } = props;
 
   return (
-    <Link key={title} href={`/${to}/${fields.slug}`}>
+    <Link key={title} href={`${to}/${fields.slug}`}>
       <div className={styles.wrapper}>
         <Image
           className={styles.image}

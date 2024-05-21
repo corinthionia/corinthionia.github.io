@@ -1,11 +1,21 @@
 .wrapper {
-  width: 100%;
-  max-width: 375px;
-  margin-top: 64px;
-  padding-top: 64px;
+  width: 216px;
+  padding: calc(64px + 64px) 0 0 32px;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  position: fixed;
+  top: 0px;
+  left: calc((100% - 768px) / 2 - 216px);
+
+  @media (min-width: 1400px) {
+    left: calc((100% - 768px) / 2 - 300px);
+  }
+
+  @media ((min-width: 1300px) and (max-width: 1400px)) {
+    left: 24px;
+  }
 
   @include responsive(xl) {
     display: none;
@@ -16,7 +26,7 @@
   display: flex;
   flex-direction: column;
   gap: 18px;
-  margin-right: 8px;
+  margin-right: 16px;
 }
 
 .text {

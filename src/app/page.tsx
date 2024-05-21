@@ -20,7 +20,7 @@ export default async function Home() {
 
       <PostList>
         {posts.map((post: PostType) => (
-          <Thumbnail key={post.fields.slug} post={post} to="post" />
+          <Thumbnail key={post.fields.slug} post={post} to={ROUTE.POST} />
         ))}
       </PostList>
     </section>

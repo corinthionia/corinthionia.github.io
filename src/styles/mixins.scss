@@ -59,6 +59,12 @@
       @content;
     }
   }
+
+  @if $point == xxl {
+    @media (max-width: 1400px) {
+      @content;
+    }
+  }
 }
 
 @mixin border($width: 100%, $height: 1px, $color, $direction: row) {
