@@ -4,7 +4,6 @@ import { Pretendard } from '@/styles/fonts';
 import Header from '@/components/Header/Header';
 import Bio from '@/components/Bio/Bio';
 import Footer from '@/components/Footer/Footer';
-import Aside from '@/components/Aside/Aside';
 import '@/styles/globals.css';
 import TOC from '@/components/TOC/TOC';
 

@@ -1,6 +1,6 @@
 'use client';
 
-import { useLayoutEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { getTOCObserver } from '@/utils/toc';
 import Heading from '@/components/TOC/Heading';
 import styles from './index.module.scss';
@@ -9,7 +9,7 @@ const TOC = () => {
   const [activeId, setActiveId] = useState<string>('');
   const [headings, setHeadings] = useState<Element[]>([]);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const observer = getTOCObserver(setActiveId);
 
     const headingElements = Array.from(document.querySelectorAll('h1, h2')).slice(1);
