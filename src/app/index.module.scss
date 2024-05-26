@@ -52,19 +52,21 @@
 .heading {
   display: flex;
   gap: 24px;
-  color: $gray200;
+  color: var(--gray200);
 
-  h2 {
+  span {
+    font-size: 24px;
+    font-weight: 600;
     cursor: pointer;
     &:hover {
-      color: $gray400;
+      color: var(--gray400);
       text-decoration: $yellow200 wavy underline;
       text-underline-position: under;
     }
   }
 
-  h2.fixed {
-    color: $gray400;
+  span.fixed {
+    color: var(--gray500);
     text-decoration: $yellow200 wavy underline;
     text-underline-position: under;
   }

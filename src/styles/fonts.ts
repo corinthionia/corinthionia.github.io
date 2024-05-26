@@ -1,6 +1,6 @@
-import localFont from 'next/font/local';
+import { Noto_Sans_KR } from 'next/font/google';
 
-export const Pretendard = localFont({
-  src: '../assets/fonts/Pretendard.woff2',
+export const NotoSansKR = Noto_Sans_KR({
+  subsets: ['latin'],
   display: 'swap',
 });

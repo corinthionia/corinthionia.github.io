@@ -20,7 +20,7 @@
   display: flex;
   gap: 12px;
   margin-top: 8px;
-  color: $gray300;
+  color: var(--gray300);
 
   span:hover {
     color: $mint100;

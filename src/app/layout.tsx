@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
 import styles from './index.module.scss';
-import { Pretendard } from '@/styles/fonts';
+import { NotoSansKR } from '@/styles/fonts';
 import Header from '@/components/Header/Header';
 import Bio from '@/components/Bio/Bio';
 import Footer from '@/components/Footer/Footer';
-import '@/styles/globals.css';
-import TOC from '@/components/TOC/TOC';
+import { ThemeProvider } from 'next-themes';
+import '@/styles/globals.scss';
 
 export const metadata: Metadata = {
   title: 'Corinthionia',
@@ -15,18 +15,19 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ko">
-      <body className={Pretendard.className}>
-        <div className={styles.layout}>
-          <Header />
+      <body className={NotoSansKR.className}>
+        <ThemeProvider>
+          <div className={styles.layout}>
+            <Header />
+            <Bio />
 
-          <Bio />
+            <div className={styles.grid}>
+              <main className={styles.contents}>{children}</main>
+            </div>
 
-          <div className={styles.grid}>
-            <main className={styles.contents}>{children}</main>
+            <Footer />
           </div>
-
-          <Footer />
-        </div>
+        </ThemeProvider>
       </body>
     </html>
   );

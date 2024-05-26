@@ -1,9 +1,12 @@
 'use client';
 
+import { useTheme } from 'next-themes';
 import { useEffect, useRef } from 'react';
 
 const Giscus = () => {
   const ref = useRef<HTMLDivElement>(null);
+  const { theme } = useTheme();
+  const isLightTheme = theme === 'light';
 
   useEffect(() => {
     if (!ref.current || ref.current.hasChildNodes()) return;
@@ -20,7 +23,7 @@ const Giscus = () => {
     scriptElem.setAttribute('data-reactions-enabled', '1');
     scriptElem.setAttribute('data-emit-metadata', '0');
     scriptElem.setAttribute('data-input-position', 'bottom');
-    scriptElem.setAttribute('data-theme', 'light');
+    scriptElem.setAttribute('data-theme', isLightTheme ? 'light' : 'transparent_dark');
     scriptElem.setAttribute('data-lang', 'en');
     scriptElem.crossOrigin = 'anonymous';
     scriptElem.async = true;
@@ -30,8 +33,11 @@ const Giscus = () => {
 
   useEffect(() => {
     const iframe = document.querySelector<HTMLIFrameElement>('iframe.giscus-frame');
-    iframe?.contentWindow?.postMessage({ giscus: { setConfig: { theme: 'light' } } }, 'https://giscus.app');
-  }, []);
+    iframe?.contentWindow?.postMessage(
+      { giscus: { setConfig: { theme: isLightTheme ? 'light' : 'transparent_dark' } } },
+      'https://giscus.app'
+    );
+  }, [theme]);
 
   return <section ref={ref} />;
 };

@@ -3,9 +3,9 @@
   height: 68px;
   padding: 0 28px;
   background: none;
-  background: #ffffff5f;
+  background: var(--header);
   backdrop-filter: blur(8px);
-  border-bottom: 1px solid $gray400;
+  border-bottom: 1px solid var(--header-border);
 
   position: fixed;
   top: 0;
@@ -13,6 +13,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @include responsive(xs) {
+    height: 56px;
+  }
 }
 
 .itemWrapper {

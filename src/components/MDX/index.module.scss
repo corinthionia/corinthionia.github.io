@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   margin: 0 auto 100px auto;
-  color: $gray700;
+  color: var(--gray700);
   line-height: 2;
   font-size: 16px;
   word-break: break-all;
@@ -26,7 +26,7 @@
     margin-top: 60px;
     margin-bottom: 4px;
     code[class*='language-'] {
-      color: $gray600;
+      color: var(--gray600);
     }
   }
 
@@ -36,7 +36,7 @@
     margin-top: 56px;
     margin-bottom: 4px;
     code[class*='language-'] {
-      color: $gray600;
+      color: var(--gray600);
     }
   }
 
@@ -48,7 +48,7 @@
     code[class*='language-'] {
       font-size: 18px;
       font-weight: 600;
-      color: $gray600;
+      color: var(--gray600);
     }
   }
 
@@ -75,8 +75,8 @@
     margin: 20px 0;
     padding: 12px 20px;
     border-radius: 12px;
-    background: $blue100;
-    color: $gray500;
+    background: var(--block-background);
+    color: var(--gray500);
   }
 
   ol,
@@ -90,7 +90,7 @@
   }
 
   hr {
-    border: 0.5px solid $gray100;
+    border: 0.5px solid var(--gray100);
     margin: 60px 0;
   }
 
@@ -127,14 +127,14 @@
 
   table {
     margin: 8px 0;
-    border: 1px solid $gray100;
+    border: 1px solid var(--gray100);
     font-size: 12px;
     text-align: center;
     border-collapse: collapse;
 
     th,
     td {
-      border: 1px solid $gray100;
+      border: 1px solid var(--gray100);
       padding: 4px 0;
     }
   }
@@ -148,7 +148,7 @@
   code[class*='language-'],
   pre[class*='language-'] {
     font-size: 12px;
-    color: $gray800;
+    color: var(--gray800);
     direction: ltr;
     text-align: left;
     white-space: pre;
@@ -168,7 +168,7 @@
   code[class*='language-']::-moz-selection,
   code[class*='language-'] *::-moz-selection,
   pre[class*='language-'] *::-moz-selection {
-    background: $gray50;
+    background: var(--gray50);
     color: inherit;
     text-shadow: none;
   }
@@ -176,7 +176,7 @@
   code[class*='language-']::selection,
   code[class*='language-'] *::selection,
   pre[class*='language-'] *::selection {
-    background: $gray50;
+    background: var(--gray50);
     color: inherit;
     text-shadow: none;
   }
@@ -189,12 +189,12 @@
     margin-top: 12px;
     margin-bottom: 36px;
     border-radius: 4px;
-    border: 0.5px solid $gray100;
+    border: 0.5px solid var(--gray100);
   }
 
   /* Inline code */
   :not(pre) > code {
-    background: $gray50;
+    background: var(--gray50);
     padding: 2px 4px;
     border-radius: 3px;
     color: $red100;

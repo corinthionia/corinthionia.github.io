@@ -30,7 +30,7 @@
     gap: 4px;
     border-radius: 8px;
     font-size: 12px;
-    background: $blue100;
+    background: var(--block-background);
   }
 
   @include responsive(xs) {
@@ -47,14 +47,14 @@
 }
 
 .bottom {
-  color: $gray600;
+  color: var(--gray600);
   line-height: 1.5;
 
   overflow: hidden;
   @include ellipsis(2);
 
   &:hover {
-    color: $gray700;
+    color: var(--gray700);
   }
 
   @include responsive(s) {
