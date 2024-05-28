@@ -21,7 +21,7 @@
 
 .itemWrapper {
   width: 100%;
-  max-width: 768px;
+  max-width: $screen-max-width;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -54,8 +54,18 @@
 }
 
 .logo {
+  color: $pink200;
+  font-weight: 600;
+  font-size: 24px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.theme {
+  @include responsive(s) {
+    width: 26px;
+    height: 26px;
+  }
 }

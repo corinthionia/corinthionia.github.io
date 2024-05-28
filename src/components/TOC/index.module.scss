@@ -1,14 +1,11 @@
 .wrapper {
   width: 216px;
   padding: 128px 20px 0 28px;
+  @include flex-col(8px);
 
   position: fixed;
   top: 0px;
   right: calc((100% - 768px) / 2 - 216px);
-
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
 
   color: var(--gray300);
   font-size: 12px;

@@ -3,8 +3,7 @@
 import Link from 'next/link';
 import { ROUTE } from '@/constants/ROUTE';
 import styles from './index.module.scss';
-import logoLight from 'public/header_logo_light.svg';
-import logoDark from 'public/header_logo_dark.svg';
+import logo from 'public/header_logo.svg';
 
 import Image from 'next/image';
 import Menu from '@/components/Menu/Menu';
@@ -19,8 +18,8 @@ const menus = [
 ];
 
 const Header = () => {
-  const { theme } = useTheme();
-  const isLightTheme = theme === 'light';
+  const { theme, systemTheme } = useTheme();
+  const isLightTheme = systemTheme === 'light' || theme === 'light';
 
   const [isMenuOpened, setIsMenuOpened] = useState(false);
 
@@ -44,7 +43,7 @@ const Header = () => {
 
         <Link href={ROUTE.MAIN}>
           <div className={styles.logo}>
-            <Image width={205} height={14} alt="logo" src={isLightTheme ? logoLight : logoDark} />
+            <Image width={136} src={logo} alt="logo" />
           </div>
         </Link>
 

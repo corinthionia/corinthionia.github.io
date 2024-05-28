@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: '',
-  description: '',
+  title: 'Corinthionia',
+  description: 'Tech blog by @Corinthionia',
   applicationName: '',
   authors: null,
 

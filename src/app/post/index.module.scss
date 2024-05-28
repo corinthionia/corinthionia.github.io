@@ -1,6 +1,5 @@
 .wrapper {
   width: 100%;
-  max-width: 768px;
-  margin: 0 auto;
-  padding-top: calc(64px + 72px);
+  max-width: $post-max-width;
+  margin: 64px auto 0 auto;
 }

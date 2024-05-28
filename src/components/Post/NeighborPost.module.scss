@@ -6,21 +6,30 @@
   justify-content: space-between;
 
   @include responsive(s) {
-    flex-direction: column;
-    gap: 6px;
+    @include flex-col(6px);
   }
 }
 
 .wrapper {
   width: 240px;
   padding: 8px;
-
   cursor: pointer;
+
   &:hover {
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     transition:
       text-shadow 0.5s,
       opacity 0.5s;
+
+    .top {
+      color: $blue300;
+      transition: color 0.5s ease;
+    }
+
+    .bottom {
+      color: var(--gray700);
+      transition: color 0.5s ease;
+    }
   }
 
   @include flex-col(8px);
@@ -40,10 +49,6 @@
 
 .top {
   color: $blue400;
-
-  &:hover {
-    color: $blue300;
-  }
 }
 
 .bottom {
@@ -52,10 +57,6 @@
 
   overflow: hidden;
   @include ellipsis(2);
-
-  &:hover {
-    color: var(--gray700);
-  }
 
   @include responsive(s) {
     @include ellipsis(1);

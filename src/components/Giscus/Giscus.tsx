@@ -5,8 +5,8 @@ import { useEffect, useRef } from 'react';
 
 const Giscus = () => {
   const ref = useRef<HTMLDivElement>(null);
-  const { theme } = useTheme();
-  const isLightTheme = theme === 'light';
+  const { theme, systemTheme } = useTheme();
+  const isLightTheme = systemTheme === 'light' || theme === 'light';
 
   useEffect(() => {
     if (!ref.current || ref.current.hasChildNodes()) return;

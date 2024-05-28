@@ -7,14 +7,15 @@ const Bio = () => {
   return (
     <section className={styles.wrapper}>
       <div className={styles.profile}>
-        <Image width={140} height={140} alt="Profile Image" src={profileImage} />
+        <Image alt="Profile Image" src={profileImage} className={styles.image} />
+
         <div className={styles.text}>
-          <div className={styles.name}>Joohyun Kim</div>
+          <span className={styles.name}>Joohyun Kim</span>
           <div className={styles.description}>
             <Link href="mailto:corinthionia@gmail.com">
-              <div>corinthionia@gmail.com</div>
+              <span>corinthionia@gmail.com</span>
             </Link>
-            <div>프론트엔드를 공부하고 있습니다</div>
+            <span>프론트엔드를 공부하고 있습니다</span>
           </div>
         </div>
       </div>

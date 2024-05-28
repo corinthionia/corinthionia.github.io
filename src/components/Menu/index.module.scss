@@ -11,10 +11,8 @@
   border: 1px solid var(--gray200);
   filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.1));
 
-  display: flex;
+  @include flex-col(12px);
   align-items: center;
-  flex-direction: column;
-  gap: 12px;
 
   font-size: 14px;
   color: var(--gray500);

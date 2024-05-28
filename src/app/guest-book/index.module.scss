@@ -1,10 +1,11 @@
 .wrapper {
   width: 100%;
-  display: flex;
-  flex-direction: column;
+  max-width: $post-max-width;
+  @include flex-col;
+
   margin: 0 auto;
   color: var(--gray800);
-  padding-top: 128px;
+  padding-top: 64px;
 
   @include responsive(l) {
     margin-top: 128px;
@@ -18,8 +19,7 @@
 
 .textWrapper {
   width: 100%;
-  display: flex;
-  flex-direction: column;
+  @include flex-col;
   margin-bottom: 120px;
 }
 

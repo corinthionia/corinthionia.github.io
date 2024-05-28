@@ -40,7 +40,6 @@ const Thumbnail = (props: Props) => {
           </div>
           <div className={styles.postData}>
             <div className={styles.category}>{categories[1]}</div>
-            <div className={styles.category}>|</div>
             <div className={styles.date}>{formatDate(date)}</div>
           </div>
         </div>

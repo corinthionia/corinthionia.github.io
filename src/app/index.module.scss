@@ -1,8 +1,7 @@
 .layout {
   width: 100vw;
-  display: flex;
   align-items: center;
-  flex-direction: column;
+  @include flex-col;
 }
 
 .grid {
@@ -10,68 +9,88 @@
   max-width: 1500px;
   display: flex;
   position: relative;
-
-  // @include responsive(xl) {
-  //   display: flex;
-  //   flex-direction: column;
-  //   align-items: center;
-  // }
+  padding-top: 64px;
 }
 
 .contents {
   width: 100%;
-  // max-width: 768px;
-  display: flex;
-  flex-direction: column;
+  @include flex-col;
   overflow: auto;
   margin: 0 auto;
 }
 
 .list {
   width: 100%;
-  max-width: 768px;
+  max-width: $screen-max-width;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 64px;
-  padding-top: calc(64px + 52px);
+  padding-top: 64px;
+
+  @include flex-col;
+
+  @include responsive(xl) {
+    padding-top: 52px;
+  }
 
   @include responsive(l) {
-    padding: calc(64px + 40px) 32px 0 32px;
+    padding: 40px 32px 0 32px;
   }
 
   @include responsive(s) {
     width: 100%;
+    padding: 0;
     display: grid;
-    row-gap: 52px;
     grid-template-columns: 1fr;
-    padding: calc(64px + 40px) 0 0 0;
+    row-gap: 52px;
+    gap: 16px;
   }
 }
 
+.bio {
+  @include flex-col(12px);
+  background: var(--block-background);
+  border-radius: 12px;
+  padding: 24px;
+  color: var(--gray700);
+  font-size: 14px;
+}
+
 .heading {
+  width: 100%;
+  margin-top: 100px;
   display: flex;
   gap: 24px;
+  font-size: 22px;
   color: var(--gray200);
 
   span {
-    font-size: 24px;
     font-weight: 600;
     cursor: pointer;
     &:hover {
       color: var(--gray400);
-      text-decoration: $yellow200 wavy underline;
-      text-underline-position: under;
+      transition: color 0.5s;
     }
   }
 
   span.fixed {
-    color: var(--gray500);
-    text-decoration: $yellow200 wavy underline;
-    text-underline-position: under;
+    color: var(--gray600);
+  }
+
+  @include responsive(l) {
+    padding: 8px;
+    font-size: 18px;
+    max-width: 360px;
+    font-weight: 500;
   }
 
   @include responsive(s) {
-    margin: 0 auto;
+    margin: 16px auto 0 auto;
   }
+}
+
+.postGrid {
+  width: 100%;
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 72px;
 }

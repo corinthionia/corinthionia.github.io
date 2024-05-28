@@ -4,6 +4,7 @@
   margin: 0 auto;
   overflow: hidden;
   cursor: pointer;
+
   &:hover {
     text-shadow: 0 0 10px rgba(47, 58, 48, 0.2);
     transition:
@@ -12,9 +13,10 @@
   }
 
   @include responsive(s) {
-    width: 300px;
+    @include flex-col;
+    width: 100%;
+    max-width: 360px;
     height: inherit;
-    flex-direction: column;
 
     & + & {
       margin-top: 0px;
@@ -25,8 +27,10 @@
 .image {
   object-fit: cover;
   overflow: hidden;
+
   @include responsive(s) {
     width: 100%;
+    height: 180px;
     border-radius: 12px;
     border: 1px solid var(--gray100);
   }
@@ -34,10 +38,9 @@
 
 .postInfo {
   width: calc(100% - 200px);
-  padding: 4px 12px 16px 20px;
+  padding: 4px 12px 8px 20px;
 
-  display: flex;
-  flex-direction: column;
+  @include flex-col;
   justify-content: space-between;
 
   @include responsive(s) {
@@ -92,6 +95,7 @@
   align-items: center;
   font-weight: 600;
   font-size: 12px;
+  gap: 8px;
 
   @include responsive(s) {
     margin-top: 16px;
@@ -99,12 +103,16 @@
     font-size: 14px;
   }
 
-  .date {
-    color: var(--gray300);
+  .category {
+    font-weight: 400;
+    font-size: 12px;
+    padding: 3px 6px;
+    border-radius: 8px;
+    color: $blue300;
+    background: var(--block-background);
   }
 
-  .category {
-    color: $blue300;
-    margin-right: 8px;
+  .date {
+    color: var(--gray300);
   }
 }
