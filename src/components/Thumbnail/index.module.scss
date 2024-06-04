@@ -1,8 +1,10 @@
 .wrapper {
-  display: flex;
-  height: 160px;
+  width: 100%;
+  max-width: 800px;
+  height: 180px;
   margin: 0 auto;
-  overflow: hidden;
+  display: flex;
+  gap: 40px;
   cursor: pointer;
 
   &:hover {
@@ -17,10 +19,6 @@
     width: 100%;
     max-width: 360px;
     height: inherit;
-
-    & + & {
-      margin-top: 0px;
-    }
   }
 }
 
@@ -30,28 +28,49 @@
 
   @include responsive(s) {
     width: 100%;
-    height: 180px;
-    border-radius: 12px;
+    height: 200px;
     border: 1px solid var(--gray100);
   }
 }
 
 .postInfo {
-  width: calc(100% - 200px);
-  padding: 4px 12px 8px 20px;
+  width: calc(100% - 320px);
+  height: 100%;
 
-  @include flex-col;
-  justify-content: space-between;
-
+  @include flex-col(12px);
   @include responsive(s) {
     width: 100%;
-    padding: 24px 8px;
+    padding: 16px 12px 24px 12px;
   }
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.category {
+  font-size: 12px;
+  padding: 3px 6px;
+  border-radius: 8px;
+  color: $blue300;
+  background: var(--block-background);
+}
+
+.date {
+  font-size: 12px;
+  color: var(--gray300);
+}
+
+.bottom {
+  @include flex-col(12px);
+  align-items: flex-start;
+  justify-content: space-between;
 }
 
 .title {
   display: -webkit-box;
-
   overflow: hidden;
   white-space: normal;
   text-overflow: ellipsis;
@@ -59,9 +78,9 @@
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 
-  color: var(--gray700);
-  font-size: 22px;
-  font-weight: 600;
+  color: var(--gray800);
+  font-size: 26px;
+  font-weight: 500;
   line-height: 1.6;
 
   @include responsive(s) {
@@ -70,7 +89,6 @@
 }
 
 .summary {
-  margin-top: 8px;
   overflow: hidden;
   white-space: normal;
   text-overflow: ellipsis;
@@ -80,39 +98,12 @@
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 
-  color: var(--gray300);
-  font-size: 12px;
-  line-height: 1.5;
+  color: var(--gray500);
+  font-size: 13px;
+  line-height: 1.6;
+  font-weight: 300;
 
   @include responsive(s) {
-    margin-top: 16px;
     -webkit-line-clamp: 2;
-  }
-}
-
-.postData {
-  display: flex;
-  align-items: center;
-  font-weight: 600;
-  font-size: 12px;
-  gap: 8px;
-
-  @include responsive(s) {
-    margin-top: 16px;
-    font-weight: 600;
-    font-size: 14px;
-  }
-
-  .category {
-    font-weight: 400;
-    font-size: 12px;
-    padding: 3px 6px;
-    border-radius: 8px;
-    color: $blue300;
-    background: var(--block-background);
-  }
-
-  .date {
-    color: var(--gray300);
   }
 }

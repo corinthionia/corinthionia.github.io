@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import styles from './index.module.scss';
 import { PostType } from '@/interfaces/post';
 import { formatDate } from '@/utils/date';
+import styles from './index.module.scss';
 
 interface Props {
   to: string;
@@ -23,24 +23,25 @@ const Thumbnail = (props: Props) => {
       <div className={styles.wrapper}>
         <Image
           className={styles.image}
-          width={160}
+          width={256}
           height={160}
           quality={100}
           src={thumbnail}
           alt="thumbnail"
-          style={{ objectFit: 'cover', borderRadius: '8px' }}
+          style={{ objectFit: 'cover' }}
           sizes="(max-width: 768px) 100%"
           priority
         />
 
         <div className={styles.postInfo}>
-          <div>
+          <div className={styles.top}>
+            <div className={styles.category}>{categories[1]}</div>
+            <span className={styles.date}>{formatDate(date)}</span>
+          </div>
+
+          <div className={styles.bottom}>
             <div className={styles.title}>{title}</div>
             <div className={styles.summary}>{summary}</div>
-          </div>
-          <div className={styles.postData}>
-            <div className={styles.category}>{categories[1]}</div>
-            <div className={styles.date}>{formatDate(date)}</div>
           </div>
         </div>
       </div>

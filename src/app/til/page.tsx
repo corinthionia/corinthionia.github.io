@@ -3,12 +3,14 @@ import { getAllPosts } from 'src/utils/post';
 import { CONTENTS_PATH } from '@/constants/CONTENTS_PATH';
 import { ROUTE } from '@/constants/ROUTE';
 import PostList from '@/components/PostList/PostList';
-import Thumbnail from '@/components/Thumbnail/Thumbnail';
 import Bio from '@/components/Bio/Bio';
+import Thumbnail from '@/components/Thumbnail/Thumbnail';
 import styles from './index.module.scss';
+import { getAllCategories } from '@/utils/category';
 
 export default async function Page() {
   const posts = await getAllPosts(CONTENTS_PATH.TIL_PATH);
+  const categories = await getAllCategories(CONTENTS_PATH.TIL_PATH);
 
   return (
     <>
@@ -21,6 +23,8 @@ export default async function Page() {
           ))}
         </PostList>
       </main>
+
+      {/* <Category categories={categories} /> */}
     </>
   );
 }

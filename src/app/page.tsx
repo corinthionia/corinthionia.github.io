@@ -4,7 +4,6 @@ import { PostType } from '@/interfaces/post';
 import { getPinnedPostList } from 'src/utils/post';
 import { ROUTE } from '@/constants/ROUTE';
 import styles from './index.module.scss';
-import PostList from '@/components/PostList/PostList';
 
 import bio from '/public/bio.svg';
 import github from '/public/bio_github.svg';
