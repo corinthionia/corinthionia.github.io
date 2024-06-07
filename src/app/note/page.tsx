@@ -9,8 +9,8 @@ import styles from './index.module.scss';
 import { getAllCategories } from '@/utils/category';
 
 export default async function Page() {
-  const posts = await getAllPosts(CONTENTS_PATH.TIL_PATH);
-  const categories = await getAllCategories(CONTENTS_PATH.TIL_PATH);
+  const posts = await getAllPosts(CONTENTS_PATH.NOTE_PATH);
+  const categories = await getAllCategories(CONTENTS_PATH.NOTE_PATH);
 
   return (
     <>
@@ -19,7 +19,7 @@ export default async function Page() {
       <main className={styles.wrapper}>
         <PostList>
           {posts.map((post: PostType) => (
-            <Thumbnail key={post.fields.slug} post={post} to={ROUTE.TIL} />
+            <Thumbnail key={post.fields.slug} post={post} to={ROUTE.NOTE} />
           ))}
         </PostList>
       </main>

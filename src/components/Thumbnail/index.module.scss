@@ -40,7 +40,7 @@
   @include flex-col(12px);
   @include responsive(s) {
     width: 100%;
-    padding: 16px 12px 24px 12px;
+    padding: 16px 4px 24px 8px;
   }
 }
 

@@ -15,7 +15,7 @@ import { useTheme } from 'next-themes';
 
 const menus = [
   { title: '포스트', href: ROUTE.POST },
-  { title: '기록', href: ROUTE.TIL },
+  { title: '노트', href: ROUTE.NOTE },
   { title: '코드조각', href: ROUTE.SNIPPET },
 ];
 

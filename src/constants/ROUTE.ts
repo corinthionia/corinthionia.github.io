@@ -1,7 +1,7 @@
 export const ROUTE = {
   MAIN: '/',
   POST: '/post',
-  TIL: '/til',
+  NOTE: '/note',
   SNIPPET: '/snippet',
   GUESTBOOK: '/guest-book',
 } as const;

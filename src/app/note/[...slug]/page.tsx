@@ -19,7 +19,7 @@ interface ParamType {
 export default async function Page({ params }: ParamType) {
   const { slug } = params;
 
-  const { prev, curr, next } = await getNeighborPosts(CONTENTS_PATH.TIL_PATH, slug);
+  const { prev, curr, next } = await getNeighborPosts(CONTENTS_PATH.NOTE_PATH, slug);
 
   if (!curr) return notFound();
 
@@ -34,7 +34,7 @@ export default async function Page({ params }: ParamType) {
         <Header title={title} date={formatDate(date)} />
         <MDX content={content} />
         <Border />
-        <NeighborPost pageType="til" neighborPost={{ prev, next }} />
+        <NeighborPost pageType="note" neighborPost={{ prev, next }} />
         <Giscus />
       </PostLayout>
 
