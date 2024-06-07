@@ -28,7 +28,17 @@
   position: relative;
 }
 
-.items {
+.right {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+
+  .border {
+    color: var(--gray300);
+  }
+}
+
+.menus {
   gap: 24px;
   display: flex;
   align-items: center;
@@ -51,16 +61,6 @@
   @media (min-width: 577px) {
     display: none;
   }
-}
-
-.logo {
-  color: $pink200;
-  font-weight: 600;
-  font-size: 24px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 .theme {

@@ -23,8 +23,8 @@ const Thumbnail = (props: Props) => {
       <div className={styles.wrapper}>
         <Image
           className={styles.image}
-          width={256}
-          height={160}
+          width={224}
+          height={144}
           quality={100}
           src={thumbnail}
           alt="thumbnail"
