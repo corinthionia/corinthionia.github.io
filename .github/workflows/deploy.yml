@@ -13,6 +13,9 @@ jobs:
       - name: 🔔 Check out source code
         uses: actions/checkout@v3
 
+      - name: 👋🏻 Setup pnpm
+        uses: pnpm/action-setup@v2
+
       - name: 📂 Install dependencies
         run: |
           pnpm install
