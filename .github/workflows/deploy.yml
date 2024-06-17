@@ -28,7 +28,6 @@ jobs:
 
       - name: 🏗️ Build project
         run: |
-          export CI=false
           pnpm build
 
       - name: 🚀 Deploy to Github Pages
