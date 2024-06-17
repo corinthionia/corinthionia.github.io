@@ -29,7 +29,7 @@ const Giscus = () => {
     scriptElem.async = true;
 
     ref.current.appendChild(scriptElem);
-  }, []);
+  }, [isLightTheme]);
 
   useEffect(() => {
     const iframe = document.querySelector<HTMLIFrameElement>('iframe.giscus-frame');
@@ -37,7 +37,7 @@ const Giscus = () => {
       { giscus: { setConfig: { theme: isLightTheme ? 'light' : 'transparent_dark' } } },
       'https://giscus.app'
     );
-  }, [theme]);
+  }, [isLightTheme, theme]);
 
   return <section ref={ref} />;
 };
