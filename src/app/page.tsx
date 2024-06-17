@@ -11,7 +11,18 @@ export default async function Home() {
   return (
     <section className={styles.list}>
       <div className={styles.bio}>
-        <span>프론트엔드를 공부하고 있습니다 ✨</span>
+        <div className={styles.text}>
+          <span>corinthionia@gmail.com</span>
+          <span>프론트엔드를 공부하고 있습니다 ✨</span>
+        </div>
+        <div className={styles.links}>
+          <Link href="https://github.com/corinthionia" target="_blank">
+            <span>깃허브</span>
+          </Link>
+          <Link href="/guest-book">
+            <span>방명록</span>
+          </Link>
+        </div>
       </div>
 
       <div className={styles.heading}>

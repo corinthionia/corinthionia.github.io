@@ -4,14 +4,12 @@ import Link from 'next/link';
 import { ROUTE } from '@/constants/ROUTE';
 import styles from './index.module.scss';
 
-import logoLight from 'public/header_logo_light.svg';
-import logoDark from 'public/header_logo_dark.svg';
+import logo from 'public/header_logo.svg';
 
 import Image from 'next/image';
 import Menu from '@/components/Menu/Menu';
 import { useState } from 'react';
 import Theme from './Theme';
-import { useTheme } from 'next-themes';
 
 const menus = [
   { title: '포스트', href: ROUTE.POST },
@@ -20,9 +18,6 @@ const menus = [
 ];
 
 const Header = () => {
-  const { theme, systemTheme } = useTheme();
-  const isLightTheme = systemTheme === 'light' || theme === 'light';
-
   const [isMenuOpened, setIsMenuOpened] = useState(false);
 
   const handleMenuClick = () => {
@@ -32,12 +27,12 @@ const Header = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.itemWrapper}>
-        <Link href={ROUTE.MAIN}>
-          <Image width={60} src={isLightTheme ? logoLight : logoDark} alt="logo" className={styles.logo} />
-        </Link>
-
         <Image width={28} height={28} alt="menu" src="/profile.svg" className={styles.menu} onClick={handleMenuClick} />
         {isMenuOpened && <Menu onClick={handleMenuClick} />}
+
+        <Link href={ROUTE.MAIN} className={styles.logo}>
+          <Image width={160} src={logo} alt="logo" />
+        </Link>
 
         <div className={styles.right}>
           <div className={styles.menus}>
