@@ -1,5 +1,6 @@
 {
   "name": "corinthionia.github.io",
+  "homepage": "https://corinthionia.github.io",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -7,7 +8,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "deploy": "touch out/.nojekyll && gh-pages -d out --dotfiles"
   },
   "lint-staged": {
     "*.{ts,tsx}": [
@@ -34,6 +36,7 @@
     "classnames": "^2.5.1",
     "eslint": "^8",
     "eslint-config-next": "14.0.4",
+    "gh-pages": "^6.1.1",
     "husky": "^8.0.3",
     "lint-staged": "^15.2.0",
     "prettier": "^3.2.5",

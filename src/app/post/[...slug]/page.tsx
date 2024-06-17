@@ -7,8 +7,9 @@ import NeighborPost from '@/components/Post/NeighborPost';
 import Giscus from '@/components/Giscus/Giscus';
 import TOC from '@/components/TOC/TOC';
 import { formatDate } from '@/utils/date';
-import { getNeighborPosts } from '@/utils/post';
+import { getAllPosts, getNeighborPosts } from '@/utils/post';
 import { CONTENTS_PATH } from '@/constants/CONTENTS_PATH';
+import { PostType } from '@/interfaces/post';
 
 interface ParamType {
   params: {
@@ -41,4 +42,12 @@ export default async function Page({ params }: ParamType) {
       <TOC />
     </>
   );
+}
+
+export async function generateStaticParams() {
+  const posts: PostType[] = await getAllPosts(CONTENTS_PATH.POST_PATH);
+
+  return posts.map(post => ({
+    slug: post.fields.slug.split('/'),
+  }));
 }

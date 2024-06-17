@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import { CONTENTS_PATH } from '@/constants/CONTENTS_PATH';
-import { getNeighborPosts } from '@/utils/post';
+import { getAllPosts, getNeighborPosts } from '@/utils/post';
 import { formatDate } from '@/utils/date';
 import PostLayout from '@/layouts/PostLayout';
 import Header from '@/components/Post/Header';
@@ -9,6 +9,7 @@ import Border from 'src/ui/Border/Border';
 import NeighborPost from '@/components/Post/NeighborPost';
 import Giscus from '@/components/Giscus/Giscus';
 import TOC from '@/components/TOC/TOC';
+import { PostType } from '@/interfaces/post';
 
 interface ParamType {
   params: {
@@ -41,4 +42,12 @@ export default async function Page({ params }: ParamType) {
       <TOC />
     </>
   );
+}
+
+export async function generateStaticParams() {
+  const posts: PostType[] = await getAllPosts(CONTENTS_PATH.NOTE_PATH);
+
+  return posts.map(post => ({
+    slug: post.fields.slug.split('/'),
+  }));
 }
