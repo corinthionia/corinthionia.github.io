@@ -47,6 +47,10 @@ export default async function Page({ params }: ParamType) {
 export async function generateStaticParams() {
   const posts: PostType[] = await getAllPosts(CONTENTS_PATH.NOTE_PATH);
 
+  if (!posts || posts.length === 0) {
+    return [{ slug: 'not-found' }];
+  }
+
   return posts.map(post => ({
     slug: post.fields.slug.split('/'),
   }));
