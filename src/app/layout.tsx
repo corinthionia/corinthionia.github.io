@@ -4,10 +4,14 @@ import Header from '@/components/Header/Header';
 import Footer from '@/components/Footer/Footer';
 import { ThemeProvider } from 'next-themes';
 import '@/styles/globals.scss';
+import Head from 'next/head';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ko">
+      <Head>
+        <title>Tech blog by @corinthionia</title>
+      </Head>
       <body className={Pretendard.className}>
         <ThemeProvider>
           <Header />

@@ -26,9 +26,9 @@ export default async function Home() {
       </div>
 
       <div className={styles.heading}>
-        <span className={styles.fixed}>📌 고정된 포스트</span>
+        <span className={styles.fixed}>📌 Pinned Post</span>
         <Link href={ROUTE.POST}>
-          <span>전체 포스트</span>
+          <span>View All</span>
         </Link>
       </div>
       <div className={styles.postGrid}>

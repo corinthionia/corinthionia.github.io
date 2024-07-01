@@ -1,0 +1,18 @@
+{
+  "frontmatter": {
+    "description": "frontmatter",
+    "prefix": ["fm"],
+    "body": [
+      "---",
+      "title: '$1'",
+      "date: '$CURRENT_YEAR-$CURRENT_MONTH-${CURRENT_DATE}'",
+      "summary: '$2'",
+      "categories: [${3|post,note,snippet|}, '$4']",
+      "thumbnail: '/thumbnail/$3/$TM_FILENAME_BASE.png'",
+      "draft: ${5|false,true|}",
+      "pinned: ${6|false,true|}",
+      "---\n",
+      "$0",
+    ],
+  },
+}
