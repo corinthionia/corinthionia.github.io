@@ -1,12 +1,11 @@
 .mdx {
+  @include flex-col;
   width: 100%;
   margin: 0 auto 100px auto;
-  @include flex-col;
-
-  color: var(--gray700);
   line-height: 2;
   font-size: 15px;
   word-break: break-all;
+  color: var(--gray800);
 
   p {
     margin: 0;
@@ -215,12 +214,18 @@
       font-size: 23px;
     }
 
+    h1 {
+      font-weight: 500;
+    }
+
     h2 {
       font-size: 22px;
+      font-weight: 500;
     }
 
     h3 {
       font-size: 17px;
+      font-weight: 500;
     }
 
     img {

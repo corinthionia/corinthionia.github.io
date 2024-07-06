@@ -29,7 +29,6 @@
   @include responsive(s) {
     width: 100%;
     height: 200px;
-    border: 1px solid var(--gray100);
   }
 }
 
@@ -93,7 +92,7 @@
   white-space: normal;
   text-overflow: ellipsis;
   overflow-wrap: break-word;
-
+  line-clamp: 2;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;

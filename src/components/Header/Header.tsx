@@ -1,15 +1,13 @@
 'use client';
 
-import Link from 'next/link';
-import { ROUTE } from '@/constants/ROUTE';
-import styles from './index.module.scss';
-
-import logo from 'public/header_logo.svg';
-
-import Image from 'next/image';
-import Menu from '@/components/Menu/Menu';
 import { useState } from 'react';
+import { ROUTE } from '@/constants/ROUTE';
+import Menu from '@/components/Menu/Menu';
+import Link from 'next/link';
+import Image from 'next/image';
+import logo from 'public/header_logo.svg';
 import Theme from './Theme';
+import styles from './index.module.scss';
 
 const menus = [
   { title: '포스트', href: ROUTE.POST },
@@ -31,7 +29,7 @@ const Header = () => {
         {isMenuOpened && <Menu onClick={handleMenuClick} />}
 
         <Link href={ROUTE.MAIN} className={styles.logo}>
-          <Image width={160} src={logo} alt="logo" />
+          <Image width={140} src={logo} alt="logo" />
         </Link>
 
         <div className={styles.right}>

@@ -1,6 +1,6 @@
 .wrapper {
   width: 100vw;
-  height: 68px;
+  height: $HEADER_HEIGHT;
   padding: 0 28px;
   background: none;
   background: var(--header);
@@ -16,13 +16,13 @@
 
   @include responsive(xs) {
     height: 56px;
+    padding: 0 20px;
   }
 }
 
 .itemWrapper {
   width: 100%;
   max-width: $screen-max-width;
-  padding: 0 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;

@@ -3,10 +3,11 @@
   margin: 0 auto 96px;
   justify-content: flex-end;
 
-  @include flex-col;
-  @include responsive(xs) {
-    margin: 0 auto 36px;
+  h2 {
+    font-weight: 500;
   }
+
+  @include flex-col;
 }
 
 .title {

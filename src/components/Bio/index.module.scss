@@ -1,7 +1,6 @@
 .wrapper {
   width: 216px;
   padding: calc(64px + 64px) 0 0 32px;
-
   position: fixed;
   top: 0px;
   left: calc((100% - 768px) / 2 - 216px);
@@ -33,7 +32,7 @@
 
   @include responsive(s) {
     max-width: 360px;
-    padding: 0 32px 32px 32px;
+    padding: 0 20px 0px 20px;
   }
 }
 
@@ -45,6 +44,10 @@
     flex-direction: row;
     align-items: center;
     margin-top: 64px;
+  }
+
+  @include responsive(s) {
+    margin-top: 36px;
   }
 }
 
