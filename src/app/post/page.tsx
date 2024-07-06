@@ -7,6 +7,7 @@ import Bio from '@/components/Bio/Bio';
 import styles from './index.module.scss';
 import Thumbnail from '@/components/Thumbnail/Thumbnail';
 import { getAllCategories } from '@/utils/category';
+import { Metadata } from 'next';
 
 export default async function Page() {
   const posts = await getAllPosts(CONTENTS_PATH.POST_PATH);
@@ -25,4 +26,22 @@ export default async function Page() {
       </main>
     </>
   );
+}
+
+export async function generateMetadata(): Promise<Metadata | undefined> {
+  const authors = ['Corinthionia', 'Joohyun Kim'];
+
+  return {
+    title: 'Blog | Corinthionia',
+    description: 'Blog | Corinthionia',
+    openGraph: {
+      title: 'Blog | Corinthionia',
+      description: 'Blog | Corinthionia',
+      siteName: 'Corinthionia',
+      locale: 'ko_KR',
+      type: 'article',
+      url: './',
+      authors: authors,
+    },
+  };
 }

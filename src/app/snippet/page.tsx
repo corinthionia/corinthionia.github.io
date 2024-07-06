@@ -4,6 +4,7 @@ import { CONTENTS_PATH } from '@/constants/CONTENTS_PATH';
 import Bio from '@/components/Bio/Bio';
 import Snippet from '@/components/Snippet/Snippet';
 import styles from './index.module.scss';
+import { Metadata } from 'next';
 
 export default async function Page() {
   const posts = await getAllSnippets(CONTENTS_PATH.SNIPPET_PATH);
@@ -19,4 +20,22 @@ export default async function Page() {
       </main>
     </>
   );
+}
+
+export async function generateMetadata(): Promise<Metadata | undefined> {
+  const authors = ['Corinthionia', 'Joohyun Kim'];
+
+  return {
+    title: 'Snippet | Corinthionia',
+    description: 'Snippet | Corinthionia',
+    openGraph: {
+      title: 'Snippet | Corinthionia',
+      description: 'Snippet | Corinthionia',
+      siteName: 'Corinthionia',
+      locale: 'ko_KR',
+      type: 'article',
+      url: './',
+      authors: authors,
+    },
+  };
 }

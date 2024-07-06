@@ -4,6 +4,7 @@ import { PostType } from '@/interfaces/post';
 import { getPinnedPostList } from 'src/utils/post';
 import { ROUTE } from '@/constants/ROUTE';
 import styles from './index.module.scss';
+import { Metadata } from 'next';
 
 export default async function Home() {
   const posts = await getPinnedPostList();
@@ -38,4 +39,22 @@ export default async function Home() {
       </div>
     </section>
   );
+}
+
+export async function generateMetadata(): Promise<Metadata | undefined> {
+  const authors = ['Corinthionia', 'Joohyun Kim'];
+
+  return {
+    title: 'Corinthionia',
+    description: 'Corinthionia',
+    openGraph: {
+      title: 'Corinthionia',
+      description: 'Corinthionia',
+      siteName: 'Corinthionia',
+      locale: 'ko_KR',
+      type: 'article',
+      url: './',
+      authors: authors,
+    },
+  };
 }

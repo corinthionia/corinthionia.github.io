@@ -15,7 +15,13 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    images: '',
+    title: 'Corinthionia',
+    description: 'Tech blog by @Corinthionia',
+    url: './',
+    siteName: 'Corinthionia',
+    images: [''],
+    locale: 'ko-KR',
+    type: 'website',
   },
 
   generator: '',

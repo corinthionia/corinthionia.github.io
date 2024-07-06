@@ -10,6 +10,7 @@ import NeighborPost from '@/components/Post/NeighborPost';
 import Giscus from '@/components/Giscus/Giscus';
 import TOC from '@/components/TOC/TOC';
 import { PostType } from '@/interfaces/post';
+import { Metadata } from 'next';
 
 interface ParamType {
   params: {
@@ -54,4 +55,40 @@ export async function generateStaticParams() {
   return posts.map(post => ({
     slug: post.fields.slug.split('/'),
   }));
+}
+
+export async function generateMetadata({ params }: ParamType): Promise<Metadata | undefined> {
+  const { curr } = await getNeighborPosts(CONTENTS_PATH.NOTE_PATH, params.slug);
+  const post = curr;
+
+  if (!post) {
+    return;
+  }
+
+  const publishedAt = new Date(post.frontMatter.date).toISOString();
+  const modifiedAt = new Date(post.frontMatter.date).toISOString();
+  const authors = ['Corinthionia', 'Joohyun Kim'];
+
+  return {
+    title: `${post.frontMatter.title} | Corinthionia`,
+    description: post.frontMatter.summary,
+    openGraph: {
+      title: post.frontMatter.title,
+      description: post.frontMatter.summary,
+      siteName: 'Corinthionia',
+      locale: 'ko_KR',
+      type: 'article',
+      publishedTime: publishedAt,
+      modifiedTime: modifiedAt,
+      url: './',
+      images: post.frontMatter.thumbnail,
+      authors: authors,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.frontMatter.title,
+      description: post.frontMatter.summary,
+      images: post.frontMatter.thumbnail,
+    },
+  };
 }
