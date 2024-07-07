@@ -10,9 +10,7 @@ import { formatDate } from '@/utils/date';
 import { getAllPosts, getNeighborPosts } from '@/utils/post';
 import { CONTENTS_PATH } from '@/constants/CONTENTS_PATH';
 import { PostType } from '@/interfaces/post';
-import { generatePageMetadata } from '@/components/SEO/SEO';
 import { Metadata } from 'next';
-import { metadata } from '@/assets/metadata';
 
 interface ParamType {
   params: {

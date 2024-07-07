@@ -18,7 +18,10 @@
     ]
   },
   "dependencies": {
+    "@next/third-parties": "^14.2.4",
+    "corinthionia.github.io": "link:",
     "glob": "^10.3.10",
+    "google": "link:@next/third-parties/google",
     "gray-matter": "^4.0.3",
     "next": "^14.2.3",
     "next-mdx-remote": "^4.4.1",

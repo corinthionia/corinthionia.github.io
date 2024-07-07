@@ -3,8 +3,10 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Corinthionia',
   description: 'Tech blog by @Corinthionia',
-  applicationName: '',
-  authors: null,
+  applicationName: 'Corinthionia',
+  icons: {
+    icon: '/favicon/favicon-96x96.png',
+  },
 
   metadataBase: new URL('https://corinthionia.github.io'),
   alternates: {
@@ -33,7 +35,6 @@ export const metadata: Metadata = {
   creator: '',
   publisher: '',
   robots: '',
-  icons: '',
   manifest: '',
   verification: undefined,
   appleWebApp: null,
