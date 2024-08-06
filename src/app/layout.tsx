@@ -18,24 +18,21 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="icon" href="./favicon.svg" />
       </Head>
 
-      <body className={NotoSansKR.className}>
-        <Script
-          async
-          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_TRACKING_ID}`}
-        ></Script>
-        <Script
-          id="google-analytics"
-          dangerouslySetInnerHTML={{
-            __html: `
+      <Script
+        async
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_TRACKING_ID}`}
+      ></Script>
+      <Script id="google-analytics">
+        {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
 
             gtag('config', ${process.env.NEXT_PUBLIC_GA_TRACKING_ID});
-            `,
-          }}
-        ></Script>
+        `}
+      </Script>
 
+      <body className={NotoSansKR.className}>
         <ThemeProvider>
           <Header />
           <div className={styles.layout}>
