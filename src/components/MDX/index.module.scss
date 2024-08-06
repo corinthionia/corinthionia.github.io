@@ -3,7 +3,7 @@
   width: 100%;
   margin: 0 auto 100px auto;
   line-height: 2;
-  font-size: 15px;
+  font-size: 16px;
   word-break: break-all;
   color: var(--gray800);
 
@@ -21,7 +21,7 @@
 
   h1 {
     font-size: 32px;
-    font-weight: 500;
+    font-weight: 600;
     margin-top: 60px;
     margin-bottom: 4px;
     code[class*='language-'] {
@@ -108,7 +108,19 @@
   u {
     text-decoration: $yellow100 wavy underline;
     text-underline-position: under;
-    text-underline-offset: 3px;
+    text-underline-offset: 1px;
+  }
+
+  mark {
+    background: var(--mark-background);
+    padding: 0.5px 4px;
+    border-radius: 2px;
+    color: $gray800;
+  }
+
+  em {
+    color: $red100;
+    font-style: normal;
   }
 
   img {

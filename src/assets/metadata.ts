@@ -7,7 +7,6 @@ export const metadata: Metadata = {
   icons: {
     icon: '/favicon/favicon-96x96.png',
   },
-
   metadataBase: new URL('https://corinthionia.github.io'),
   alternates: {
     canonical: '/',
@@ -25,18 +24,18 @@ export const metadata: Metadata = {
     locale: 'ko-KR',
     type: 'website',
   },
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+  },
 
   generator: '',
   keywords: null,
   referrer: null,
-  themeColor: '',
   colorScheme: null,
-  viewport: '',
   creator: '',
   publisher: '',
   robots: '',
   manifest: '',
-  verification: undefined,
   appleWebApp: null,
   formatDetection: null,
   abstract: '',

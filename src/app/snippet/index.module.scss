@@ -1,6 +1,6 @@
 .wrapper {
   width: 100%;
-  max-width: $post-max-width;
+  max-width: $POST_MAX_WIDTH;
   margin: 64px auto 0 auto;
   @include flex-col;
 

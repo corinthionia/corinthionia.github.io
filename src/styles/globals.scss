@@ -18,6 +18,7 @@
   --menu-background: #{$white};
 
   --block-background: #{$blue100};
+  --mark-background: #{rgba($yellow100, 0.5)};
 }
 
 html[data-theme='dark'] {
@@ -36,8 +37,8 @@ html[data-theme='dark'] {
   --header-border: #{$gray800};
 
   --menu-background: #{$gray900};
-
   --block-background: #242424;
+  --mark-background: #{$yellow100};
 
   background: var(--gray50);
 }

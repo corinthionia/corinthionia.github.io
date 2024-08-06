@@ -18,7 +18,7 @@
 
   @include responsive(xl) {
     width: 100%;
-    max-width: $screen-max-width;
+    max-width: $SCREEN_MAX_WIDTH;
     position: inherit;
     margin: 0 auto;
     left: 50%;
