@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import Header from '@/components/Header/Header';
 import Footer from '@/components/Footer/Footer';
 import { ThemeProvider } from 'next-themes';
@@ -13,11 +12,6 @@ export const metadata = meta;
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ko">
-      <Head>
-        <title>Tech blog by @corinthionia</title>
-        <link rel="icon" href="./favicon.svg" />
-      </Head>
-
       <Script
         async
         src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_TRACKING_ID}`}
