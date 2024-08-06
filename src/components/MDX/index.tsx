@@ -12,7 +12,7 @@ interface Props {
   content: string;
 }
 
-const MDX = (props: Props) => {
+function MDX(props: Props) {
   const { content } = props;
 
   return (
@@ -28,6 +28,6 @@ const MDX = (props: Props) => {
       />
     </main>
   );
-};
+}
 
 export default MDX;

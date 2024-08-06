@@ -1,9 +1,9 @@
 'use client';
 
+import { useTheme } from 'next-themes';
 import Image from 'next/image';
 import dark from 'public/icons/dark.svg';
 import light from 'public/icons/light.svg';
-import { useTheme } from 'next-themes';
 import styles from './index.module.scss';
 
 const Theme = () => {

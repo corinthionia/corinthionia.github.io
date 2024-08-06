@@ -1,16 +1,10 @@
+import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { CONTENTS_PATH } from '@/constants/CONTENTS_PATH';
+import { CONTENTS_PATH } from '@/constants/post';
 import { getAllPosts, getNeighborPosts } from '@/utils/post';
 import { formatDate } from '@/utils/date';
-import PostLayout from '@/layouts/PostLayout';
-import Header from '@/components/Post/Header';
-import MDX from '@/components/MDX/MDX';
-import Border from 'src/ui/Border/Border';
-import NeighborPost from '@/components/Post/NeighborPost';
-import Giscus from '@/components/Giscus/Giscus';
-import TOC from '@/components/TOC/TOC';
 import { PostType } from '@/interfaces/post';
-import { Metadata } from 'next';
+import PostLayout from '@/layouts/post';
 
 interface ParamType {
   params: {
@@ -20,7 +14,6 @@ interface ParamType {
 
 export default async function Page({ params }: ParamType) {
   const { slug } = params;
-
   const { prev, curr, next } = await getNeighborPosts(CONTENTS_PATH.NOTE_PATH, slug);
 
   if (!curr) return notFound();
@@ -31,17 +24,7 @@ export default async function Page({ params }: ParamType) {
   } = curr;
 
   return (
-    <>
-      <PostLayout>
-        <Header title={title} date={formatDate(date)} />
-        <MDX content={content} />
-        <Border />
-        <NeighborPost pageType="note" neighborPost={{ prev, next }} />
-        <Giscus />
-      </PostLayout>
-
-      <TOC />
-    </>
+    <PostLayout title={title} date={formatDate(date)} content={content} pageType="note" neighborPost={{ prev, next }} />
   );
 }
 

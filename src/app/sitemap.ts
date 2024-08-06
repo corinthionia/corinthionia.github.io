@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next';
 import { getAllPosts } from 'src/utils/post';
-import { CONTENTS_PATH } from '@/constants/CONTENTS_PATH';
+import { CONTENTS_PATH } from '@/constants/post';
 
 const BASE_URL = 'https://corinthionia.github.io';
 

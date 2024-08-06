@@ -1,0 +1,89 @@
+.wrapper {
+  width: 100%;
+  @include flex-col(100px);
+}
+
+.bio {
+  @include flex-col(28px);
+  padding: 24px;
+  font-size: 14px;
+  border-radius: 12px;
+  color: var(--gray700);
+  background: var(--block-background);
+
+  @include responsive(s) {
+    padding: 20px;
+    font-size: 12px;
+    gap: 20px;
+  }
+
+  .info {
+    @include flex-col(8px);
+    @include responsive(s) {
+      gap: 4px;
+    }
+  }
+
+  .links {
+    display: flex;
+    gap: 20px;
+    color: var(--gray500);
+  }
+}
+
+.posts {
+  @include flex-col(40px);
+  @include responsive(s) {
+    gap: 48px;
+  }
+
+  .heading {
+    display: flex;
+    gap: 24px;
+    font-size: 22px;
+    color: var(--gray200);
+
+    span {
+      font-weight: 600;
+      cursor: pointer;
+      &:hover {
+        color: var(--gray400);
+        transition: color 0.5s;
+      }
+    }
+
+    span.fixed {
+      color: var(--gray600);
+    }
+
+    @include responsive(l) {
+      padding: 8px;
+      font-size: 18px;
+      max-width: 360px;
+      font-weight: 500;
+    }
+
+    @include responsive(s) {
+      margin: 32px auto 0 auto;
+      span {
+        font-weight: 500;
+      }
+    }
+  }
+
+  .grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 72px;
+
+    @include responsive(xl) {
+      @include flex-col;
+    }
+
+    @include responsive(s) {
+      margin: 0;
+      gap: 48px;
+    }
+  }
+}

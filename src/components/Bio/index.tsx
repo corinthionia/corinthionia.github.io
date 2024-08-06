@@ -3,7 +3,7 @@ import Link from 'next/link';
 import profileImage from 'public/profile.svg';
 import styles from './index.module.scss';
 
-const Bio = () => {
+function Bio() {
   return (
     <section className={styles.wrapper}>
       <div className={styles.profile}>
@@ -21,6 +21,6 @@ const Bio = () => {
       </div>
     </section>
   );
-};
+}
 
 export default Bio;

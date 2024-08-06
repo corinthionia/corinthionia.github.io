@@ -1,23 +1,23 @@
+import { Metadata } from 'next';
 import { PostType } from '@/interfaces/post';
 import { getAllSnippets } from 'src/utils/post';
-import { CONTENTS_PATH } from '@/constants/CONTENTS_PATH';
-import Bio from '@/components/Bio/Bio';
-import Snippet from '@/components/Snippet/Snippet';
+import { CONTENTS_PATH } from '@/constants/post';
+import Snippet from '@/components/snippet';
+import Bio from '@/components/bio';
 import styles from './index.module.scss';
-import { Metadata } from 'next';
 
 export default async function Page() {
-  const posts = await getAllSnippets(CONTENTS_PATH.SNIPPET_PATH);
+  const snippets = await getAllSnippets(CONTENTS_PATH.SNIPPET_PATH);
 
   return (
     <>
       <Bio />
 
-      <main className={styles.wrapper}>
-        {posts.map((post: PostType) => (
-          <Snippet key={post.fields.slug} title={post.frontMatter.title} content={post.content} />
+      <section className={styles.wrapper}>
+        {snippets.map((snippet: PostType) => (
+          <Snippet key={snippet.fields.slug} title={snippet.frontMatter.title} content={snippet.content} />
         ))}
-      </main>
+      </section>
     </>
   );
 }

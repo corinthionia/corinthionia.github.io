@@ -9,7 +9,7 @@ interface Props {
   post: PostType;
 }
 
-const Thumbnail = (props: Props) => {
+function Thumbnail(props: Props) {
   const {
     to,
     post: {
@@ -47,6 +47,6 @@ const Thumbnail = (props: Props) => {
       </div>
     </Link>
   );
-};
+}
 
 export default Thumbnail;

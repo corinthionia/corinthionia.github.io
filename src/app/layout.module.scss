@@ -1,0 +1,13 @@
+.layout {
+  width: 100vw;
+  align-items: center;
+  @include flex-col;
+}
+
+.main {
+  width: 100%;
+  max-width: $SCREEN_MAX_WIDTH;
+  display: flex;
+  position: relative;
+  padding-top: $HEADER_HEIGHT;
+}

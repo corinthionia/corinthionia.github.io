@@ -2,10 +2,10 @@
 
 import { useEffect, useState } from 'react';
 import { getTOCObserver } from '@/utils/toc';
-import Heading from '@/components/TOC/Heading';
+import Heading from '@/components/toc/Heading';
 import styles from './index.module.scss';
 
-const TOC = () => {
+function TOC() {
   const [activeId, setActiveId] = useState<string>('');
   const [headings, setHeadings] = useState<Element[]>([]);
 
@@ -29,6 +29,6 @@ const TOC = () => {
       ))}
     </div>
   );
-};
+}
 
 export default TOC;

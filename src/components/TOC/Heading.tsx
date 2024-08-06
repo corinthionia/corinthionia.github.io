@@ -6,9 +6,7 @@ interface Props {
   heading: Element;
 }
 
-const Heading = (props: Props) => {
-  const { activeId, heading } = props;
-
+function Heading({ activeId, heading }: Props) {
   return (
     <div
       className={cn(
@@ -20,6 +18,6 @@ const Heading = (props: Props) => {
       <a href={`#${heading.id}`}>{heading.textContent}</a>
     </div>
   );
-};
+}
 
 export default Heading;

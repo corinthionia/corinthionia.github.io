@@ -1,20 +1,20 @@
 import Link from 'next/link';
-import { ROUTE } from '@/constants/ROUTE';
+import Border from '@/ui/Border/Border';
+import { ROUTES } from '@/constants/route';
 import cn from 'classnames';
 import styles from './index.module.scss';
-import Border from '@/ui/Border/Border';
 
 const menus = [
-  { title: '포스트', href: ROUTE.POST },
-  { title: '노트', href: ROUTE.NOTE },
-  { title: '코드조각', href: ROUTE.SNIPPET },
+  { title: '포스트', href: ROUTES.POST },
+  { title: '노트', href: ROUTES.NOTE },
+  { title: '코드조각', href: ROUTES.SNIPPET },
 ];
 
 interface Props {
   onClick: () => void;
 }
 
-const Menu = (props: Props) => {
+function Menu(props: Props) {
   const { onClick } = props;
   const pathname = window.location.pathname.split('/')[1];
 
@@ -35,6 +35,6 @@ const Menu = (props: Props) => {
       </div>
     </div>
   );
-};
+}
 
 export default Menu;

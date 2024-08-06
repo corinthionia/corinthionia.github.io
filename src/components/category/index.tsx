@@ -2,7 +2,7 @@ interface Props {
   categories: string[];
 }
 
-const Category = (props: Props) => {
+function Category(props: Props) {
   const { categories } = props;
 
   return (
@@ -12,6 +12,6 @@ const Category = (props: Props) => {
       ))}
     </div>
   );
-};
+}
 
 export default Category;

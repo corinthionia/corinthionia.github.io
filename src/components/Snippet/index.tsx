@@ -1,13 +1,13 @@
 import React from 'react';
 import styles from './index.module.scss';
-import MDX from '@/components/MDX/MDX';
+import MDX from '@/components/mdx';
 
 interface Props {
   title: string;
   content: string;
 }
 
-const Snippet = (props: Props) => {
+function Snippet(props: Props) {
   const { title, content } = props;
 
   return (
@@ -18,6 +18,6 @@ const Snippet = (props: Props) => {
       </div>
     </div>
   );
-};
+}
 
 export default Snippet;
