@@ -11,7 +11,7 @@
   position: relative;
   padding: $HEADER_HEIGHT 0 0 0;
 
-  @include responsive(xxl) {
+  @include responsive(xl) {
     padding: $HEADER_HEIGHT 32px 0 32px;
   }
 

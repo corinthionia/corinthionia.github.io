@@ -1,5 +1,26 @@
 .wrapper {
   width: 100%;
   max-width: $SCREEN_MAX_WIDTH;
-  margin: $HEADER_HEIGHT auto 0 auto;
+  margin: 64px auto 0 auto;
+
+  @include responsive(xl) {
+    margin: 48px auto 0 auto;
+    @include flex-col(64px);
+  }
+
+  @include responsive(s) {
+    margin: 32px auto 0 auto;
+    gap: 52px;
+  }
+}
+
+.list {
+  @include flex-col(64px);
+
+  @include responsive(s) {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 56px;
+    width: 100%;
+  }
 }
