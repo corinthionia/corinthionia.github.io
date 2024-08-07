@@ -2,9 +2,7 @@ interface Props {
   categories: string[];
 }
 
-function Category(props: Props) {
-  const { categories } = props;
-
+function Category({ categories }: Props) {
   return (
     <div>
       {categories.map((category: string) => (

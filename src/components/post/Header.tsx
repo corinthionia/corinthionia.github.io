@@ -6,9 +6,7 @@ interface Props {
   date: string;
 }
 
-const Header = (props: Props) => {
-  const { title, date } = props;
-
+const Header = ({ title, date }: Props) => {
   return (
     <header className={styles.header}>
       <h2 className={styles.title}>{title}</h2>

@@ -3,7 +3,7 @@ import { CONTENTS_PATH } from '@/constants/post';
 import PostListLayout from '@/layouts/post-list';
 
 export default function Page() {
-  return <PostListLayout postType={CONTENTS_PATH.NOTE_PATH} />;
+  return <PostListLayout postType="note" />;
 }
 
 export async function generateMetadata(): Promise<Metadata | undefined> {

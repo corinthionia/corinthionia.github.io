@@ -1,15 +1,12 @@
-import React from 'react';
-import styles from './index.module.scss';
 import MDX from '@/components/mdx';
+import styles from './index.module.scss';
 
 interface Props {
   title: string;
   content: string;
 }
 
-function Snippet(props: Props) {
-  const { title, content } = props;
-
+function Snippet({ title, content }: Props) {
   return (
     <div className={styles.wrapper}>
       <div className={styles.title}>{title}</div>

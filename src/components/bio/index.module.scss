@@ -3,7 +3,7 @@
   top: $HEADER_HEIGHT;
   margin: 64px 0 0 0;
 
-  @include flex-col;
+  @include flex-col(4px);
   align-items: center;
 
   @include responsive(xl) {
@@ -22,6 +22,7 @@
 .image {
   width: 120px;
   height: 120px;
+  align-self: flex-start;
 
   @include responsive(xl) {
     width: 100px;

@@ -1,9 +1,8 @@
 import { Metadata } from 'next';
-import { CONTENTS_PATH } from '@/constants/post';
 import PostListLayout from '@/layouts/post-list';
 
 export default function Page() {
-  return <PostListLayout postType={CONTENTS_PATH.POST_PATH} />;
+  return <PostListLayout postType="post" />;
 }
 
 export async function generateMetadata(): Promise<Metadata | undefined> {

@@ -14,8 +14,7 @@ interface Props {
   onClick: () => void;
 }
 
-function Menu(props: Props) {
-  const { onClick } = props;
+function Menu({ onClick }: Props) {
   const pathname = window.location.pathname.split('/')[1];
 
   return (

@@ -1,5 +1,10 @@
 .wrapper {
+  width: 100%;
+  max-width: $THUMBNAIL_WIDTH_L;
   @include flex-col;
+  @include responsive(s) {
+    max-width: $THUMBNAIL_WIDTH_S;
+  }
 }
 
 .title {

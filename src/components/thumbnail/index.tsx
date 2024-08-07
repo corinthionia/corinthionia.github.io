@@ -9,15 +9,13 @@ interface Props {
   post: PostType;
 }
 
-function Thumbnail(props: Props) {
-  const {
-    to,
-    post: {
-      frontMatter: { title, thumbnail, summary, categories, date },
-      fields,
-    },
-  } = props;
-
+function Thumbnail({
+  to,
+  post: {
+    frontMatter: { title, thumbnail, summary, categories, date },
+    fields,
+  },
+}: Props) {
   return (
     <Link key={title} href={`${to}/${fields.slug}`}>
       <div className={styles.wrapper}>

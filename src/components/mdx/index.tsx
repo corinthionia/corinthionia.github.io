@@ -12,11 +12,9 @@ interface Props {
   content: string;
 }
 
-function MDX(props: Props) {
-  const { content } = props;
-
+function MDX({ content }: Props) {
   return (
-    <main className={styles.mdx}>
+    <article className={styles.mdx}>
       <MDXRemote
         source={content}
         options={{
@@ -26,7 +24,7 @@ function MDX(props: Props) {
           },
         }}
       />
-    </main>
+    </article>
   );
 }
 

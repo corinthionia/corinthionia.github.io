@@ -7,12 +7,7 @@ interface Props {
   neighborPost: Pick<NeighborPostType, 'prev' | 'next'>;
 }
 
-const NeighborPost = (props: Props) => {
-  const {
-    pageType,
-    neighborPost: { prev, next },
-  } = props;
-
+const NeighborPost = ({ pageType, neighborPost: { prev, next } }: Props) => {
   return (
     <>
       <section className={styles.section}>
