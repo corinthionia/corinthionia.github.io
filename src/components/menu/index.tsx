@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Border from '@/ui/Border/Border';
 import { ROUTES } from '@/constants/route';
 import cn from 'classnames';
 import styles from './index.module.scss';
@@ -24,7 +23,7 @@ function Menu({ onClick }: Props) {
           @corinthionia
         </Link>
       </div>
-      <Border />
+      <div className={styles.border} />
       <div className={styles.bottom}>
         {menus.map(menu => (
           <Link href={menu.href} key={menu.title} onClick={onClick}>

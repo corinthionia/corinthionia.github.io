@@ -25,6 +25,7 @@
 .image {
   object-fit: cover;
   overflow: hidden;
+  border-radius: 2px;
 
   @include responsive(s) {
     width: 100%;

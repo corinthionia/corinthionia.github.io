@@ -12,9 +12,9 @@ export const metadata = meta;
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ko">
-      <GoogleAnalytics />
-
       <body className={Pretendard.className}>
+        <GoogleAnalytics />
+
         <ThemeProvider>
           <Header />
           <div className={styles.layout}>

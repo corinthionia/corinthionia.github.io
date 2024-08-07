@@ -16,11 +16,4 @@
 
 .list {
   @include flex-col(64px);
-
-  @include responsive(s) {
-    display: grid;
-    grid-template-columns: 1fr;
-    row-gap: 56px;
-    width: 100%;
-  }
 }
