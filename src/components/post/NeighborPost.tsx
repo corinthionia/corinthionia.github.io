@@ -3,7 +3,7 @@ import { NeighborPostType } from '@/interfaces/post';
 import styles from './NeighborPost.module.scss';
 
 interface Props {
-  pageType: 'post' | 'note';
+  pageType: string;
   neighborPost: Pick<NeighborPostType, 'prev' | 'next'>;
 }
 

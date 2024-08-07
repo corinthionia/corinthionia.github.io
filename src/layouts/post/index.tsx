@@ -1,4 +1,4 @@
-import { NeighborPostType } from '@/interfaces/post';
+import { NeighborPostType, PageType } from '@/interfaces/post';
 import Header from '@/components/post/Header';
 import MDX from '@/components/mdx';
 import NeighborPost from '@/components/post/NeighborPost';
@@ -10,7 +10,7 @@ interface Props {
   title: string;
   date: string;
   content: string;
-  pageType: 'post' | 'note';
+  pageType: PageType;
   neighborPost: Pick<NeighborPostType, 'prev' | 'next'>;
 }
 
