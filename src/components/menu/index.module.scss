@@ -1,0 +1,50 @@
+.wrapper {
+  position: fixed;
+  z-index: 3;
+  top: 80px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+
+  width: calc(100% - 64px);
+  padding: 16px 32px 20px 32px;
+  border-radius: 16px;
+  border: 1px solid var(--gray200);
+  filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.1));
+
+  @include flex-col(12px);
+  align-items: center;
+
+  font-size: 14px;
+  color: var(--gray500);
+  background: var(--menu-background);
+  animation: slide-down 0.5s;
+}
+
+.top {
+  width: 100%;
+  text-align: center;
+  color: $blue500;
+}
+
+.bottom {
+  width: 100%;
+  padding: 0 8px;
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.active {
+  color: var(--gray800);
+  font-weight: 500;
+  text-decoration: $purple300 wavy underline;
+  text-underline-position: under;
+}
+
+.border {
+  width: 100%;
+  height: 3px;
+  border-radius: 1px;
+  background-image: linear-gradient(60deg, $blue200 0%, $purple100 100%);
+}

@@ -1,0 +1,35 @@
+.header {
+  width: 100%;
+  margin: 0 auto 120px;
+  justify-content: flex-end;
+
+  @include flex-col;
+  @include responsive(s) {
+    margin: 0 auto 100px;
+  }
+}
+
+.title {
+  margin-top: 0;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.info {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+  color: var(--gray300);
+
+  span:hover {
+    color: $mint100;
+    -moz-transition: color 0.7s ease;
+    -o-transition: color 0.7s ease;
+    -ms-transition: color 0.7s ease;
+    -webkit-transition: color 0.7s ease;
+    transition: color 0.7s ease;
+  }
+
+  @include typo-medium(13px);
+}

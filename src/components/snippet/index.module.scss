@@ -1,0 +1,20 @@
+.wrapper {
+  width: 100%;
+  max-width: $THUMBNAIL_WIDTH_L;
+  @include flex-col;
+  @include responsive(s) {
+    max-width: $THUMBNAIL_WIDTH_S;
+  }
+}
+
+.title {
+  padding: 4px 8px;
+  display: flex;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.snippet {
+  width: 100%;
+  padding: 8px;
+}

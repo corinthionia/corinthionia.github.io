@@ -3,7 +3,7 @@ import path from 'path';
 import matter from 'gray-matter';
 import { sync } from 'glob';
 import { NeighborPostType, PostInfoType, PostType } from '@/interfaces/post';
-import { CONTENTS_PATH } from '@/constants/CONTENTS_PATH';
+import { CONTENTS_PATH } from '@/constants/post';
 
 const getContentsDir = (basePath: string) => path.join(process.cwd(), basePath);
 

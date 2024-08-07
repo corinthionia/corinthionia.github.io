@@ -16,13 +16,8 @@ export interface PostInfoType {
   path: string;
 }
 
-export interface PostType {
-  frontMatter: { [key: string]: any };
+export interface PostType extends PostInfoType {
   content: string;
-  fields: {
-    slug: string;
-  };
-  path: string;
 }
 
 export interface NeighborPostType {
@@ -30,3 +25,5 @@ export interface NeighborPostType {
   curr: PostType | undefined;
   next: PostType | null;
 }
+
+export type PageType = 'post' | 'note' | 'snippet';
