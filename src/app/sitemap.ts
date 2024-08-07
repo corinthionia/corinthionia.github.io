@@ -1,8 +1,7 @@
 import { MetadataRoute } from 'next';
+import { INFO } from '@/constants/info';
 import { getAllPosts } from 'src/utils/post';
 import { CONTENTS_PATH } from '@/constants/post';
-
-const BASE_URL = 'https://corinthionia.github.io';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const posts = await getAllPosts(CONTENTS_PATH.POST_PATH);
@@ -10,11 +9,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   return [
     ...posts.map(post => ({
-      url: `${BASE_URL}/post/${post.fields.slug}`,
+      url: `${INFO.website}/post/${post.fields.slug}`,
       lastModified: `${post.frontMatter.date}`,
     })),
     ...notes.map(note => ({
-      url: `${BASE_URL}/note/${note.fields.slug}`,
+      url: `${INFO.website}/note/${note.fields.slug}`,
       lastModified: note.frontMatter.date,
     })),
   ];

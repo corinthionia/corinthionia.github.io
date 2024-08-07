@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { INFO } from '@/constants/info';
 import { ROUTES } from '@/constants/route';
 import cn from 'classnames';
 import styles from './index.module.scss';
@@ -19,7 +20,7 @@ function Menu({ onClick }: Props) {
   return (
     <div className={styles.wrapper}>
       <div className={styles.top}>
-        <Link href="https://github.com/corinthionia" target="_blank">
+        <Link href={INFO.github} target="_blank">
           @corinthionia
         </Link>
       </div>

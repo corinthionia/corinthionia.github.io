@@ -5,6 +5,7 @@ import { getPinnedPostList } from 'src/utils/post';
 import { PostType } from '@/interfaces/post';
 import { ROUTES } from '@/constants/route';
 import styles from './index.module.scss';
+import { INFO } from '@/constants/info';
 
 export default async function Home() {
   const posts = await getPinnedPostList();
@@ -13,11 +14,11 @@ export default async function Home() {
     <section className={styles.wrapper}>
       <section className={styles.bio}>
         <div className={styles.info}>
-          <span>corinthionia@gmail.com</span>
+          <span>{INFO.email}</span>
           <span>프론트엔드를 공부하고 있습니다 ✨</span>
         </div>
         <div className={styles.links}>
-          <Link href="https://github.com/corinthionia" target="_blank">
+          <Link href={INFO.github} target="_blank">
             깃허브
           </Link>
           <Link href="/guest-book">방명록</Link>

@@ -1,3 +1,4 @@
+import { INFO } from '@/constants/info';
 import { MetadataRoute } from 'next';
 
 export default function robots(): MetadataRoute.Robots {
@@ -6,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://corinthionia.github.io/sitemap.xml',
+    sitemap: `${INFO.website}/sitemap.xml`,
   };
 }

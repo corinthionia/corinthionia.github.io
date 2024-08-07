@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { INFO } from '@/constants/info';
 
 export const metadata: Metadata = {
   title: 'Corinthionia',
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
   icons: {
     icon: '/favicon/favicon-96x96.png',
   },
-  metadataBase: new URL('https://corinthionia.github.io'),
+  metadataBase: new URL(INFO.website),
   alternates: {
     canonical: '/',
     languages: {

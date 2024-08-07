@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { INFO } from '@/constants/info';
 import styles from './Header.module.scss';
 
 interface Props {
@@ -11,7 +12,7 @@ const Header = ({ title, date }: Props) => {
     <header className={styles.header}>
       <h2 className={styles.title}>{title}</h2>
       <div className={styles.info}>
-        <Link href="https://github.com/corinthionia" target="_blank">
+        <Link href={INFO.github} target="_blank">
           <span>@corinthionia</span>
         </Link>
         <span>{date}</span>
