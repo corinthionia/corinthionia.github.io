@@ -1,15 +1,13 @@
 .wrapper {
-  width: 216px;
-  padding: calc(64px + 64px) 0 0 32px;
   position: fixed;
-  top: 0px;
-  left: calc((100% - 768px) / 2 - 216px);
+  top: $HEADER_HEIGHT;
+  margin: 64px 0 0 0;
 
   @include flex-col;
   align-items: center;
 
   @media (min-width: 1400px) {
-    left: calc((100% - 768px) / 2 - 300px);
+    left: 268px;
   }
 
   @media ((min-width: 1300px) and (max-width: 1400px)) {

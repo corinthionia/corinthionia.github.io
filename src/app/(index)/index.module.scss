@@ -1,17 +1,22 @@
 .wrapper {
   width: 100%;
   @include flex-col(100px);
+  @include responsive(l) {
+    gap: 60px;
+  }
 }
 
 .bio {
-  @include flex-col(28px);
+  margin: 60px 0 0 0;
   padding: 24px;
   font-size: 14px;
   border-radius: 12px;
   color: var(--gray700);
   background: var(--block-background);
 
+  @include flex-col(28px);
   @include responsive(s) {
+    margin: 32px 0 0 0;
     padding: 20px;
     font-size: 12px;
     gap: 20px;
@@ -34,11 +39,13 @@
 .posts {
   @include flex-col(40px);
   @include responsive(s) {
-    gap: 48px;
+    gap: 32px;
   }
 
   .heading {
+    width: 100%;
     display: flex;
+    align-items: center;
     gap: 24px;
     font-size: 22px;
     color: var(--gray200);
@@ -56,18 +63,14 @@
       color: var(--gray600);
     }
 
-    @include responsive(l) {
-      padding: 8px;
+    @include responsive(xl) {
+      max-width: 800px;
+      margin: 0 auto;
       font-size: 18px;
-      max-width: 360px;
-      font-weight: 500;
     }
 
     @include responsive(s) {
-      margin: 32px auto 0 auto;
-      span {
-        font-weight: 500;
-      }
+      max-width: 360px;
     }
   }
 

@@ -14,17 +14,17 @@ async function PostListLayout({ postType }: Props) {
   const posts = await getAllPosts(postType);
 
   return (
-    <>
+    <div className={styles.wrapper}>
       <Bio />
 
-      <section className={styles.wrapper}>
+      <section>
         <PostList>
           {posts.map((post: PostType) => (
             <Thumbnail key={post.fields.slug} post={post} to={ROUTES.POST} />
           ))}
         </PostList>
       </section>
-    </>
+    </div>
   );
 }
 

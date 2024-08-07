@@ -9,5 +9,13 @@
   max-width: $SCREEN_MAX_WIDTH;
   display: flex;
   position: relative;
-  padding-top: $HEADER_HEIGHT;
+  padding: $HEADER_HEIGHT 0 0 0;
+
+  @include responsive(xxl) {
+    padding: $HEADER_HEIGHT 32px 0 32px;
+  }
+
+  @include responsive(s) {
+    padding: $HEADER_HEIGHT 20px 0 20px;
+  }
 }
