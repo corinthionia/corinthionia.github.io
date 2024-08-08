@@ -1,6 +1,6 @@
 import Header from '@/components/header';
 import Footer from '@/components/footer';
-import GoogleAnalytics from '@/components/seo/GoogleAnalytics';
+import { GoogleAnalytics } from '@next/third-parties/google';
 import { ThemeProvider } from 'next-themes';
 import { Pretendard } from '@/styles/fonts';
 import { metadata as meta } from '@/assets/metadata';
@@ -13,8 +13,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="ko">
       <body className={Pretendard.className}>
-        <GoogleAnalytics />
-
         <ThemeProvider>
           <Header />
           <div className={styles.layout}>
@@ -23,6 +21,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Footer />
         </ThemeProvider>
       </body>
+
+      {process.env.NEXT_PUBLIC_GA_TRACKING_ID && <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_TRACKING_ID} />}
     </html>
   );
 }
