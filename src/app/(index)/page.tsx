@@ -19,9 +19,9 @@ export default async function Home() {
         </div>
         <div className={styles.links}>
           <Link href={INFO.github} target="_blank">
-            깃허브
+            😺 깃허브
           </Link>
-          <Link href="/guest-book">방명록</Link>
+          <Link href="/guest-book">🏡 방명록</Link>
         </div>
       </section>
 
