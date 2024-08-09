@@ -1,11 +1,17 @@
 .mdx {
   @include flex-col;
-  width: 100%;
   margin: 0 auto 100px auto;
+  width: 100%;
   line-height: 2;
   font-size: 16px;
   word-break: break-all;
   color: var(--gray800);
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Pretendard',
+    sans-serif;
 
   p {
     margin: 0;
