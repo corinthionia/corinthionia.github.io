@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>https://corinthionia.github.io/post/frontend/cors</loc>
+<lastmod>2024-10-16</lastmod>
+</url>
+<url>
+<loc>https://corinthionia.github.io/post/frontend/state-management-library</loc>
+<lastmod>2024-09-26</lastmod>
+</url>
+<url>
+<loc>https://corinthionia.github.io/post/frontend/css-js-animation</loc>
+<lastmod>2024-09-11</lastmod>
+</url>
+<url>
+<loc>https://corinthionia.github.io/post/frontend/browser-rendering-process</loc>
+<lastmod>2024-09-04</lastmod>
+</url>
+<url>
 <loc>https://corinthionia.github.io/post/javascript/javascript-module</loc>
 <lastmod>2024-08-28</lastmod>
 </url>
