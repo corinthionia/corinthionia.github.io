@@ -30,7 +30,9 @@
     font-weight: 600;
     margin-top: 60px;
     margin-bottom: 4px;
-    code[class*='language-'] {
+
+    & > code {
+      font-size: 20px !important;
       color: var(--gray600);
     }
   }
@@ -40,7 +42,8 @@
     font-weight: 600;
     margin-top: 56px;
     margin-bottom: 4px;
-    code[class*='language-'] {
+    & > code {
+      font-size: 18px !important;
       color: var(--gray600);
     }
   }
@@ -50,8 +53,8 @@
     font-weight: 600;
     margin-top: 44px;
     margin-bottom: 12px;
-    code[class*='language-'] {
-      font-size: 18px;
+    & > code {
+      font-size: 16px !important;
       font-weight: 600;
       color: var(--gray600);
     }
@@ -150,6 +153,22 @@
     td {
       border: 1px solid var(--gray100);
       padding: 4px 0;
+    }
+  }
+
+  figure {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  figcaption {
+    font-size: 12px;
+    color: $gray200;
+
+    & > a {
+      color: $gray200;
     }
   }
 
