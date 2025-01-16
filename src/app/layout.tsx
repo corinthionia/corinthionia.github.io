@@ -9,7 +9,7 @@ import '@/styles/globals.scss';
 
 export const metadata = meta;
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ko">
       <body className={Pretendard.className}>
@@ -22,7 +22,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </ThemeProvider>
       </body>
 
-      {process.env.NEXT_PUBLIC_GA_TRACKING_ID && <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_TRACKING_ID} />}
+      {process.env.NEXT_PUBLIC_GA_TRACKING_ID && (
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_TRACKING_ID} />
+      )}
     </html>
   );
 }

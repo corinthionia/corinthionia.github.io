@@ -5,22 +5,22 @@
 }
 
 @mixin typo-regular($size) {
-  font-weight: 400;
+  font-weight: 300;
   font-size: $size;
 }
 
 @mixin typo-medium($size) {
-  font-weight: 500;
+  font-weight: 400;
   font-size: $size;
 }
 
 @mixin typo-semibold($size) {
-  font-weight: 600;
+  font-weight: 500;
   font-size: $size;
 }
 
 @mixin typo-bold($size) {
-  font-weight: 700;
+  font-weight: 600;
   font-size: $size;
 }
 
