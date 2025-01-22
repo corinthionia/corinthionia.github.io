@@ -2,16 +2,11 @@
   @include flex-col;
   margin: 0 auto 100px auto;
   width: 100%;
-  line-height: 2;
-  font-size: 16px;
+  line-height: 1.8;
+  font-size: 17px;
   word-break: break-all;
-  color: var(--gray800);
-  font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    'Pretendard',
-    sans-serif;
+  color: var(--gray700);
+  font-weight: 300;
 
   p {
     margin: 0;
@@ -33,7 +28,6 @@
 
     & > code {
       font-size: 20px !important;
-      color: var(--gray600);
     }
   }
 
@@ -44,7 +38,6 @@
     margin-bottom: 4px;
     & > code {
       font-size: 18px !important;
-      color: var(--gray600);
     }
   }
 
@@ -56,7 +49,6 @@
     & > code {
       font-size: 16px !important;
       font-weight: 500;
-      color: var(--gray600);
     }
   }
 
@@ -181,7 +173,6 @@
   code[class*='language-'],
   pre[class*='language-'] {
     font-size: 12px;
-    color: var(--gray800);
     direction: ltr;
     text-align: left;
     white-space: pre;
@@ -228,12 +219,11 @@
   /* Inline code */
   :not(pre) > code {
     background: var(--gray50);
-    padding: 2px 4px;
+    padding: 2px;
     border-radius: 3px;
-    color: $red100;
     margin-right: 2px;
     white-space: normal;
-    border: none;
+    border: 1px solid var(--gray100);
     font-size: 13px;
   }
 
