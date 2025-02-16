@@ -14,8 +14,8 @@ export default async function Home() {
     <section className={styles.wrapper}>
       <section className={styles.bio}>
         <div className={styles.info}>
+          <span className={styles.name}>Joohyun Kim ✨</span>
           <span>{INFO.email}</span>
-          <span>프론트엔드를 공부하고 있습니다 ✨</span>
         </div>
         <div className={styles.links}>
           <Link href={INFO.github} target="_blank">

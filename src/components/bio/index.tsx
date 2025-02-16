@@ -14,7 +14,7 @@ function Bio() {
           <Link href="mailto:corinthionia@gmail.com">
             <span>corinthionia@gmail.com</span>
           </Link>
-          <span>프론트엔드를 공부하고 있습니다</span>
+          <span>프론트엔드 개발을 하고 있어요</span>
         </div>
       </div>
     </section>
