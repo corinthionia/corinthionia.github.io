@@ -11,7 +11,7 @@ import styles from './index.module.scss';
 
 const menus = [
   { title: '포스트', href: ROUTES.POST },
-  { title: '노트', href: ROUTES.NOTE },
+  // { title: '노트', href: ROUTES.NOTE },
   { title: '코드조각', href: ROUTES.SNIPPET },
 ];
 
@@ -25,7 +25,14 @@ function Header() {
   return (
     <div className={styles.wrapper}>
       <div className={styles.itemWrapper}>
-        <Image width={28} height={28} alt="menu" src="/profile.svg" className={styles.menu} onClick={handleMenuClick} />
+        <Image
+          width={28}
+          height={28}
+          alt="menu"
+          src="/profile.svg"
+          className={styles.menu}
+          onClick={handleMenuClick}
+        />
         {isMenuOpened && <Menu onClick={handleMenuClick} />}
 
         <Link href={ROUTES.MAIN} className={styles.logo}>

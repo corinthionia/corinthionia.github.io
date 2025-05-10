@@ -6,7 +6,7 @@ import styles from './index.module.scss';
 
 const menus = [
   { title: '포스트', href: ROUTES.POST },
-  { title: '노트', href: ROUTES.NOTE },
+  // { title: '노트', href: ROUTES.NOTE },
   { title: '코드조각', href: ROUTES.SNIPPET },
 ];
 

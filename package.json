@@ -9,7 +9,7 @@
     "start": "next start",
     "lint": "next lint",
     "prepare": "husky install",
-    "deploy": "touch out/.nojekyll && gh-pages -d out -b deploy -t true && rm -rf out"
+    "deploy": "touch out/.nojekyll && gh-pages -d out -b deploy && rm -rf out"
   },
   "lint-staged": {
     "*.{ts,tsx}": [
@@ -24,7 +24,7 @@
     "eslint-config-next": "^15.1.4",
     "glob": "^10.3.10",
     "gray-matter": "^4.0.3",
-    "next": "^14.2.3",
+    "next": "14.2.28",
     "next-mdx-remote": "^4.4.1",
     "next-themes": "^0.3.0",
     "react": "^18.3.1",
