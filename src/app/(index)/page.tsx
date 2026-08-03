@@ -21,6 +21,9 @@ export default async function Home() {
           <Link href={INFO.github} target="_blank">
             😺 깃허브
           </Link>
+          <Link href={INFO.linkedin} target="_blank">
+            🔗 링크드인
+          </Link>
           <Link href="/guest-book">🏡 방명록</Link>
         </div>
       </section>
